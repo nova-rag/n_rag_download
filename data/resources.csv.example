@@ -1,0 +1,24 @@
+URL,文件名,资源类型,来源,分类
+https://en.wikipedia.org/wiki/Ultra-wideband,超宽带技术,HTML,Wikipedia,UWB的Rifa标准文档
+https://qorvo.com/innovation/tech-hubs/decawave/,Qorvo_Decawave,HTML,Qorvo官网,公开芯片SDK
+https://www.qorvo.com/products/d/da008465,DW3000_数据手册,PDF,Qorvo产品文档,公开芯片SDK
+https://github.com/firadev/fira-consortium-website,FiRa联盟官网源码,GitHub,FiRa,UWB的Rifa标准文档
+https://github.com/qorvo/libdw3000,DW3000驱动库,GitHub,Qorvo开源,公开芯片SDK
+https://github.com/FreeRTOS/FreeRTOS,FreeRTOS源码,GitHub,FreeRTOS官方,FreeRTOS文档
+https://github.com/riscv/riscv-gnu-toolchain,RISC-V工具链,GitHub,RISC-V官方,RISC-V框架相关文档
+https://www.fira-consortium.org/wp-content/uploads/FiRa_PHY_MAC_Test_Specification.pdf,FiRa测试规范,PDF,FiRa联盟,UWB的Rifa标准文档
+https://arxiv.org/pdf/2107.06124.pdf,UWB定位算法研究,PDF,arXiv,一些领域相关paper
+https://www.mdpi.com/1424-8220/22/3/794/pdf,UWB与物联网集成研究,PDF,MDPI,一些领域相关paper
+https://www.nxp.com/docs/en/white-paper/UWB-TECHNOLOGY-WP.pdf,UWB技术白皮书,PDF,NXP,其他行业相关文档
+# 以上是示例资源，你可以按照同样的格式添加更多资源
+# 格式为: URL,文件名,资源类型,来源,分类
+# 文件名用于保存下载的文件
+# 资源类型可以是HTML、PDF、GitHub等，用于决定处理方式
+# 来源是可选的，仅用于记录
+# 分类用于对资源进行分组，可选值包括：
+# - 公开芯片SDK
+# - FreeRTOS文档
+# - RISC-V框架相关文档
+# - UWB的Rifa标准文档
+# - 其他行业相关文档
+# - 一些领域相关paper 

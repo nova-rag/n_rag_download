@@ -1,0 +1,19 @@
+# 资源URL示例列表
+# 每行一个URL，以#开头的行为注释
+
+# 普通网页
+https://en.wikipedia.org/wiki/Ultra-wideband
+https://qorvo.com/innovation/tech-hubs/decawave/
+
+# PDF文档
+https://www.qorvo.com/products/d/da008465
+
+# GitHub仓库
+https://github.com/firadev/fira-consortium-website
+https://github.com/qorvo/libdw3000
+
+# 技术文档
+https://www.ti.com/lit/an/swra739/swra739.pdf
+https://www.ti.com/lit/ds/symlink/cc1352p.pdf
+
+# 更多资源可以按照每行一个URL的格式添加 

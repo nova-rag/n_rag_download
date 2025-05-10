@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+.env
+.venv
+env/
+venv/
+ENV/
+.idea/
+.vscode/
+data/downloads/*
+data/cleaned_data/*
+!data/downloads/.gitkeep
+!data/cleaned_data/.gitkeep

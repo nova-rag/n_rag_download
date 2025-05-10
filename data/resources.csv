@@ -1,0 +1,100 @@
+URL,文件名,资源类型,来源,分类
+https://en.wikipedia.org/wiki/FiRa_Consortium,FiRa_Consortium,HTML,Wikipedia,UWB的Rifa标准文档
+https://www.nxp.com/docs/en/supporting-information/FIRA-CONSORTIUM-ONE-PAGER.pdf,FIRA-CONSORTIUM-ONE-PAGER,PDF,NXP,UWB的Rifa标准文档
+https://www.carloalbertoboano.com/documents/stocker22uwb154z.pdf,uwb154z_性能研究,PDF,carloalbertoboano.com,一些领域相关paper
+https://en.wikipedia.org/wiki/RISC-V,RISC-V,HTML,Wikipedia,RISC-V框架相关文档
+https://www.wevolver.com/article/risc-v-architecture,RISC-V架构指南,HTML,Wevolver,RISC-V框架相关文档
+https://riscv.org/home/,RISC-V官网首页,HTML,RISC-V International,RISC-V框架相关文档
+https://riscv.org/about/,RISC-V组织介绍,HTML,RISC-V International,RISC-V框架相关文档
+https://www.freertos.org/,FreeRTOS官网,HTML,FreeRTOS,FreeRTOS文档
+https://la.mathworks.com/help/comm/ug/uwb-ranging-using-ieee-802.15.4z.html,UWB测距技术,HTML,MathWorks,UWB的Rifa标准文档
+https://standards.ieee.org/ieee/802.15.4z/10230/,IEEE标准参考,HTML,IEEE SA,UWB的Rifa标准文档
+https://img.antpedia.com/standard/files/pdfs_ora/20230203/IEEE%20802.15.4z-2020.pdf,IEEE_802.15.4z-2020标准,PDF,antpedia.com,UWB的Rifa标准文档
+https://onlinedocs.microchip.com/oxy/GUID-8D1A0DF1-A110-4894-8415-16544C2C110C-en-US-1/GUID-339827C2-60A3-4A93-963E-269FCD3FE8A2.html,Microchip_UWB标准文档,HTML,Microchip Online docs,公开芯片SDK
+https://en.wikipedia.org/wiki/IEEE_802.15.4,IEEE_802.15.4,HTML,Wikipedia,UWB的Rifa标准文档
+https://www.qorvo.com/products/p/DWM3001CDK,DWM3001CDK,HTML,Qorvo,公开芯片SDK
+https://www.qorvo.com/products/p/DWM3001C,DWM3001C,HTML,Qorvo,公开芯片SDK
+https://www.qorvo.com/products/p/DWM3000EVB,DWM3000EVB,HTML,Qorvo,公开芯片SDK
+https://www.qorvo.com/products/p/DWM3000,DWM3000,HTML,Qorvo,公开芯片SDK
+https://www.qorvo.com/products/p/DW3110,DW3110,HTML,Qorvo,公开芯片SDK
+https://www.qorvo.com/products/p/DW3120,DW3120,HTML,Qorvo,公开芯片SDK
+https://www.firaconsortium.org/resource-hub/specifications,FiRa规范资源,HTML,FiRa Consortium,UWB的Rifa标准文档
+https://www.firaconsortium.org/news/press-releases/2025/01/fira-consortium-unveils-fira-core-3-0-specifications-and-certification,FiRa3.0标准发布,HTML,FiRa Consortium,UWB的Rifa标准文档
+https://research.samsung.com/blog/FiRa-Consortium-Release-3-0-UWB-Core-Specification-and-Certification-Program-Launch,三星FiRa3.0博客,HTML,Samsung Research,UWB的Rifa标准文档
+https://www.firaconsortium.org/certifications/technical-specifications,FiRa技术规范,HTML,FiRa Consortium,UWB的Rifa标准文档
+https://www.firaconsortium.org/certifications/test-specifications,FiRa测试规范,HTML,FiRa Consortium,UWB的Rifa标准文档
+https://www.reddit.com/r/RISCV/comments/1fquibe/riscv_software_development_manual/,RISC-V软件开发手册讨论,HTML,Reddit,RISC-V框架相关文档
+https://five-embeddev.com/riscv-user-isa-manual/Priv-v1.12/intro.html,RISC-V用户级ISA手册,HTML,Five EmbedDev,RISC-V框架相关文档
+https://cs.brown.edu/courses/csci1952y/2024/assets/docs/riscv-spec-v2.2.pdf,RISC-V规范v2.2,PDF,Brown Computer Science,RISC-V框架相关文档
+https://gcc.gnu.org/onlinedocs/gcc/RISC-V-Options.html,RISC-V_GCC选项,HTML,GNU,RISC-V框架相关文档
+https://riscv-europe.org/summit/2025/,RISC-V欧洲峰会2025,HTML,RISC-V Summit Europe,RISC-V框架相关文档
+https://riscv.org/members/join/individual/,RISC-V个人会员,HTML,RISC-V International,RISC-V框架相关文档
+https://riscv.org/members/join/,RISC-V会员加入,HTML,RISC-V International,RISC-V框架相关文档
+https://community.riscv.org/,RISC-V社区,HTML,RISC-V International,RISC-V框架相关文档
+https://riscv.org/,RISC-V官网,HTML,RISC-V International,RISC-V框架相关文档
+https://lf-riscv.atlassian.net/wiki/display/HOME/RISC-V+Technical+Specifications,RISC-V技术规范,HTML,RISC-V Tech Hub (Atlassian),RISC-V框架相关文档
+https://shd.mit.edu/2025/recitations/riscv.html,MIT安全硬件设计课程,HTML,MIT Secure Hardware Design,RISC-V框架相关文档
+https://docs.openhwgroup.org/projects/cva6-user-manual/04_cv32a65x/riscv/priv.html,CVA6文档,HTML,OpenHW Group,RISC-V框架相关文档
+https://www.scs.stanford.edu/~zyedidia/docs/riscv/riscv-privileged.pdf,RISC-V特权架构,PDF,Stanford Secure Computer Systems Group,RISC-V框架相关文档
+https://tools.cloudbear.ru/docs/riscv-privileged-1.13-20241017.pdf,RISC-V特权文档1.13,PDF,cloudbear.ru,RISC-V框架相关文档
+http://cs107e.github.io/readings/riscv-privileged-20190608-1.pdf,RISC-V特权指南CS107e,PDF,CS107e,RISC-V框架相关文档
+https://people.eecs.berkeley.edu/~krste/papers/riscv-privileged-v1.9.1.pdf,RISC-V特权v1.9.1,PDF,Berkeley EECS,RISC-V框架相关文档
+https://riscv.org/wp-content/uploads/2024/12/riscv-debug-release.pdf,RISC-V调试支持,PDF,RISC-V International,RISC-V框架相关文档
+https://training.linuxfoundation.org/certification/linux-foundation-risc-v-foundational-associate/,RISC-V基础认证,HTML,Linux Foundation Training,RISC-V框架相关文档
+https://riscv.org/wp-content/uploads/2024/12/riscv-calling.pdf,RISC-V调用约定,PDF,RISC-V International,RISC-V框架相关文档
+https://llvm.org/docs/RISCVUsage.html,LLVM_RISC-V使用指南,HTML,LLVM,RISC-V框架相关文档
+https://riscv.org/specifications/ratified/,RISC-V已批准规范,HTML,RISC-V International,RISC-V框架相关文档
+https://code.ornl.gov/llvm-doe/llvm-project/-/blob/3b75a5c4c84d17d6647ba079391722ed9be09f85/llvm/docs/RISCVUsage.rst,LLVM_RISC-V使用指南源码,HTML,GitLab (ORNL),RISC-V框架相关文档
+https://releases.llvm.org/17.0.1/docs/RISCVUsage.html,LLVM17_RISC-V使用指南,HTML,LLVM,RISC-V框架相关文档
+https://github.com/riscv-collab/riscv-gnu-toolchain,riscv-gnu-toolchain,GitHub (GitHub Repository),GitHub,RISC-V框架相关文档
+https://gcc.gnu.org/onlinedocs/gcc.pdf,GCC编译器文档,PDF,GNU,RISC-V框架相关文档
+https://xpack-dev-tools.github.io/riscv-none-elf-gcc-xpack/docs/getting-started/,xPack_RISC-V_GCC入门,HTML,xPack,RISC-V框架相关文档
+https://gnu-mcu-eclipse.github.io/blog/2018/05/06/riscv-none-gcc-v7-2-0-3-20180506-released/,RISC-V嵌入式GCC发布,HTML,GNU MCU Eclipse,RISC-V框架相关文档
+https://github.com/stnolting/riscv-gcc-prebuilt,riscv-gcc-prebuilt,GitHub (GitHub Repository),GitHub,RISC-V框架相关文档
+https://www.llvm.org/docs/RISCV/RISCVVectorExtension.html,RISC-V向量扩展,HTML,LLVM,RISC-V框架相关文档
+https://releases.llvm.org/16.0.0/docs/RISCVUsage.html,LLVM16_RISC-V使用指南,HTML,LLVM,RISC-V框架相关文档
+https://github.com/sifive/riscv-llvm,riscv-llvm,GitHub (GitHub Repository),GitHub,RISC-V框架相关文档
+https://github.com/lowRISC/riscv-llvm,lowRISC/riscv-llvm,GitHub (GitHub Repository),GitHub,RISC-V框架相关文档
+https://groups.google.com/a/groups.riscv.org/g/sw-dev/c/8JCVG678W7I,LLVM_RISC-V讨论组,HTML (Google Group),Google Groups,RISC-V框架相关文档
+https://rocm.docs.amd.com/projects/llvm-project/en/docs-6.4.0/LLVM/llvm/html/RISCVUsage.html,AMD_RISC-V使用指南,HTML,AMD ROCm Docs,RISC-V框架相关文档
+https://runtimerec.com/how-to-debug-risc-v-applications/,RISC-V应用调试指南,HTML,RunTime Recruitment,RISC-V框架相关文档
+https://shakti.org.in/docs/RISC-V-GDB-tutorial.pdf,RISC-V_GDB教程,PDF,Shakti Processor,RISC-V框架相关文档
+https://wiki.qemu.org/Documentation/Platforms/RISCV,QEMU_RISC-V文档,HTML (Wiki),QEMU,RISC-V框架相关文档
+https://www.sourceware.org/gdb/documentation/,GDB文档,HTML,Sourceware,RISC-V框架相关文档
+https://github.com/riscvarchive/riscv-binutils-gdb,riscv-binutils-gdb,GitHub (GitHub Repository),GitHub,RISC-V框架相关文档
+https://risc-v-getting-started-guide.readthedocs.io/_/downloads/en/latest/pdf/,RISC-V入门指南PDF,PDF,Read the Docs,RISC-V框架相关文档
+https://stackoverflow.com/questions/67385543/riscv64-linux-gnu-gdb-on-ubuntu-20-04,Ubuntu上RISC-V_GDB讨论,HTML,Stack Overflow,RISC-V框架相关文档
+https://sourceware.org/gdb/current/onlinedocs/gdb.html/index.html,GDB当前文档,HTML,Sourceware,RISC-V框架相关文档
+https://riseproject.dev/,RISC-V软件生态系统,HTML,RISE Project (Linux Foundation),RISC-V框架相关文档
+https://www.reddit.com/r/RISCV/comments/ql34t2/is_there_any_documentation_relates_to_the/,RISC-V工具链文档讨论,HTML,Reddit,RISC-V框架相关文档
+https://www.freertos.org/Documentation/01-FreeRTOS-quick-start/01-Beginners-guide/00-Overview,FreeRTOS入门指南,HTML,FreeRTOS,FreeRTOS文档
+https://www.freertos.org/Documentation/02-Kernel/07-Books-and-manual/01-RTOS_book,FreeRTOS内核文档,HTML,FreeRTOS,FreeRTOS文档
+https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started.html,AWS_FreeRTOS入门,HTML,AWS Documentation,FreeRTOS文档
+https://www.freertos.org/Documentation/02-Kernel/07-Books-and-manual/01-Code/01-Zip-files,FreeRTOS示例代码,HTML,FreeRTOS,FreeRTOS文档
+https://www.freertos.org/Documentation/00-Overview,FreeRTOS文档概览,HTML,FreeRTOS,FreeRTOS文档
+https://github.com/FreeRTOS/FreeRTOS-Kernel-Book,FreeRTOS-Kernel-Book,GitHub (GitHub Repository),GitHub,FreeRTOS文档
+https://www.freertos.org/Documentation/RTOS_book.html,FreeRTOS书籍,HTML,FreeRTOS,FreeRTOS文档
+https://www.qorvo.com/products/p/QM33120WDK1,QM33120WDK1,HTML,Qorvo,公开芯片SDK
+https://forum.qorvo.com/t/dwm3001cdk-arduino-ide-programming/21072,DWM3001CDK_Arduino编程,HTML (Forum),Qorvo Tech Forum,公开芯片SDK
+https://forum.qorvo.com/t/new-release-of-dw3000-and-qm33-sdk-dw3-qm33-sdk-v1-0-2/19160,DW3000和QM33_SDK发布,HTML (Forum),Qorvo Tech Forum,公开芯片SDK
+https://www.farnell.com/datasheets/4509030.pdf,DWM3001CDK快速入门,PDF,Farnell,公开芯片SDK
+https://forum.qorvo.com/t/getting-started-with-the-dwm3001c/13430,DWM3001C入门指南,HTML (Forum),Qorvo Tech Forum,公开芯片SDK
+https://github.com/Uberi/DWM3001CDK-demo-firmware,DWM3001CDK-demo-firmware,GitHub (GitHub Repository),GitHub,公开芯片SDK
+https://forums.estimote.com/t/new-android-uwb-sdk-updated-on-github/12311,Android_UWB_SDK更新,HTML (Forum),Estimote Forums,公开芯片SDK
+https://github.com/Uberi/DWM3001C-starter-firmware,DWM3001C-starter-firmware,GitHub (GitHub Repository),GitHub,公开芯片SDK
+https://forum.qorvo.com/t/getting-started-with-dwm3001cdke/11801,DWM3001CDKE入门指南,HTML (Forum),Qorvo Tech Forum,公开芯片SDK
+https://forum.qorvo.com/t/qorvo-nearby-interaction-software-package-v-3-0-release/13390,Qorvo邻近交互软件包,HTML (Forum),Qorvo Tech Forum,公开芯片SDK
+https://github.com/Decawave/uwb-core,uwb-core,GitHub (GitHub Repository),GitHub,公开芯片SDK
+https://doc.riot-os.org/group__pkg__uwb__dw1000.html,RIOT_OS_DW1000驱动,HTML,RIOT OS Docs,公开芯片SDK
+https://github.com/osomprivacy/uwb-stack,uwb-stack,GitHub (GitHub Repository),GitHub,公开芯片SDK
+https://github.com/Decawave/uwb-apps,uwb-apps,GitHub (GitHub Repository),GitHub,公开芯片SDK
+https://github.com/Decawave/uwb-dw1000,uwb-dw1000,GitHub (GitHub Repository),GitHub,公开芯片SDK
+https://github.com/orgs/Decawave/repositories,Decawave仓库列表,HTML (GitHub Organization),GitHub,公开芯片SDK
+https://github.com/Decawave/mynewt-dw1000-core,mynewt-dw1000-core,GitHub (GitHub Repository),GitHub,公开芯片SDK
+https://github.com/Decawave/dwm1001-examples,dwm1001-examples,GitHub (GitHub Repository),GitHub,公开芯片SDK
+https://github.com/insightsip/ISP3080-SDK,ISP3080-SDK,GitHub (GitHub Repository),GitHub,公开芯片SDK
+https://github.com/foldedtoad/dwm3000,dwm3000,GitHub (GitHub Repository),GitHub,公开芯片SDK
+https://github.com/br101/libdeca,libdeca,GitHub (GitHub Repository),GitHub,公开芯片SDK
+https://docs.nordicsemi.com/bundle/ncs-latest/page/zephyr/boards/qorvo/index.html,Nordic_Qorvo文档,HTML,Nordic Semiconductor Docs,公开芯片SDK
+https://forum.qorvo.com/c/wireless-connectivity/ultra-wideband/5,Qorvo_UWB论坛,HTML (Forum),Qorvo Tech Forum,公开芯片SDK
+https://forum.qorvo.com/t/dw3300q-stm32-sdk-documentation/18064,DW3300Q_STM32_SDK文档,HTML (Forum),Qorvo Tech Forum,公开芯片SDK 

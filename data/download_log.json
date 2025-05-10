@@ -1,0 +1,181 @@
+{
+  "downloaded_files": [
+    "1_FiRa_Consortium_-_Wikipedia.html",
+    "2_FiRa_Consortium.pdf",
+    "3_On_the_Performance_of_IEEE_802.15.4z-Compliant_Ultra-Wideband_Devices_-_Carlo_Alberto_Boano.pdf",
+    "4_RISC-V_-_Wikipedia.html",
+    "5_RISC-V_Architecture__A_Comprehensive_Guide_to_the_Open-Source_ISA_-_Wevolver.html",
+    "6_Home___RISC-V_International.html",
+    "7_About_RISC-V_International.html",
+    "8_FreeRTOS__-_FreeRTOS_.html",
+    "11_IEEE_802.15.4z-2020.pdf.pdf",
+    "12_5_IEEE_802.15.4z-2020_UWB_Standard_-_Microchip_Online_docs.html",
+    "13_IEEE_802.15.4_-_Wikipedia.4",
+    "14_DWM3001CDK_-_Qorvo.html",
+    "15_DWM3001C_-_Qorvo.html",
+    "16_DWM3000EVB_-_Qorvo.html",
+    "17_DWM3000_-_Qorvo.html",
+    "18_DW3110_-_Qorvo.html",
+    "19_DW3120_-_Qorvo.html",
+    "20_Purchase_Specifications___FiRa_Consortium.html",
+    "21_FiRa_Consortium_Unveils_FiRa_Core_3.0_Specifications_and_Certification_Program.html",
+    "23_Technical_Specifications___FiRa_Consortium.html",
+    "24_Test_Specifications___FiRa_Consortium.html",
+    "26_RISC-V_Instruction_Set_Manual__Volume_I__RISC-V_User-Level_ISA___Five_EmbedDev.html",
+    "28_RISC-V_Options__Using_the_GNU_Compiler_Collection__GCC__.html",
+    "29_Welcome_-_RISC-V_Summit_Europe_2025.html",
+    "30_Individual_Membership___RISC-V_International.html",
+    "31_Join_RISC-V.html",
+    "32_RISC-V_International.html",
+    "33_RISC-V_International.html",
+    "34_ISA_Specifications_-_Home_-_RISC-V_Tech_Hub.html",
+    "35_Binary_Exploitation_and_RISC-V_Warmup___6.5950_6.5951_-_MIT_Secure_Hardware_Design.html",
+    "36_Privileged_RISC-V_ISA___CVA6_documentation.html",
+    "37_The_RISC-V_Instruction_Set_Manual_-_Stanford_Secure_Computer_Systems_Group.pdf",
+    "38_The_RISC-V_Instruction_Set_Manual__Volume_II__Privileged_Architecture.pdf",
+    "39_The_RISC-V_Instruction_Set_Manual_-_CS107e.pdf",
+    "40_The_RISC-V_Instruction_Set_Manual_-_People__EECS.pdf",
+    "41_RISC-V_External_Debug_Support_Version_0.13.2_d5029366d59e8563c08b6b9435f82573b603e48e.pdf",
+    "42_RISC-V_Foundational_Associate__RVFA_.html",
+    "43_Calling_Convention_-_RISC-V.pdf",
+    "44_User_Guide_for_RISC-V_Target___LLVM_21.0.0git_documentation.html",
+    "45_RISC-V_Ratified_Specifications.html",
+    "46_llvm_docs_RISCVUsage.rst___3b75a5c4c84d17d6647ba079391722ed9be09f85___llvm-doe___llvm-project___GitLab.rst",
+    "47_User_Guide_for_RISC-V_Target___LLVM_17.0.1_documentation.html",
+    "48_GNU_toolchain_for_RISC-V__including_GCC_-_GitHub.html",
+    "49_Using_the_GNU_Compiler_Collection.pdf",
+    "50_Getting_Started___xPack_GNU_RISC-V_Embedded_GCC.html",
+    "51_GNU_MCU_Eclipse_RISC-V_Embedded_GCC_v7.2.0-3-20180506_released.html",
+    "52_riscv-gcc-prebuilt_README.md_at_main_-_GitHub.md",
+    "53_RISC-V_Vector_Extension___LLVM_21.0.0git_documentation.html",
+    "54_User_Guide_for_RISC-V_Target___LLVM_16.0.0_documentation.html",
+    "55_riscv-llvm_README.md_at_dev_-_GitHub.md",
+    "56_lowRISC_riscv-llvm__RISC-V_support_for_LLVM_projects__LLVM__Clang__...__-_GitHub.html",
+    "57_LLVM_for_RISC-V_-_Google_Groups.html",
+    "58_User_Guide_for_RISC-V_Target___LLVM_19.0.0git_documentation.html",
+    "59_How_to_Debug_RISC-V_Applications_-_RunTime_Recruitment.html",
+    "60_RISC-V_GDB_Tutorial_-_Shakti_Processor.pdf",
+    "61_Documentation_Platforms_RISCV_-_QEMU.html",
+    "62_GDB_Documentation_-_Sourceware.html",
+    "63_RISC-V_backports_for_binutils-gdb._Development_is_done_upstream_at_the_FSF._-_GitHub.html",
+    "64_PDF_-_RISC-V_-_Getting_Started_Guide.pdf",
+    "65_riscv64-linux-gnu-gdb_on_ubuntu_20.04_-_Stack_Overflow.html",
+    "66_Top__Debugging_with_GDB__-_sourceware.org.html",
+    "67_Rise__RISC-V_Software_Ecosystem___Linux_Foundation_Project.html",
+    "69_Beginner_s_guides_to_FreeRTOS.html",
+    "70_FreeRTOS_Documentation_-_FreeRTOS_.html",
+    "71_Get_Started_with_FreeRTOS_-_AWS_Documentation.html",
+    "72_FreeRTOS_Book_Examples.html",
+    "73_FreeRTOS_documentation_-_FreeRTOS_.html",
+    "74_FreeRTOS_FreeRTOS-Kernel-Book_-_GitHub.html",
+    "75_FreeRTOS_Documentation_-_FreeRTOS_.html",
+    "76_QM33120WDK1_-_Qorvo.html",
+    "77_DWM3001CDK_Arduino_IDE_Programming_-_Ultra-Wideband_-_Qorvo_Tech_Forum.html",
+    "78_New_release_of_DW3000_and_QM33_SDK__DW3_QM33_SDK_v1.0.2_-_Qorvo_Tech_Forum.html",
+    "79_DWM3001CDK_Quick_Start_Guide_-_Farnell.pdf",
+    "80_Getting_Started_with_the_DWM3001C_-_Ultra-Wideband_-_Qorvo_Tech_Forum.html",
+    "81_README.md_-_Uberi_DWM3001CDK-demo-firmware_-_GitHub.md",
+    "82_New_Android_UWB_SDK_updated_on_Github_-_Estimote_Forums.html",
+    "83_Uberi_DWM3001C-starter-firmware__A_firmware_for_the_..._-_GitHub.html",
+    "84_Getting_started_with_DWM3001CDKE_-_Ultra-Wideband_-_Qorvo_Tech_Forum.html",
+    "85_Qorvo_Nearby_Interaction_Software_package_v.3.0_Release_-_Ultra-Wideband.html",
+    "86_Decawave_uwb-core__Ultrawideband_Core_-_GitHub.html",
+    "87_Driver_implementation_for_the_uwb-core_driver_for_Decawave_DW1000_transceiver.html",
+    "88_osomprivacy_uwb-stack_-_GitHub.html",
+    "89_Decawave_uwb-apps_-_GitHub.html",
+    "90_This_repo_contains_the_uwb-core_driver_for_Decawave_DW1000_transceiver._-_GitHub.html",
+    "91_Repositories_-_Decawave_-_GitHub.html",
+    "92_Decawave_mynewt-dw1000-core___DEPRECATED__Use_https___github.com_Decawave_uwb-core_for_new_designs._-_GitHub.html",
+    "93_Simple_C_examples_for_Decawave_DWM1001_hardware_-_GitHub.html",
+    "94_insightsip_ISP3080-SDK__UWB_examples_using_ISP3080_-_GitHub.html",
+    "95_foldedtoad_dwm3000__Port_of_Qorvo_Decawave_s_DWM3000_..._-_GitHub.html",
+    "96_br101_libdeca__UWB_Library_for_Decawave_Qorvo_DW3000_-_GitHub.html",
+    "97_Qorvo__Inc._-_Technical_Documentation.html",
+    "98_Latest_Ultra-Wideband_topics_-_Qorvo_Tech_Forum.html",
+    "99_DW3300Q_STM32_SDK_Documentation_-_Ultra-Wideband_-_Qorvo_Tech_Forum.html",
+    "27_The_RISC-V_Instruction_Set_Manual_-_Brown_Computer_Science.pdf"
+  ],
+  "errors": {
+    "9": {
+      "resource": "UWB Ranging Using IEEE 802.15.4z - MathWorks",
+      "url": "https://la.mathworks.com/help/comm/ug/uwb-ranging-using-ieee-802.15.4z.html",
+      "error": "HTTP错误: 403"
+    },
+    "10": {
+      "resource": "IEEE 802.15.4z-2020 - IEEE SA",
+      "url": "https://standards.ieee.org/ieee/802.15.4z/10230/",
+      "error": "HTTP错误: 403"
+    },
+    "22": {
+      "resource": "FiRa Consortium Release 3.0 - UWB Core Specification and Certification Program Launch",
+      "url": "https://research.samsung.com/blog/FiRa-Consortium-Release-3-0-UWB-Core-Specification-and-Certification-Program-Launch",
+      "error": "HTTP错误: 403"
+    },
+    "25": {
+      "resource": "RISC-V software development manual : r/RISCV - Reddit",
+      "url": "https://www.reddit.com/r/RISCV/comments/1fquibe/riscv_software_development_manual/",
+      "error": "HTTP错误: 403"
+    },
+    "68": {
+      "resource": "Is there any documentation relates to the riscv-gnu-toolchain - Reddit",
+      "url": "https://www.reddit.com/r/RISCV/comments/ql34t2/is_there_any_documentation_relates_to_the/",
+      "error": "HTTP错误: 403"
+    },
+    "93": {
+      "resource": "mynewt-dw1000-core",
+      "url": "https://github.com/Decawave/mynewt-dw1000-core",
+      "error": "Git clone失败: Git clone失败: Cloning into '/Users/matrix/projects/niuruisen_rag/data/downloads/93_mynewt-dw1000-core_git'...\nerror: RPC failed; curl 18 Transferred a partial file\nerror: 4083 bytes of body are still expected\nfetch-pack: unexpected disconnect while reading sideband packet\nfatal: early EOF\nfatal: fetch-pack: invalid index-pack output\n"
+    },
+    "94": {
+      "resource": "dwm1001-examples",
+      "url": "https://github.com/Decawave/dwm1001-examples",
+      "error": "Git clone失败: Git clone失败: Cloning into '/Users/matrix/projects/niuruisen_rag/data/downloads/94_dwm1001-examples_git'...\nerror: RPC failed; curl 92 HTTP/2 stream 5 was not closed cleanly: CANCEL (err 8)\nerror: 6360 bytes of body are still expected\nfetch-pack: unexpected disconnect while reading sideband packet\nfatal: early EOF\nfatal: fetch-pack: invalid index-pack output\n"
+    },
+    "95": {
+      "resource": "ISP3080-SDK",
+      "url": "https://github.com/insightsip/ISP3080-SDK",
+      "error": "Git clone失败: Git clone失败: Cloning into '/Users/matrix/projects/niuruisen_rag/data/downloads/95_ISP3080-SDK_git'...\nerror: RPC failed; curl 92 HTTP/2 stream 5 was not closed cleanly: CANCEL (err 8)\nerror: 6125 bytes of body are still expected\nfetch-pack: unexpected disconnect while reading sideband packet\nfatal: early EOF\nfatal: fetch-pack: invalid index-pack output\n"
+    },
+    "96": {
+      "resource": "dwm3000",
+      "url": "https://github.com/foldedtoad/dwm3000",
+      "error": "Git clone失败: Git clone失败: Cloning into '/Users/matrix/projects/niuruisen_rag/data/downloads/96_dwm3000_git'...\nerror: RPC failed; curl 18 Transferred a partial file\nerror: 7282 bytes of body are still expected\nfetch-pack: unexpected disconnect while reading sideband packet\nfatal: early EOF\nfatal: fetch-pack: invalid index-pack output\n"
+    },
+    "82": {
+      "resource": "DWM3001CDK-demo-firmware",
+      "url": "https://github.com/Uberi/DWM3001CDK-demo-firmware",
+      "error": "Git clone失败: Git clone失败: fatal: destination path '/Users/matrix/projects/niuruisen_rag/data/downloads/82_DWM3001CDK-demo-firmware_git' already exists and is not an empty directory.\n"
+    },
+    "84": {
+      "resource": "DWM3001C-starter-firmware",
+      "url": "https://github.com/Uberi/DWM3001C-starter-firmware",
+      "error": "Git clone失败: Git clone失败: fatal: destination path '/Users/matrix/projects/niuruisen_rag/data/downloads/84_DWM3001C-starter-firmware_git' already exists and is not an empty directory.\n"
+    },
+    "87": {
+      "resource": "uwb-core",
+      "url": "https://github.com/Decawave/uwb-core",
+      "error": "Git clone失败: Git clone失败: fatal: destination path '/Users/matrix/projects/niuruisen_rag/data/downloads/87_uwb-core_git' already exists and is not an empty directory.\n"
+    },
+    "89": {
+      "resource": "uwb-stack",
+      "url": "https://github.com/osomprivacy/uwb-stack",
+      "error": "Git clone失败: Git clone失败: fatal: destination path '/Users/matrix/projects/niuruisen_rag/data/downloads/89_uwb-stack_git' already exists and is not an empty directory.\n"
+    },
+    "90": {
+      "resource": "uwb-apps",
+      "url": "https://github.com/Decawave/uwb-apps",
+      "error": "Git clone失败: Git clone失败: fatal: destination path '/Users/matrix/projects/niuruisen_rag/data/downloads/90_uwb-apps_git' already exists and is not an empty directory.\n"
+    },
+    "91": {
+      "resource": "uwb-dw1000",
+      "url": "https://github.com/Decawave/uwb-dw1000",
+      "error": "Git clone失败: Git clone失败: fatal: destination path '/Users/matrix/projects/niuruisen_rag/data/downloads/91_uwb-dw1000_git' already exists and is not an empty directory.\n"
+    },
+    "97": {
+      "resource": "libdeca",
+      "url": "https://github.com/br101/libdeca",
+      "error": "Git clone失败: Git clone失败: fatal: destination path '/Users/matrix/projects/niuruisen_rag/data/downloads/97_libdeca_git' already exists and is not an empty directory.\n"
+    }
+  },
+  "last_updated": 1746100197.15713
+}

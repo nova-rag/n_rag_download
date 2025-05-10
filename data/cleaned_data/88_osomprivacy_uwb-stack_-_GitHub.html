@@ -1,0 +1,276 @@
+GitHub - osomprivacy/uwb-stack
+Skip to content
+Navigation Menu
+Toggle navigation
+Sign in
+Product
+GitHub Copilot
+Write better code with AI
+GitHub Advanced Security
+Find and fix vulnerabilities
+Actions
+Automate any workflow
+Codespaces
+Instant dev environments
+Issues
+Plan and track work
+Code Review
+Manage code changes
+Discussions
+Collaborate outside of code
+Code Search
+Find more, search less
+Explore
+Why GitHub
+All features
+Documentation
+GitHub Skills
+Blog
+Solutions
+By company size
+Enterprises
+Small and medium teams
+Startups
+Nonprofits
+By use case
+DevSecOps
+DevOps
+CI/CD
+View all use cases
+By industry
+Healthcare
+Financial services
+Manufacturing
+Government
+View all industries
+View all solutions
+Resources
+Topics
+AI
+DevOps
+Security
+Software Development
+View all
+Explore
+Learning Pathways
+Events & Webinars
+Ebooks & Whitepapers
+Customer Stories
+Partners
+Executive Insights
+Open Source
+GitHub Sponsors
+Fund open source developers
+The ReadME Project
+GitHub community articles
+Repositories
+Topics
+Trending
+Collections
+Enterprise
+Enterprise platform
+AI-powered developer platform
+Available add-ons
+GitHub Advanced Security
+Enterprise-grade security features
+Copilot for business
+Enterprise-grade AI features
+Premium Support
+Enterprise-grade 24/7 support
+Pricing
+Search or jump to...
+Search code, repositories, users, issues, pull requests...
+Search
+Clear
+Search syntax tips
+Provide feedback
+We read every piece of feedback, and take your input very seriously.
+Include my email address so I can be contacted
+Cancel
+Submit feedback
+Saved searches
+Use saved searches to filter your results more quickly
+Name
+Query
+To see all available qualifiers, see our documentation.
+Cancel
+Create saved search
+Sign in
+Sign up
+Reseting focus
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+Dismiss alert
+osomprivacy
+/
+uwb-stack
+Public
+Notifications
+You must be signed in to change notification settings
+Fork
+1
+Star
+4
+License
+View license
+4
+stars
+1
+fork
+Branches
+Tags
+Activity
+Star
+Notifications
+You must be signed in to change notification settings
+Code
+Pull requests
+0
+Projects
+0
+Security
+Insights
+Additional navigation options
+Code
+Pull requests
+Projects
+Security
+Insights
+osomprivacy/uwb-stack
+TKQ1.221220.425BranchesTagsGo to fileCodeFolders and filesNameNameLast commit messageLast commit dateLatest commit History5 Commitskernelkernel  macmac  toolstools  COPYINGCOPYING  README.mdREADME.md  View all filesRepository files navigationREADMELicenseThis repository contains the source code for the UWB stack on Android
+Repository organisation
+The following layout is used:
+kernel: all the Linux specific code
+kernel/drivers: the DW3000 driver
+kernel/net/mcps802154: the Linux specific code for the mcps and symbolic
+links to the general purpose MAC code
+mac: the general purpose MAC layer code, to be used in various targets
+including the Linux kernel
+HOWTO
+SETUP your target
+⚠️ IMPORTANT Please note that the following section describes how to setup a build for the
+db845c Dragonboard target and must be adapted to your own system.
+Copy config/sdm845-db845c-uwb.dts in arch/arm64/boot/dts/qcom/sdm845-db845c-uwb.dts to support dw3000 device in your Device Tree (DT)
+Please note the following key points:
+the SPI controller driver is now an external module named
+spi-geni-qcom-lowlatency. (for DB)
+the dw3000@0 is put inside the &spi2 node.
+interrupts must be changed to match the GPIO where the dw3000 IRQ pin is
+connected.
+uwbhal,reset-gpio = <&tlmm 50 GPIO_ACTIVE_LOW> must be change to match the
+GPIO where the dw3000 reset pin is connected.
+uwbhal,affinity must be set to the cpumask where to put our own threaded
+softirq and SPI controller thread to achieve good performance.
+dw3000_default_state must be change according required GPIO configuration.
+compatible = "decawave,dw3000" is the module alias used by our SPI driver
+so the ko is automatically loaded
+Copy db845c-uwb_defconfig in arch/arm64/configs/db845c-uwb_defconfig
+Once your target device tree is configured, create a new build.config to
+include our requirements for the kernel configuration.
+Like config/build.config.db845c
+For example on the Dragonboard db845c's:
+KERNEL_DIR=common
+. ${ROOT_DIR}/common/build.config.common
+. ${ROOT_DIR}/common/build.config.aarch64
+DEFCONFIG=db845c-uwb_defconfig
+MAKE_GOALS="${MAKE_GOALS}
+qcom/sdm845-db845c-uwb.dtb
+Image.gz
+"
+FILES="
+arch/arm64/boot/Image.gz
+arch/arm64/boot/dts/qcom/sdm845-db845c-uwb.dtb
+"
+Ensure that you kernel is built with the following options:
+Enable GPIOLIB support
+CONFIG_GPIOLIB=y
+Enable IEEEE802154 support
+CONFIG_6LOWPAN=m
+CONFIG_IEEE802154=m
+CONFIG_IEEE802154_NL802154_EXPERIMENTAL=y
+CONFIG_IEEE802154_6LOWPAN=m
+CONFIG_MAC802154=m
+BUILD
+Overview
+Qorvo UWB driver can be built as an external module using the
+common-android-mainline kernel manifest.
+It must be passed as prebuilt kernel to the AOSP build script to generate a boot
+image ready to be flashed.
+Build kernel and modules
+If the uwb-release project is installed in <UWB_RELEASE_PATH>, run from your
+kernel source build:
+EXT_MODULES=${UWB_RELEASE_PATH}/kernel ./build/build.sh
+For the dragonboard db845c, using the android 5.9 stable kernel,
+out/android-mainline/dist/ contains the kernel and its modules.
+Build images for the dragonboard db845c
+Install the content of the previously built kernel folder into your device
+kernel prebuilt location.
+For the dragonboard db845c, using the android 5.9 stable kernel, prebuit kernel
+is located in the target repository inside AOSP sources:
+device/linaro/dragonboard-kernel/android-5.9
+Enable Permissive SELinux
+Our SELinux rules have not yet been written for this release,
+for now enable the permissive mode:
+In BoardConfig.mk:
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+Add Qorvo vendor modules
+Copy all the content of platform_vendor_qorvo in vendor/qorvo.
+In your device.mk, add the vendor extension:
+$(call inherit-product-if-exists, vendor/qorvo/device.mk)
+Then recompile the AOSP sources.
+⚠️ IMPORTANT Please ensure that the dw3000 module is loaded on startup
+after the following dependencies:
+spi-geni-qcom-lowlatency (or your board driver)
+mac802154
+mcps802154
+. build/envsetup.sh
+lunch db845c-userdebug
+make
+Testing
+once you flashed yout android boards, you can launch a fira ranging with the following commands on the boards :
+service call uwb 10 i32 0
+haluwbctl start_fira_twr_session -a 1 -d 2
+service call uwb 10 i32 0
+haluwbctl start_fira_twr_session -a 1 -d 2 --responder --controlee
+To find out more : haluwbctl --help
+About
+No description, website, or topics provided.
+Resources
+Readme
+License
+View license
+Activity
+Custom properties
+Stars
+4
+stars
+Watchers
+1
+watching
+Forks
+1
+fork
+Report repository
+Releases
+No releases published
+Packages
+0
+No packages published
+Languages
+C
+98.8%
+Other
+1.2%
+Footer
+© 2025 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+You can’t perform that action at this time.

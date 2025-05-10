@@ -1,0 +1,4062 @@
+[
+  {
+    "url": "https://en.wikipedia.org/wiki/FiRa_Consortium",
+    "filename": "FiRa_Consortium",
+    "resource_type": "HTML",
+    "source": "Wikipedia",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/1_FiRa_Consortium_-_Wikipedia.html",
+    "clean_path": "data/cleaned_data/1_FiRa_Consortium_-_Wikipedia.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.nxp.com/docs/en/supporting-information/FIRA-CONSORTIUM-ONE-PAGER.pdf",
+    "filename": "FIRA-CONSORTIUM-ONE-PAGER",
+    "resource_type": "PDF",
+    "source": "NXP",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/2_FiRa_Consortium.pdf",
+    "clean_path": "data/cleaned_data/2_FiRa_Consortium.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://www.carloalbertoboano.com/documents/stocker22uwb154z.pdf",
+    "filename": "uwb154z_性能研究",
+    "resource_type": "PDF",
+    "source": "carloalbertoboano.com",
+    "category": "一些领域相关paper",
+    "path": "data/downloads/3_On_the_Performance_of_IEEE_802.15.4z-Compliant_Ultra-Wideband_Devices_-_Carlo_Alberto_Boano.pdf",
+    "clean_path": "data/cleaned_data/3_On_the_Performance_of_IEEE_802.15.4z-Compliant_Ultra-Wideband_Devices_-_Carlo_Alberto_Boano.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/RISC-V",
+    "filename": "RISC-V",
+    "resource_type": "HTML",
+    "source": "Wikipedia",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/4_RISC-V_-_Wikipedia.html",
+    "clean_path": "data/cleaned_data/4_RISC-V_-_Wikipedia.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.wevolver.com/article/risc-v-architecture",
+    "filename": "RISC-V架构指南",
+    "resource_type": "HTML",
+    "source": "Wevolver",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/5_RISC-V_Architecture__A_Comprehensive_Guide_to_the_Open-Source_ISA_-_Wevolver.html",
+    "clean_path": "data/cleaned_data/5_RISC-V_Architecture__A_Comprehensive_Guide_to_the_Open-Source_ISA_-_Wevolver.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://riscv.org/home/",
+    "filename": "RISC-V官网首页",
+    "resource_type": "HTML",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/6_Home___RISC-V_International.html",
+    "clean_path": "data/cleaned_data/6_Home___RISC-V_International.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://riscv.org/about/",
+    "filename": "RISC-V组织介绍",
+    "resource_type": "HTML",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/7_About_RISC-V_International.html",
+    "clean_path": "data/cleaned_data/7_About_RISC-V_International.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.freertos.org/",
+    "filename": "FreeRTOS官网",
+    "resource_type": "HTML",
+    "source": "FreeRTOS",
+    "category": "FreeRTOS文档",
+    "path": "data/downloads/8_FreeRTOS__-_FreeRTOS_.html",
+    "clean_path": "data/cleaned_data/8_FreeRTOS__-_FreeRTOS_.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://img.antpedia.com/standard/files/pdfs_ora/20230203/IEEE%20802.15.4z-2020.pdf",
+    "filename": "IEEE_802.15.4z-2020标准",
+    "resource_type": "PDF",
+    "source": "antpedia.com",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/11_IEEE_802.15.4z-2020.pdf.pdf",
+    "clean_path": "data/cleaned_data/11_IEEE_802.15.4z-2020.pdf.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://onlinedocs.microchip.com/oxy/GUID-8D1A0DF1-A110-4894-8415-16544C2C110C-en-US-1/GUID-339827C2-60A3-4A93-963E-269FCD3FE8A2.html",
+    "filename": "Microchip_UWB标准文档",
+    "resource_type": "HTML",
+    "source": "Microchip Online docs",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/12_5_IEEE_802.15.4z-2020_UWB_Standard_-_Microchip_Online_docs.html",
+    "clean_path": "data/cleaned_data/12_5_IEEE_802.15.4z-2020_UWB_Standard_-_Microchip_Online_docs.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/IEEE_802.15.4",
+    "filename": "IEEE_802.15.4",
+    "resource_type": "HTML",
+    "source": "Wikipedia",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/13_IEEE_802.15.4_-_Wikipedia.4",
+    "clean_path": "data/cleaned_data/13_IEEE_802.15.4_-_Wikipedia.4",
+    "file_type": "未知文件类型"
+  },
+  {
+    "url": "https://www.qorvo.com/products/p/DWM3001CDK",
+    "filename": "DWM3001CDK",
+    "resource_type": "HTML",
+    "source": "Qorvo",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/14_DWM3001CDK_-_Qorvo.html",
+    "clean_path": "data/cleaned_data/14_DWM3001CDK_-_Qorvo.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.qorvo.com/products/p/DWM3001C",
+    "filename": "DWM3001C",
+    "resource_type": "HTML",
+    "source": "Qorvo",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/15_DWM3001CDK.html",
+    "clean_path": "data/cleaned_data/15_DWM3001CDK.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.qorvo.com/products/p/DWM3000EVB",
+    "filename": "DWM3000EVB",
+    "resource_type": "HTML",
+    "source": "Qorvo",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/16_DWM3000EVB_-_Qorvo.html",
+    "clean_path": "data/cleaned_data/16_DWM3000EVB_-_Qorvo.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.qorvo.com/products/p/DWM3000",
+    "filename": "DWM3000",
+    "resource_type": "HTML",
+    "source": "Qorvo",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/17_DWM3000_-_Qorvo.html",
+    "clean_path": "data/cleaned_data/17_DWM3000_-_Qorvo.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.qorvo.com/products/p/DW3110",
+    "filename": "DW3110",
+    "resource_type": "HTML",
+    "source": "Qorvo",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/18_DW3110_-_Qorvo.html",
+    "clean_path": "data/cleaned_data/18_DW3110_-_Qorvo.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.qorvo.com/products/p/DW3120",
+    "filename": "DW3120",
+    "resource_type": "HTML",
+    "source": "Qorvo",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/19_DW3120_-_Qorvo.html",
+    "clean_path": "data/cleaned_data/19_DW3120_-_Qorvo.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.firaconsortium.org/resource-hub/specifications",
+    "filename": "FiRa规范资源",
+    "resource_type": "HTML",
+    "source": "FiRa Consortium",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/20_Purchase_Specifications___FiRa_Consortium.html",
+    "clean_path": "data/cleaned_data/20_Purchase_Specifications___FiRa_Consortium.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.firaconsortium.org/news/press-releases/2025/01/fira-consortium-unveils-fira-core-3-0-specifications-and-certification",
+    "filename": "FiRa3.0标准发布",
+    "resource_type": "HTML",
+    "source": "FiRa Consortium",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/21_FiRa_Consortium_Unveils_FiRa_Core_3.0_Specifications_and_Certification_Program.html",
+    "clean_path": "data/cleaned_data/21_FiRa_Consortium_Unveils_FiRa_Core_3.0_Specifications_and_Certification_Program.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.firaconsortium.org/certifications/technical-specifications",
+    "filename": "FiRa技术规范",
+    "resource_type": "HTML",
+    "source": "FiRa Consortium",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/23_Technical_Specifications___FiRa_Consortium.html",
+    "clean_path": "data/cleaned_data/23_Technical_Specifications___FiRa_Consortium.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.firaconsortium.org/certifications/test-specifications",
+    "filename": "FiRa测试规范",
+    "resource_type": "HTML",
+    "source": "FiRa Consortium",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/24_Test_Specifications___FiRa_Consortium.html",
+    "clean_path": "data/cleaned_data/24_Test_Specifications___FiRa_Consortium.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://five-embeddev.com/riscv-user-isa-manual/Priv-v1.12/intro.html",
+    "filename": "RISC-V用户级ISA手册",
+    "resource_type": "HTML",
+    "source": "Five EmbedDev",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/26_RISC-V_Instruction_Set_Manual__Volume_I__RISC-V_User-Level_ISA___Five_EmbedDev.html",
+    "clean_path": "data/cleaned_data/26_RISC-V_Instruction_Set_Manual__Volume_I__RISC-V_User-Level_ISA___Five_EmbedDev.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://cs.brown.edu/courses/csci1952y/2024/assets/docs/riscv-spec-v2.2.pdf",
+    "filename": "RISC-V规范v2.2",
+    "resource_type": "PDF",
+    "source": "Brown Computer Science",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/27_The_RISC-V_Instruction_Set_Manual_-_Brown_Computer_Science.pdf",
+    "clean_path": "data/cleaned_data/27_The_RISC-V_Instruction_Set_Manual_-_Brown_Computer_Science.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://gcc.gnu.org/onlinedocs/gcc/RISC-V-Options.html",
+    "filename": "RISC-V_GCC选项",
+    "resource_type": "HTML",
+    "source": "GNU",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/28_RISC-V_Options__Using_the_GNU_Compiler_Collection__GCC__.html",
+    "clean_path": "data/cleaned_data/28_RISC-V_Options__Using_the_GNU_Compiler_Collection__GCC__.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://riscv-europe.org/summit/2025/",
+    "filename": "RISC-V欧洲峰会2025",
+    "resource_type": "HTML",
+    "source": "RISC-V Summit Europe",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/29_Welcome_-_RISC-V_Summit_Europe_2025.html",
+    "clean_path": "data/cleaned_data/29_Welcome_-_RISC-V_Summit_Europe_2025.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://riscv.org/members/join/individual/",
+    "filename": "RISC-V个人会员",
+    "resource_type": "HTML",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/30_Individual_Membership___RISC-V_International.html",
+    "clean_path": "data/cleaned_data/30_Individual_Membership___RISC-V_International.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://riscv.org/members/join/",
+    "filename": "RISC-V会员加入",
+    "resource_type": "HTML",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/31_Join_RISC-V.html",
+    "clean_path": "data/cleaned_data/31_Join_RISC-V.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://community.riscv.org/",
+    "filename": "RISC-V社区",
+    "resource_type": "HTML",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/32_RISC-V_International.html",
+    "clean_path": "data/cleaned_data/32_RISC-V_International.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://riscv.org/",
+    "filename": "RISC-V官网",
+    "resource_type": "HTML",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/33_RISC-V_International.html",
+    "clean_path": "data/cleaned_data/33_RISC-V_International.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://lf-riscv.atlassian.net/wiki/display/HOME/RISC-V+Technical+Specifications",
+    "filename": "RISC-V技术规范",
+    "resource_type": "HTML",
+    "source": "RISC-V Tech Hub (Atlassian)",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/34_ISA_Specifications_-_Home_-_RISC-V_Tech_Hub.html",
+    "clean_path": "data/cleaned_data/34_ISA_Specifications_-_Home_-_RISC-V_Tech_Hub.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://shd.mit.edu/2025/recitations/riscv.html",
+    "filename": "MIT安全硬件设计课程",
+    "resource_type": "HTML",
+    "source": "MIT Secure Hardware Design",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/35_Binary_Exploitation_and_RISC-V_Warmup___6.5950_6.5951_-_MIT_Secure_Hardware_Design.html",
+    "clean_path": "data/cleaned_data/35_Binary_Exploitation_and_RISC-V_Warmup___6.5950_6.5951_-_MIT_Secure_Hardware_Design.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://docs.openhwgroup.org/projects/cva6-user-manual/04_cv32a65x/riscv/priv.html",
+    "filename": "CVA6文档",
+    "resource_type": "HTML",
+    "source": "OpenHW Group",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/36_Privileged_RISC-V_ISA___CVA6_documentation.html",
+    "clean_path": "data/cleaned_data/36_Privileged_RISC-V_ISA___CVA6_documentation.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.scs.stanford.edu/~zyedidia/docs/riscv/riscv-privileged.pdf",
+    "filename": "RISC-V特权架构",
+    "resource_type": "PDF",
+    "source": "Stanford Secure Computer Systems Group",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/37_The_RISC-V_Instruction_Set_Manual_-_Stanford_Secure_Computer_Systems_Group.pdf",
+    "clean_path": "data/cleaned_data/37_The_RISC-V_Instruction_Set_Manual_-_Stanford_Secure_Computer_Systems_Group.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://tools.cloudbear.ru/docs/riscv-privileged-1.13-20241017.pdf",
+    "filename": "RISC-V特权文档1.13",
+    "resource_type": "PDF",
+    "source": "cloudbear.ru",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/38_The_RISC-V_Instruction_Set_Manual__Volume_II__Privileged_Architecture.pdf",
+    "clean_path": "data/cleaned_data/38_The_RISC-V_Instruction_Set_Manual__Volume_II__Privileged_Architecture.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "http://cs107e.github.io/readings/riscv-privileged-20190608-1.pdf",
+    "filename": "RISC-V特权指南CS107e",
+    "resource_type": "PDF",
+    "source": "CS107e",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/39_The_RISC-V_Instruction_Set_Manual_-_CS107e.pdf",
+    "clean_path": "data/cleaned_data/39_The_RISC-V_Instruction_Set_Manual_-_CS107e.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://people.eecs.berkeley.edu/~krste/papers/riscv-privileged-v1.9.1.pdf",
+    "filename": "RISC-V特权v1.9.1",
+    "resource_type": "PDF",
+    "source": "Berkeley EECS",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/40_The_RISC-V_Instruction_Set_Manual_-_People__EECS.pdf",
+    "clean_path": "data/cleaned_data/40_The_RISC-V_Instruction_Set_Manual_-_People__EECS.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://riscv.org/wp-content/uploads/2024/12/riscv-debug-release.pdf",
+    "filename": "RISC-V调试支持",
+    "resource_type": "PDF",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/41_RISC-V_External_Debug_Support_Version_0.13.2_d5029366d59e8563c08b6b9435f82573b603e48e.pdf",
+    "clean_path": "data/cleaned_data/41_RISC-V_External_Debug_Support_Version_0.13.2_d5029366d59e8563c08b6b9435f82573b603e48e.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://training.linuxfoundation.org/certification/linux-foundation-risc-v-foundational-associate/",
+    "filename": "RISC-V基础认证",
+    "resource_type": "HTML",
+    "source": "Linux Foundation Training",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/42_RISC-V_Foundational_Associate__RVFA_.html",
+    "clean_path": "data/cleaned_data/42_RISC-V_Foundational_Associate__RVFA_.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://riscv.org/wp-content/uploads/2024/12/riscv-calling.pdf",
+    "filename": "RISC-V调用约定",
+    "resource_type": "PDF",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/43_Calling_Convention_-_RISC-V.pdf",
+    "clean_path": "data/cleaned_data/43_Calling_Convention_-_RISC-V.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://llvm.org/docs/RISCVUsage.html",
+    "filename": "LLVM_RISC-V使用指南",
+    "resource_type": "HTML",
+    "source": "LLVM",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/44_User_Guide_for_RISC-V_Target___LLVM_21.0.0git_documentation.html",
+    "clean_path": "data/cleaned_data/44_User_Guide_for_RISC-V_Target___LLVM_21.0.0git_documentation.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://riscv.org/specifications/ratified/",
+    "filename": "RISC-V已批准规范",
+    "resource_type": "HTML",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/45_RISC-V_Ratified_Specifications.html",
+    "clean_path": "data/cleaned_data/45_RISC-V_Ratified_Specifications.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://code.ornl.gov/llvm-doe/llvm-project/-/blob/3b75a5c4c84d17d6647ba079391722ed9be09f85/llvm/docs/RISCVUsage.rst",
+    "filename": "LLVM_RISC-V使用指南源码",
+    "resource_type": "HTML",
+    "source": "GitLab (ORNL)",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/46_llvm_docs_RISCVUsage.rst___3b75a5c4c84d17d6647ba079391722ed9be09f85___llvm-doe___llvm-project___GitLab.rst",
+    "clean_path": "data/cleaned_data/46_llvm_docs_RISCVUsage.rst___3b75a5c4c84d17d6647ba079391722ed9be09f85___llvm-doe___llvm-project___GitLab.rst",
+    "file_type": "ReStructuredText文件"
+  },
+  {
+    "url": "https://releases.llvm.org/17.0.1/docs/RISCVUsage.html",
+    "filename": "LLVM17_RISC-V使用指南",
+    "resource_type": "HTML",
+    "source": "LLVM",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/47_User_Guide_for_RISC-V_Target___LLVM_17.0.1_documentation.html",
+    "clean_path": "data/cleaned_data/47_User_Guide_for_RISC-V_Target___LLVM_17.0.1_documentation.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://gcc.gnu.org/onlinedocs/gcc.pdf",
+    "filename": "GCC编译器文档",
+    "resource_type": "PDF",
+    "source": "GNU",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/49_Using_the_GNU_Compiler_Collection.pdf",
+    "clean_path": "data/cleaned_data/49_Using_the_GNU_Compiler_Collection.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://xpack-dev-tools.github.io/riscv-none-elf-gcc-xpack/docs/getting-started/",
+    "filename": "xPack_RISC-V_GCC入门",
+    "resource_type": "HTML",
+    "source": "xPack",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/50_Getting_Started___xPack_GNU_RISC-V_Embedded_GCC.html",
+    "clean_path": "data/cleaned_data/50_Getting_Started___xPack_GNU_RISC-V_Embedded_GCC.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://gnu-mcu-eclipse.github.io/blog/2018/05/06/riscv-none-gcc-v7-2-0-3-20180506-released/",
+    "filename": "RISC-V嵌入式GCC发布",
+    "resource_type": "HTML",
+    "source": "GNU MCU Eclipse",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/51_GNU_MCU_Eclipse_RISC-V_Embedded_GCC_v7.2.0-3-20180506_released.html",
+    "clean_path": "data/cleaned_data/51_GNU_MCU_Eclipse_RISC-V_Embedded_GCC_v7.2.0-3-20180506_released.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.llvm.org/docs/RISCV/RISCVVectorExtension.html",
+    "filename": "RISC-V向量扩展",
+    "resource_type": "HTML",
+    "source": "LLVM",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/53_RISC-V_Vector_Extension___LLVM_21.0.0git_documentation.html",
+    "clean_path": "data/cleaned_data/53_RISC-V_Vector_Extension___LLVM_21.0.0git_documentation.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://releases.llvm.org/16.0.0/docs/RISCVUsage.html",
+    "filename": "LLVM16_RISC-V使用指南",
+    "resource_type": "HTML",
+    "source": "LLVM",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/54_User_Guide_for_RISC-V_Target___LLVM_16.0.0_documentation.html",
+    "clean_path": "data/cleaned_data/54_User_Guide_for_RISC-V_Target___LLVM_16.0.0_documentation.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://groups.google.com/a/groups.riscv.org/g/sw-dev/c/8JCVG678W7I",
+    "filename": "LLVM_RISC-V讨论组",
+    "resource_type": "HTML (Google Group)",
+    "source": "Google Groups",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/57_LLVM_for_RISC-V_-_Google_Groups.html",
+    "clean_path": "data/cleaned_data/57_LLVM_for_RISC-V_-_Google_Groups.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://rocm.docs.amd.com/projects/llvm-project/en/docs-6.4.0/LLVM/llvm/html/RISCVUsage.html",
+    "filename": "AMD_RISC-V使用指南",
+    "resource_type": "HTML",
+    "source": "AMD ROCm Docs",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/58_User_Guide_for_RISC-V_Target___LLVM_19.0.0git_documentation.html",
+    "clean_path": "data/cleaned_data/58_User_Guide_for_RISC-V_Target___LLVM_19.0.0git_documentation.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://runtimerec.com/how-to-debug-risc-v-applications/",
+    "filename": "RISC-V应用调试指南",
+    "resource_type": "HTML",
+    "source": "RunTime Recruitment",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/59_How_to_Debug_RISC-V_Applications_-_RunTime_Recruitment.html",
+    "clean_path": "data/cleaned_data/59_How_to_Debug_RISC-V_Applications_-_RunTime_Recruitment.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://shakti.org.in/docs/RISC-V-GDB-tutorial.pdf",
+    "filename": "RISC-V_GDB教程",
+    "resource_type": "PDF",
+    "source": "Shakti Processor",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/60_RISC-V_GDB_Tutorial_-_Shakti_Processor.pdf",
+    "clean_path": "data/cleaned_data/60_RISC-V_GDB_Tutorial_-_Shakti_Processor.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://wiki.qemu.org/Documentation/Platforms/RISCV",
+    "filename": "QEMU_RISC-V文档",
+    "resource_type": "HTML (Wiki)",
+    "source": "QEMU",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/61_Documentation_Platforms_RISCV_-_QEMU.html",
+    "clean_path": "data/cleaned_data/61_Documentation_Platforms_RISCV_-_QEMU.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.sourceware.org/gdb/documentation/",
+    "filename": "GDB文档",
+    "resource_type": "HTML",
+    "source": "Sourceware",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/62_GDB_Documentation_-_Sourceware.html",
+    "clean_path": "data/cleaned_data/62_GDB_Documentation_-_Sourceware.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://risc-v-getting-started-guide.readthedocs.io/_/downloads/en/latest/pdf/",
+    "filename": "RISC-V入门指南PDF",
+    "resource_type": "PDF",
+    "source": "Read the Docs",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/64_PDF_-_RISC-V_-_Getting_Started_Guide.pdf",
+    "clean_path": "data/cleaned_data/64_PDF_-_RISC-V_-_Getting_Started_Guide.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://stackoverflow.com/questions/67385543/riscv64-linux-gnu-gdb-on-ubuntu-20-04",
+    "filename": "Ubuntu上RISC-V_GDB讨论",
+    "resource_type": "HTML",
+    "source": "Stack Overflow",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/65_riscv64-linux-gnu-gdb_on_ubuntu_20.04_-_Stack_Overflow.html",
+    "clean_path": "data/cleaned_data/65_riscv64-linux-gnu-gdb_on_ubuntu_20.04_-_Stack_Overflow.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://sourceware.org/gdb/current/onlinedocs/gdb.html/index.html",
+    "filename": "GDB当前文档",
+    "resource_type": "HTML",
+    "source": "Sourceware",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/66_Top__Debugging_with_GDB__-_sourceware.org.html",
+    "clean_path": "data/cleaned_data/66_Top__Debugging_with_GDB__-_sourceware.org.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://riseproject.dev/",
+    "filename": "RISC-V软件生态系统",
+    "resource_type": "HTML",
+    "source": "RISE Project (Linux Foundation)",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/67_Rise__RISC-V_Software_Ecosystem___Linux_Foundation_Project.html",
+    "clean_path": "data/cleaned_data/67_Rise__RISC-V_Software_Ecosystem___Linux_Foundation_Project.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.freertos.org/Documentation/01-FreeRTOS-quick-start/01-Beginners-guide/00-Overview",
+    "filename": "FreeRTOS入门指南",
+    "resource_type": "HTML",
+    "source": "FreeRTOS",
+    "category": "FreeRTOS文档",
+    "path": "data/downloads/69_Beginner_s_guides_to_FreeRTOS.html",
+    "clean_path": "data/cleaned_data/69_Beginner_s_guides_to_FreeRTOS.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.freertos.org/Documentation/02-Kernel/07-Books-and-manual/01-RTOS_book",
+    "filename": "FreeRTOS内核文档",
+    "resource_type": "HTML",
+    "source": "FreeRTOS",
+    "category": "FreeRTOS文档",
+    "path": "data/downloads/70_FreeRTOS_Documentation_-_FreeRTOS_.html",
+    "clean_path": "data/cleaned_data/70_FreeRTOS_Documentation_-_FreeRTOS_.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started.html",
+    "filename": "AWS_FreeRTOS入门",
+    "resource_type": "HTML",
+    "source": "AWS Documentation",
+    "category": "FreeRTOS文档",
+    "path": "data/downloads/71_Get_Started_with_FreeRTOS_-_AWS_Documentation.html",
+    "clean_path": "data/cleaned_data/71_Get_Started_with_FreeRTOS_-_AWS_Documentation.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.freertos.org/Documentation/02-Kernel/07-Books-and-manual/01-Code/01-Zip-files",
+    "filename": "FreeRTOS示例代码",
+    "resource_type": "HTML",
+    "source": "FreeRTOS",
+    "category": "FreeRTOS文档",
+    "path": "data/downloads/72_FreeRTOS_Book_Examples.html",
+    "clean_path": "data/cleaned_data/72_FreeRTOS_Book_Examples.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.freertos.org/Documentation/00-Overview",
+    "filename": "FreeRTOS文档概览",
+    "resource_type": "HTML",
+    "source": "FreeRTOS",
+    "category": "FreeRTOS文档",
+    "path": "data/downloads/73_FreeRTOS_documentation_-_FreeRTOS_.html",
+    "clean_path": "data/cleaned_data/73_FreeRTOS_documentation_-_FreeRTOS_.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.freertos.org/Documentation/RTOS_book.html",
+    "filename": "FreeRTOS书籍",
+    "resource_type": "HTML",
+    "source": "FreeRTOS",
+    "category": "FreeRTOS文档",
+    "path": "data/downloads/75_FreeRTOS_Documentation_-_FreeRTOS_.html",
+    "clean_path": "data/cleaned_data/75_FreeRTOS_Documentation_-_FreeRTOS_.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.qorvo.com/products/p/QM33120WDK1",
+    "filename": "QM33120WDK1",
+    "resource_type": "HTML",
+    "source": "Qorvo",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/76_QM33120WDK1_-_Qorvo.html",
+    "clean_path": "data/cleaned_data/76_QM33120WDK1_-_Qorvo.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://forum.qorvo.com/t/dwm3001cdk-arduino-ide-programming/21072",
+    "filename": "DWM3001CDK_Arduino编程",
+    "resource_type": "HTML (Forum)",
+    "source": "Qorvo Tech Forum",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/77_QM33120WDK1.html",
+    "clean_path": "data/cleaned_data/77_QM33120WDK1.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://forum.qorvo.com/t/new-release-of-dw3000-and-qm33-sdk-dw3-qm33-sdk-v1-0-2/19160",
+    "filename": "DW3000和QM33_SDK发布",
+    "resource_type": "HTML (Forum)",
+    "source": "Qorvo Tech Forum",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/78_New_release_of_DW3000_and_QM33_SDK__DW3_QM33_SDK_v1.0.2_-_Qorvo_Tech_Forum.html",
+    "clean_path": "data/cleaned_data/78_New_release_of_DW3000_and_QM33_SDK__DW3_QM33_SDK_v1.0.2_-_Qorvo_Tech_Forum.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://www.farnell.com/datasheets/4509030.pdf",
+    "filename": "DWM3001CDK快速入门",
+    "resource_type": "PDF",
+    "source": "Farnell",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/79_DW3000和QM33_SDK发布.html",
+    "clean_path": "data/cleaned_data/79_DW3000和QM33_SDK发布.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://forum.qorvo.com/t/getting-started-with-the-dwm3001c/13430",
+    "filename": "DWM3001C入门指南",
+    "resource_type": "HTML (Forum)",
+    "source": "Qorvo Tech Forum",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/80_DWM3001CDK快速入门.pdf",
+    "clean_path": "data/cleaned_data/80_DWM3001CDK快速入门.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://github.com/Uberi/DWM3001CDK-demo-firmware",
+    "filename": "DWM3001CDK-demo-firmware - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/82_DWM3001CDK-demo-firmware_git",
+    "clean_path": "data/cleaned_data/82_DWM3001CDK-demo-firmware_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Uberi/DWM3001CDK-demo-firmware",
+    "filename": "DWM3001CDK-demo-firmware - flash_placement.xml",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/82_DWM3001CDK-demo-firmware_git",
+    "clean_path": "data/cleaned_data/82_DWM3001CDK-demo-firmware_git/flash_placement.xml",
+    "file_type": "XML文件"
+  },
+  {
+    "url": "https://github.com/Uberi/DWM3001CDK-demo-firmware",
+    "filename": "DWM3001CDK-demo-firmware - licence.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/82_DWM3001CDK-demo-firmware_git",
+    "clean_path": "data/cleaned_data/82_DWM3001CDK-demo-firmware_git/licence.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://forums.estimote.com/t/new-android-uwb-sdk-updated-on-github/12311",
+    "filename": "Android_UWB_SDK更新",
+    "resource_type": "HTML (Forum)",
+    "source": "Estimote Forums",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/82_New_Android_UWB_SDK_updated_on_Github_-_Estimote_Forums.html",
+    "clean_path": "data/cleaned_data/82_New_Android_UWB_SDK_updated_on_Github_-_Estimote_Forums.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Uberi/DWM3001C-starter-firmware",
+    "filename": "DWM3001C-starter-firmware - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/84_DWM3001C-starter-firmware_git",
+    "clean_path": "data/cleaned_data/84_DWM3001C-starter-firmware_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Uberi/DWM3001C-starter-firmware",
+    "filename": "DWM3001C-starter-firmware - flash_placement.xml",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/84_DWM3001C-starter-firmware_git",
+    "clean_path": "data/cleaned_data/84_DWM3001C-starter-firmware_git/flash_placement.xml",
+    "file_type": "XML文件"
+  },
+  {
+    "url": "https://forum.qorvo.com/t/getting-started-with-dwm3001cdke/11801",
+    "filename": "DWM3001CDKE入门指南",
+    "resource_type": "HTML (Forum)",
+    "source": "Qorvo Tech Forum",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/84_DWM3001C-starter-firmware.txt",
+    "clean_path": "data/cleaned_data/84_DWM3001C-starter-firmware.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://forum.qorvo.com/t/qorvo-nearby-interaction-software-package-v-3-0-release/13390",
+    "filename": "Qorvo邻近交互软件包",
+    "resource_type": "HTML (Forum)",
+    "source": "Qorvo Tech Forum",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/85_DWM3001CDKE入门指南.html",
+    "clean_path": "data/cleaned_data/85_DWM3001CDKE入门指南.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CODING_STANDARDS.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CODING_STANDARDS.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README_hikey960.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README_hikey960.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README_kernel.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README_kernel.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - ADOPTERS.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/ADOPTERS.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README_cmake.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README_cmake.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - ss_twr.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/ss_twr.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README_doxy.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README_doxy.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README_sysfs.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README_sysfs.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git",
+    "clean_path": "data/cleaned_data/87_uwb-core_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://doc.riot-os.org/group__pkg__uwb__dw1000.html",
+    "filename": "RIOT_OS_DW1000驱动",
+    "resource_type": "HTML",
+    "source": "RIOT OS Docs",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core.txt",
+    "clean_path": "data/cleaned_data/87_uwb-core.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/osomprivacy/uwb-stack",
+    "filename": "uwb-stack - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/89_uwb-stack_git",
+    "clean_path": "data/cleaned_data/89_uwb-stack_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/osomprivacy/uwb-stack",
+    "filename": "uwb-stack - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/89_uwb-stack_git",
+    "clean_path": "data/cleaned_data/89_uwb-stack_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/osomprivacy/uwb-stack",
+    "filename": "uwb-stack - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/89_uwb-stack_git",
+    "clean_path": "data/cleaned_data/89_uwb-stack_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - CODING_STANDARDS.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/CODING_STANDARDS.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - pdoa_viewer.json",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/pdoa_viewer.json",
+    "file_type": "JSON文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - pdoa_viewer_serial.json",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/pdoa_viewer_serial.json",
+    "file_type": "JSON文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - flows.json",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/flows.json",
+    "file_type": "JSON文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git",
+    "clean_path": "data/cleaned_data/90_uwb-apps_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-dw1000",
+    "filename": "uwb-dw1000 - CODING_STANDARDS.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/91_uwb-dw1000_git",
+    "clean_path": "data/cleaned_data/91_uwb-dw1000_git/CODING_STANDARDS.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-dw1000",
+    "filename": "uwb-dw1000 - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/91_uwb-dw1000_git",
+    "clean_path": "data/cleaned_data/91_uwb-dw1000_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-dw1000",
+    "filename": "uwb-dw1000 - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/91_uwb-dw1000_git",
+    "clean_path": "data/cleaned_data/91_uwb-dw1000_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - terms_of_use.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/terms_of_use.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - index.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/index.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - licenses.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/licenses.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - release_notes.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/release_notes.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - licenses.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/licenses.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - nRF5_Dynastream_license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/nRF5_Dynastream_license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - nRF5_Nordic_license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/nRF5_Nordic_license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - s132_nrf52_5.0.0_licence-agreement.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/s132_nrf52_5.0.0_licence-agreement.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - s132_nrf51822_5.0.0_release-notes.pdf",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/s132_nrf51822_5.0.0_release-notes.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - s132_nrf52_5.0.0_licence-agreement.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/s132_nrf52_5.0.0_licence-agreement.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - s132_nrf52_5.0.0_migration-document.pdf",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/s132_nrf52_5.0.0_migration-document.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - s112_nrf52810_5.1.0_licence-agreement.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/s112_nrf52810_5.1.0_licence-agreement.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - s112_nrf51822_5.1.0_release-notes.pdf",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/s112_nrf51822_5.1.0_release-notes.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - s112_nrf52810_5.1.0_licence-agreement.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/s112_nrf52810_5.1.0_licence-agreement.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - s140_nrf52840_5.0.0-2.alpha_licence-agreement.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/s140_nrf52840_5.0.0-2.alpha_licence-agreement.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - s140_nrf52840_5.0.0-2.alpha_readme.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/s140_nrf52840_5.0.0-2.alpha_readme.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - s140_nrf52840_5.0.0-2.alpha_licence-agreement.pdf",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/s140_nrf52840_5.0.0-2.alpha_licence-agreement.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - s140_nrf52840_5.0.0-2.alpha_migration-document.pdf",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/s140_nrf52840_5.0.0-2.alpha_migration-document.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - s140_nrf52840_5.0.0-2.alpha_licence-agreement.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/s140_nrf52840_5.0.0-2.alpha_licence-agreement.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - s140_nrf52840_5.0.0-2.alpha_release-notes-update-1.pdf",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/s140_nrf52840_5.0.0-2.alpha_release-notes-update-1.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - Readme.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/Readme.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - Readme.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/Readme.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - licenses_external.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/licenses_external.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - 00index_e.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/00index_e.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - updates.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/updates.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - 00index_j.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/00index_j.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - mkfs.xls",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/mkfs.xls",
+    "file_type": "Excel文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - read.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/read.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - chmod.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/chmod.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - size.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/size.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - lseek.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/lseek.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - dioctl.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/dioctl.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - gets.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/gets.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - fattime.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/fattime.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - chdir.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/chdir.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - getlabel.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/getlabel.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - puts.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/puts.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - opendir.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/opendir.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - expand.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/expand.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - rename.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/rename.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - dstat.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/dstat.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - rc.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/rc.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - readdir.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/readdir.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - dread.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/dread.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - findnext.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/findnext.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - eof.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/eof.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - stat.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/stat.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - sfile.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/sfile.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - dinit.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/dinit.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - putc.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/putc.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - tell.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/tell.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - sync.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/sync.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - sfatfs.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/sfatfs.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - sdir.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/sdir.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - sfileinfo.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/sfileinfo.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - forward.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/forward.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - mount.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/mount.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - mkdir.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/mkdir.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - config.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/config.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - close.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/close.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - findfirst.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/findfirst.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - mkfs.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/mkfs.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - fdisk.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/fdisk.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - utime.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/utime.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - write.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/write.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - open.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/open.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - getcwd.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/getcwd.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - truncate.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/truncate.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - dwrite.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/dwrite.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - getfree.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/getfree.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - closedir.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/closedir.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - unlink.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/unlink.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - appnote.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/appnote.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - error.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/error.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - chdrive.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/chdrive.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - printf.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/printf.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - filename.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/filename.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - setlabel.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/setlabel.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - read.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/read.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - chmod.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/chmod.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - size.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/size.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - lseek.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/lseek.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - dioctl.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/dioctl.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - gets.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/gets.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - fattime.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/fattime.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - chdir.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/chdir.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - getlabel.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/getlabel.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - puts.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/puts.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - opendir.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/opendir.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - expand.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/expand.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - rename.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/rename.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - dstat.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/dstat.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - rc.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/rc.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - readdir.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/readdir.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - dread.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/dread.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - findnext.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/findnext.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - eof.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/eof.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - stat.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/stat.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - sfile.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/sfile.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - dinit.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/dinit.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - putc.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/putc.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - tell.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/tell.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - sync.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/sync.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - sfatfs.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/sfatfs.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - sdir.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/sdir.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - sfileinfo.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/sfileinfo.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - forward.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/forward.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - mount.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/mount.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - mkdir.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/mkdir.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - config.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/config.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - close.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/close.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - findfirst.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/findfirst.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - mkfs.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/mkfs.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - fdisk.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/fdisk.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - utime.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/utime.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - write.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/write.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - open.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/open.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - getcwd.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/getcwd.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - truncate.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/truncate.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - dwrite.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/dwrite.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - getfree.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/getfree.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - closedir.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/closedir.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - unlink.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/unlink.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - appnote.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/appnote.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - error.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/error.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - chdrive.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/chdrive.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - printf.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/printf.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - filename.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/filename.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - setlabel.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/setlabel.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - 00readme.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/00readme.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - 00history.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/00history.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - README-VISUAL-C++.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/README-VISUAL-C++.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - sicslogo.pdf",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/sicslogo.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - pt-doc.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/pt-doc.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - pt-refman.pdf",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/pt-refman.pdf",
+    "file_type": "PDF文档"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - pt-mainpage.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/pt-mainpage.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00019.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00019.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - globals_type.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/globals_type.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - tree.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/tree.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00015.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00015.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - index.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/index.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - functions.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/functions.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00014.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00014.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - modules.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/modules.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00022.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00022.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - annotated.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/annotated.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00018.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00018.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - hierarchy.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/hierarchy.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00013.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00013.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00005.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00005.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00009.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00009.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - functions_vars.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/functions_vars.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - files.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/files.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00012.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00012.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00011.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00011.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - main.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/main.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00010.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00010.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00006.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00006.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00021.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00021.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - globals_defs.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/globals_defs.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00017.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00017.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00016.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00016.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - globals.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/globals.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - a00020.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/a00020.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - SIL-License.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/SIL-License.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - savannah.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/savannah.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - sys_arch.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/sys_arch.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - rawapi.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/rawapi.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - snmp_agent.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/snmp_agent.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - mqtt_client.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/mqtt_client.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - mdns.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/mdns.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - ppp.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/ppp.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - contrib.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/contrib.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - index.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/index.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - index.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/index.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - 404.html",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/404.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - readme.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/readme.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - origin.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/origin.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - unlicense.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/unlicense.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - apache-2.0.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/apache-2.0.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - rsa_pub.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/rsa_pub.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - rsa_priv.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/rsa_priv.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - dh_prime.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/dh_prime.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - README.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/README.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - rename-1.3-2.0.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/rename-1.3-2.0.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - readme.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/readme.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - readme.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/readme.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - readme.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/readme.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - LICENSE.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/LICENSE.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - license.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/license.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - README.TXT",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/README.TXT",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - LICENSE.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/LICENSE.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - disclaimer.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/disclaimer.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - JLinkLog.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/JLinkLog.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - flash_placement.xml",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/flash_placement.xml",
+    "file_type": "XML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - flash_placement.xml",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/flash_placement.xml",
+    "file_type": "XML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - JLinkLog.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/JLinkLog.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - flash_placement.xml",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/flash_placement.xml",
+    "file_type": "XML文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - JLinkLog.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/JLinkLog.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples - flash_placement.xml",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git",
+    "clean_path": "data/cleaned_data/94_dwm1001-examples_git/flash_placement.xml",
+    "file_type": "XML文件"
+  },
+  {
+    "url": "https://github.com/br101/libdeca",
+    "filename": "libdeca - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/97_libdeca_git",
+    "clean_path": "data/cleaned_data/97_libdeca_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/br101/libdeca",
+    "filename": "libdeca - README.md",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/97_libdeca_git",
+    "clean_path": "data/cleaned_data/97_libdeca_git/README.md",
+    "file_type": "Markdown文件"
+  },
+  {
+    "url": "https://github.com/br101/libdeca",
+    "filename": "libdeca - LICENSE.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/97_libdeca_git",
+    "clean_path": "data/cleaned_data/97_libdeca_git/LICENSE.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://github.com/br101/libdeca",
+    "filename": "libdeca - CMakeLists.txt",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/97_libdeca_git",
+    "clean_path": "data/cleaned_data/97_libdeca_git/CMakeLists.txt",
+    "file_type": "文本文件"
+  },
+  {
+    "url": "https://docs.nordicsemi.com/bundle/ncs-latest/page/zephyr/boards/qorvo/index.html",
+    "filename": "Nordic_Qorvo文档",
+    "resource_type": "HTML",
+    "source": "Nordic Semiconductor Docs",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/97_Qorvo__Inc._-_Technical_Documentation.html",
+    "clean_path": "data/cleaned_data/97_Qorvo__Inc._-_Technical_Documentation.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://forum.qorvo.com/c/wireless-connectivity/ultra-wideband/5",
+    "filename": "Qorvo_UWB论坛",
+    "resource_type": "HTML (Forum)",
+    "source": "Qorvo Tech Forum",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/98_Latest_Ultra-Wideband_topics_-_Qorvo_Tech_Forum.html",
+    "clean_path": "data/cleaned_data/98_Latest_Ultra-Wideband_topics_-_Qorvo_Tech_Forum.html",
+    "file_type": "HTML文件"
+  },
+  {
+    "url": "https://forum.qorvo.com/t/dw3300q-stm32-sdk-documentation/18064",
+    "filename": "DW3300Q_STM32_SDK文档",
+    "resource_type": "HTML (Forum)",
+    "source": "Qorvo Tech Forum",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/99_Qorvo_UWB论坛.html",
+    "clean_path": "data/cleaned_data/99_Qorvo_UWB论坛.html",
+    "file_type": "HTML文件"
+  }
+]

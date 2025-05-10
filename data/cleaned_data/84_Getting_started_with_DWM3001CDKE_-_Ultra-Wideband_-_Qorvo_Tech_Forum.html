@@ -1,0 +1,159 @@
+Getting started with DWM3001CDKE - Ultra-Wideband - Qorvo Tech Forum
+Qorvo Tech Forum
+Getting started with DWM3001CDKE
+Wireless Connectivity
+Ultra-Wideband
+dwm3000
+Indranil
+February 28, 2022, 10:01pm
+1
+Hi, I just got a DWM3001CDKE1.0 development module for evaluating UWB RTLS. However, I don’t know exactly how to get started. I connected the board to the PC using USB and tried running the DecaRanging_5p02.exe software, I get an error “Cannot open a Cheetah/FTDI device or connect to EVK3000 over COM port…” Also, I see that the D20 LED is blinking indicating that the J-Link is not enumerated. Can you please provide any documents/help what tools are needed and/or how to get started? Thanks.
+4 Likes
+Wassim_Qorvo
+April 19, 2022,
+9:36am
+2
+Hi @Indranil
+You can find here https://www.qorvo.com/products/p/DWM3000EVB#documents API software revision 1.4 and in this link
+https://www.decawave.com/wp-content/uploads/2022/03/DW3xxx_XR6.0C_24Feb2022.zip you can find API software revision 2.2 with uwb driver in library format.
+These 2 releases supports STM32F429 Nucleo and nrF52840 DK targets.
+DWM3001CDK is based on nRF52833, so you need to port the code of the release to that target.
+Qorvo provides a ready software for DWM3001CDK for Nearby Interaction where you can interact with iPhone and get distance and direction relative to a U1-equipped iPhone.
+https://www.qorvo.com/products/p/DWM3001CDK#evaluation-tools
+Hope it helps,
+Wassim
+1 Like
+bpaddock
+April 19, 2022, 12:22pm
+3
+“…driver in library format…DWM3001CDK is based on nRF52833, so you need to port the code of the release to that target.”
+It would be far easier to port code with actual source code.
+What needs done to port this library?
+Wassim_Qorvo
+April 19, 2022,
+1:44pm
+4
+You don’t need to port the library as it’s already generated for Cortex-M33.
+Maye you can start from this Nordic Q&A
+bpaddock
+April 19, 2022,
+3:53pm
+5
+Really at this point I’ve decided to look at alternative vendors such as NXP and Spark, because Qurvo is not forthcoming with documentation and source files.
+The DWM3001CDK is delivered with zero documentation and code, not sure how anyone thinks that is useful.
+There is at least Apple Demo.
+1 Like
+illysky
+December 8, 2022,
+2:11pm
+6
+I have just purchased DWM3001CDK, NRF52’s have nothing on them. There is also nothing in the SDK that is on the DK product page. I just want to evaluate it, I don’t want to port code, I have enough to do.
+You have cutting edge technology but prehistoric customer support! Please can you provide us with precompiled firmware for DWM3001CDK to work with your software.
+1 Like
+How to run DWM3001C API software on DWM3001CDK board?
+cpp
+January 24, 2023, 10:21am
+7
+Hi,
+I just got two DWM3001CDKE kits and I am willing to give a try to your porting suggestion. I did as you said and changed every reference to the NRF52840 in dw3000_api.emProject to the corresponding NRF52833 value. I tried to add screenshots of the differences but apparently new users cannot embed media in posts.
+I managed to compile successfully like this, however when I try to run even the first example (ex_00a_reading_dev_id) I get an error in dw_irq_init inside platform/port.c, line 92. I gather this probably has to do with the definition of the pins, which do not match between the DWM3001CDKE and the original project.
+I am hoping @Wassim_Qorvo or someone else here can offer some guidance on how to proceed further.
+Thanks in advance!
+Wassim_Qorvo
+January 24, 2023,
+3:43pm
+8
+Hi @cpp,
+Please use these definition instead for DWM30001CDK:
+#define ARDUINO_13_PIN
+NRF_GPIO_PIN_MAP(0,
+3)
+// used as DW3000_CLK_Pin
+#define ARDUINO_12_PIN
+NRF_GPIO_PIN_MAP(0, 29)
+// used as DW3000_MISO_Pin
+#define ARDUINO_11_PIN
+NRF_GPIO_PIN_MAP(0,
+8)
+// used as DW3000_MOSI_Pin
+#define ARDUINO_10_PIN
+NRF_GPIO_PIN_MAP(1,
+6)
+// used as DW3000_CS_Pin
+#define ARDUINO_9_PIN
+NRF_GPIO_PIN_MAP(1, 19)
+// used as DW3000_WKUP_Pin
+#define ARDUINO_8_PIN
+NRF_GPIO_PIN_MAP(1,
+2)
+// used as DW3000_IRQ_Pin
+#define ARDUINO_7_PIN
+NRF_GPIO_PIN_MAP(0, 25)
+// used as DW3000_RST_Pin
+Also keep in mind, you need to update FLASH and RAM ranges according to nRF52833 target.
+Hope it helps,
+Wassim
+cpp
+January 25, 2023, 10:17am
+9
+Thanks @Wassim_Qorvo. That does help!
+rexxdad
+April 3, 2023, 10:08pm
+10
+well, I have just received my CDK boards. and I ‘hope’ I have started right…
+to flash the board, connect the computer USB cable to the J9 connector (flash/debug) (I guess, nothing says that )
+red light on solid
+flash the nrf52833, CLI .hex binary
+(the jlink doc says 52840… )
+flash successful…
+connect serial terminal, no response
+switch to USB J20 (I guess, none of the instructions says to move the cable)
+red light flash (good)
+D9 on solid, green
+no response on serial terminal.
+no
+flash of the LEDs when typing either …
+all this on a mac mini.
+rexxdad
+April 4, 2023,
+2:11pm
+11
+ok, the no response was the terminal app needed to set DTR.
+I want the CDK to be a responder… so I start the RESPF app,
+but my IOS app can’t find it… using BLE for the
+service UUID
+“6E400001-B5A3-F393-E0A9-E50E24DCCA9E”
+and I don’t see it in my android scanner either
+according to the R2 NI accessory spec, the service UUID is 48fe3e40-0817-4bb2-8633-3073689c2dba
+Nearby-Interaction-Accessory-Protocol-Specification-Release-R2.pdf
+the sample code from Apple uses the 6E400001/6E400002/6E400003 uuids
+download from here, have to logon
+"https://developer.apple.com/nearby-interaction/specification/"
+rexxdad
+April 4, 2023,
+8:20pm
+12
+upgraded to the V3 sdk… now it works as expected… no serial port interaction required
+Luctor_et_Emergo
+February 17, 2024,
+7:10am
+13
+Hi, I recently bought 4 DWM3001CDK. I downloaded all the files related to this product to make it work.
+However, after all the reading, watching youtubes/Google/Blogs nothing answered my question, which is: how to upload a hex file to the board?
+The board, as shipped, has no application image loaded on it. Hence the board needs to be flashed first through J9. As the product claims to have a J-link OB on it, I should be able to use the J-flash lite tool to flash the board, by directly connecting the board (through J9) to the laptop USB port. By doing that, the board is recognized and the USB port is working. However I get an error message “no probe connected” from the executable Jflashlite.
+I also tried to use J-link OB drag and drop. This doesn’t work either as the board is not showing up as a flash drive.
+I could not find anything else in the documentation to get this working. Any help is appreciated.
+I’m using windows 10.
+thanks
+Luctor_et_Emergo
+February 17, 2024,
+8:26am
+14
+It’s solved. I had to download a
+" INTEL HID event filter" driver for windows 10. The way I became aware of this is when I tried to get this system working on a windows 7 machine. That machine gave me an error message about it. The windows 10 machine gave no error message at all.
+Home
+Categories
+Guidelines
+Terms of Service
+Privacy Policy
+Powered by Discourse, best viewed with JavaScript enabled

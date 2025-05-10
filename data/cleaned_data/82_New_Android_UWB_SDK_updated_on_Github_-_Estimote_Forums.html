@@ -1,0 +1,183 @@
+New Android UWB SDK updated on Github - UWB Beacons - Estimote Community Forums
+Estimote Community Forums
+New Android UWB SDK updated on Github
+UWB Beacons
+android-sdk
+jimiasty
+February 20, 2024,
+4:23pm
+1
+Dear All,
+we just updated also our Android UWB SDK on Github and it’s here: GitHub - Estimote/Android-Estimote-UWB-SDK: Android SDK and demo app for Estimote UWB Beacons
+You can find there an example Android Studio project as well as README with key documentation.
+Feel free to provide feedback.
+1 Like
+BillyYiuCimda
+October 18, 2024, 10:13am
+2
+I am trying to do Android phone (Samsung Galaxy S24+) positioning from 3 beacons. I run this Android SDK but I can only get response from 1 beacon and get 1 distance, so I cannot get the position correctly. In the readme file, it mentions about manual connect and disconnect methods but there is no example showing how we can make use of it. Can you give me an example or give me more hints? Secondly, my phone quits very frequently while running ranging with this SDK program, may I know what the problem will be?
+1 Like
+sdetweil
+October 21, 2024,
+3:01pm
+3
+in my plugin I do
+beacon.device?.let {
+uwbManager.connect(
+it,
+ourContext
+)
+}
+and
+uwbManager.disconnect(beacon, ourContext);
+1 Like
+danc2050
+December 11, 2024,
+9:56pm
+4
+I get a “Hello world!” screen only. When I debug through the code, I see that there is a scan error. I’m on Google Pixel 9 Pro. Anyone else have this issue? Also the iOS app on the app store shows no UWB Tags.
+1 Like
+sdetweil
+December 13, 2024,
+2:06am
+5
+the app on the ios app store only works w the proximity beacons, not uwb.
+the app that does the rock shaped uwb beacons is in the estimote ios sdk.
+there is some sample code in the android sdk. android only works with the newer late 2023
+uwb beacons AND they need a firmware update as android uses channel 9 where ios uses channel 5. the old firmware couldn’t switch.
+AND
+estimote said one beacon at a time on android
+the pebble shaped don’t do the apple or android ranging.
+1 Like
+danc2050
+December 13, 2024,
+3:34am
+6
+Oh wow…only one Beacon would be disastrous for my use case. Thank you for for your informative message.
+sdetweil
+December 13, 2024,
+3:46am
+7
+yeh, its an android problem as i understand it
+fatal for my use case too
+luckily my users use iphone
+1 Like
+danc2050
+December 14, 2024,
+8:35pm
+8
+Oh dear, that would be even worse. Well I want to have beacons (not necessarily Estimote’s) arranged in a building, so maybe I will have to keep them spaced apart so they aren’t trying to connect to two at a time.
+I appreciate the info.
+That is lucky! Haha. My use case can’t use iPhone since iPhone doesn’t list run apps in the background well.
+sdetweil
+December 14, 2024,
+9:03pm
+9
+Estimote beacons use Qorvo uwb chips
+Qorvo has not released any example code for android ranging to date.
+i am waiting anxiously.
+i have ported the Qorvo apple code to
+my app environment and can range w a mix of Estimote and Qorvo devices concurrently
+i have ported the Estimote sdk for android to my app environment
+and can range the newer Estimote beacons with Android (one at a time)
+apple has removed the second antenna from their phone starting w iPhone 14. so ranging doesn’t work like it used to anymore. it requires using the camera w augmented reality assist. but sadly that doesn’t work w my devices, users, or in low light situations which i dont/cant control. also require line of sight and something to recognize, which my devices are not.
+and camera use is illegal in many situations.
+1 Like
+danc2050
+December 18, 2024,
+4:48am
+10
+Your project and experience sound very interesting!
+I’ve moved onto the Qorvo DWM3001CDK, so your post makes me hopeful.
+I was able to do ranging with it with some hardcoded project. My next step is to range with it via BLE and get the config details naturally. If you’ve done this already with the Estimote beacons perhaps your code would work with the DWM3001CDK? If you have any source to bootstrap me in this regard, I would be greatly indebted to you.
+That’s crazy Apple removed functionality…I wonder what their reasoning was (besides lowering the cost of their build?).
+sdetweil
+December 18, 2024, 12:48pm
+11
+Qorvo provides a sample app for the DWM3001CDK, you have to request their sdk.
+see the last link here
+https://www.qorvo.com/products/p/DWM3001CDK#evaluation-tools
+My app is written in Ionic Vue. same source builds for IOS
+and Android no changes. i just implemented their code in a plugin. Qorvo doesn’t provide code yet for android . i use the 3001CDK board as well
+for the phone, the UWB implementation in the phone has approx 60 degree field of view. the camera has about 100. for sighted
+people using Find My w air tags,
+it could help to have AR. my users are blind
+1 Like
+danc2050
+December 19, 2024, 10:58pm
+12
+Oh wow, that is smart! I have not even heard of doing that and being able to put that on any appstore… I will have to look into that and try to find an example as well to get me ahead.
+I think I am a bit confused on the firmware…if I can just use the UCI firmware flash or if I need to create some specialized one to make the Qorvo product be a Controlee all the time?
+It seems that Apple will let things run in the background, provided there is already a bluetooth conneection, so I think what I want to do can be done in Apple!
+Today I will try to get the Nearby example set up, as the one from the app store doesn’t seem to work and is also outdated.
+sdetweil
+December 19, 2024, 11:42pm
+13
+apple requires the QNI firmware, which is not FIRA, and UCI requires the other firmware. one or the other.
+Estimote’s firmware is like the qni
+The UCI fw only works via usb port connected to some host, and the 3001cdk boards only have one antenna, so cant get angles anyhow ( the phone has/had two antennas)
+i’ve been trying to add BLE to the UCI firmware, but it uses the older (no longer supported) Nordic sdk.(which just has me completely flummoxed), it wont work w any phone anyhow.
+the murata 2AB chip w Qorvo inside DOES have 2 antennas and the UCI
+fw runs there .
+I’ve run that w the 3001cdk to get angles at the 2AB, w the UCI
+firmware on both, 3001cdk as controllee
+danc2050
+December 21, 2024,
+5:52am
+14
+That is GOOD to know…
+You’re trying to add BLE to the UCI firmware because you want your app to work for Android as well as Apple?
+I was looking at the SDK a bit and seeing some scripts that seemed like it was telling what payloads would need to be sent to the device to activate certain connections…I’m planning on uploading as much of the SDK to GPT’s new “projects” and trying to see if I can make it easy on myself…we will see. I will report back if I have any success. Feel free to also add me on Discord if you use it – danc2050. Or here is fine.
+sdetweil
+December 21, 2024, 12:18pm
+15
+sent discord fr
+well i need it to work like old way(iPhone11-13),
+2 antenna at phone
+apple and android.
+uci via usb is interesting demo w 2 computers. not useful in real world projects
+1 Like
+danc2050
+December 22, 2024,
+8:09am
+16
+Sweet I messaged you there!
+Yes I tried a project on GitHub that allowed me to use the UCI firmware also, but it sounds like we are both looking for BLE implementations. I’ll be busy most of the half of this upcoming week, but hopefully can start on making some progress on this.
+Related topics
+Topic
+Replies
+Views
+Activity
+Need detailed instructions or documentation for using Estimote UWB SDK with beacons
+UWB Beacons
+api-docs
+10
+1488
+July 21, 2023
+Ranging UWB beacons with Android 14
+UWB Beacons
+7
+192
+September 23, 2024
+Android Studio Kotlin UWB beacon
+3
+643
+February 7, 2024
+Can't connect to multiple UWB beacons on Android
+UWB Beacons
+2
+508
+April 15, 2024
+New firmware for Android 14 and Estimote UWB Beacons
+UWB Beacons
+android-sdk
+5
+1676
+August 28, 2024
+Home
+Categories
+Guidelines
+Terms of Service
+Privacy Policy
+Powered by Discourse, best viewed with JavaScript enabled
+homepagedev docscommunityour blogget in touch

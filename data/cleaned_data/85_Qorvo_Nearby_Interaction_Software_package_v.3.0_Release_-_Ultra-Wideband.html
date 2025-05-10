@@ -1,0 +1,184 @@
+Qorvo Nearby Interaction Software package v.3.0 Release - Ultra-Wideband - Qorvo Tech Forum
+Qorvo Tech Forum
+Qorvo Nearby Interaction Software package v.3.0 Release
+Wireless Connectivity
+Ultra-Wideband
+dw3000,
+apple_ni,
+dwm3000
+carlos.silva
+February 21, 2023, 12:02pm
+1
+Heads up, everyone!
+Qorvo Nearby Interaction Software package v.3.0 is finally here, including sources, binaries, and documentation (embedded firmware, example application, iOS application)
+This version implements the new iOS16 features, Camera Assistance (with an AR demo), and Background mode.
+Please check the Evaluation Tools tab on the DWM3001CDK or DWM3000EVB products page:
+https://www.qorvo.com/products/p/DWM3001CDK#evaluation-tools
+Best regards!
+4 Likes
+DWM30001CDK standalone operation without connection to USB UART
+rexxdad
+April 5, 2023, 12:12pm
+3
+got it…
+hardware binaries is a bit confusing… is it Nordic or CDK?
+nordic doesn’t work.
+so…
+and working…
+course you have private UUID’s so i have to change all my code…
+1 Like
+Wassim_Qorvo
+April 6, 2023,
+4:59am
+4
+CDK is referencing to this board DWM3001CDK - Qorvo.
+You have inside nRF52833 + dw3000.
+Then you have other binaries for nordic board (nRF52832/33/40), where you would put a shield on it as done in this kit for example QM33120WDK1 - Qorvo
+1 Like
+rexxdad
+April 6, 2023, 10:16am
+5
+yes. I understand the terminology, but the prior release of the sdk had a Nordic version, no CDK.
+it was just unclear what I was supposed to pick for what reason
+rexxdad
+April 9, 2023,
+1:29am
+6
+a service that would be useful on the CDK is an LED service.
+as the uart is closed
+rexxdad
+April 12, 2023,
+1:28pm
+7
+any help on what this means
+JST SR Connector
+what size?
+trying to find some cables for wiring up power connection, but keep getting ones that are too big.
+labeled JST/SR
+AndyA
+April 12, 2023,
+4:36pm
+8
+Looking through that package I can’t see any source code for the actual drivers, everything links to libdwt_uwb_driver-m4-hfp-6.0.14.a or libdwt_uwb_driver-m4-sfp-6.0.14.a
+So how do I use these drivers if I want to use a different processor architecture?
+Normally in that situation I’d say that I needed to write my own drivers based on the user manual. A perfectly reasonable requirement and the reason why user manuals tell you everything you need to know to use a part. Only the user manual says “please see API functions” for the method of how to do some things.
+Quite how the API will tell me how to do this isn’t very clear since the API in in effect a black box unless I want to start disassembling the binary files. Which I’m guessing is against the terms of the license.
+So how do I do this? The DW1000 I wrote my own drivers. The DW3000 I used an early decawave driver where the source was released. Right now the QM33110 looks like a non-starter since we have no way to drive the chip.
+1 Like
+K-tomato
+April 24, 2023,
+8:58am
+9
+Firstly, I would like to inform you that I encountered a build failure while following the “Building” section of the “QNIA_Developer_Guide.pdf”, which was caused by the “Error starting process mergehex”. To resolve this issue, I installed the “nRF Command-Line Tools”.
+May I ask which specific part of the “DWM3001CDK-QANI-FreeRTOS_full_QNI_3_0_0.hex” firmware, included in the v3.0 package, needs to be modified to enable one DWM3001CDK module to connect to two iPhones?
+rexxdad
+April 24, 2023,
+8:02pm
+10
+rexxdad:
+JST SR Connector
+the little piece of missing info is 1.0mm size
+rexxdad
+April 24, 2023,
+8:13pm
+11
+i did a search for concurrent client connects to peripheral
+and found this
+devzone.nordicsemi.com
+BLE peripheral that supports 2 simultaneous connections with nRF Connect SDK...
+When using nRF Connect SDK v1.6.1, a BLE peripheral that supports 2 simultaneous connections could be created by including these lines in prj.conf. These lines set
+that is over a year old, there is a link to a nbrf5340 topic on multi-connect (says up to 20!)…
+and then this
+devzone.nordicsemi.com
+Multiple Bluetooth connection possibilities (concurrent links) - Nordic...
+I'm getting confused with the following statement, taken from www.nordicsemi.com/.../S132
+"It supports up to 20 concurrent links in all roles."
+So, I will try
+rexxdad
+May 3, 2023,
+5:26pm
+12
+i got a notice today of an updated V3 sdk.
+may I make a suggestion… the binaries are still labeled 3.0.0, but the package is 3.1.0
+could we get a future package update to build the binaries with the package version number…
+thanks…
+oh, and this brings up a terrible problem
+how do I update CDK boards that are in enclosures, with no serial port connection
+my ESP32 device does not have USB most mode and jflash
+doesn’t run on ESP32.
+robogo
+May 3, 2023,
+8:59pm
+13
+Carlos, DO you know where I can find example code to enable camera assist in IOS nearby Interaction? It’s supposed to increase field of view and reduce direction drop out.
+1 Like
+carlos.silva
+May 9, 2023, 11:34am
+14
+Hi @robogo !
+Yes! It was added in v3.0 already.
+It is just a single line when creating the NearbyAccessoryConfiguration:
+configuration = try NINearbyAccessoryConfiguration(data: configData)
+configuration?.isCameraAssistanceEnabled = true
+If you wanna know more you can check Apple’s WWDC22 NI presentation:
+What’s new in Nearby Interaction - WWDC22 - Videos - Apple Developer
+Kind regards!
+frankbuss
+June 1, 2023,
+4:15pm
+15
+I got an older version with libniq-m4-hfp-0.9.9.1.a working with a custom board with a nRF5340 and Zephyr. Was some headache, because e.g. it crashed at osMutexCreate, because the Qorvo library passed a NULL pointer to it, so I had to patch the CMSIS implementation of Zephyr, and wasn’t very stable, sometimes it didn’t start. I’m currently trying to update to the latest version.
+But right, it is a serious limitation to provide only binary versions of central parts of the firmware. It makes it more difficult to debug it, and limits the usable target hardware to the ARM architecture. Is there a reason why it is not distributed as source code, or is there a detailed documentation to write the driver myself? The embedded firmware part looks also very bloated and with unnecessary layers, like the libniq lib doesn’t do much except doing some variable initializations, and most of the secret implementation is in libembedded_mac_arm.
+AndyA
+June 1, 2023,
+4:58pm
+16
+There is a user manual which in theory contains all the information required to write your own driver. It did for the DW1000, it wasn’t very clear on how some things worked but it did at least tell you what you needed to know to make things work.
+However the DW3000 manual has a number of sections where it tells you to refer to the driver source code for details of how to perform an operation. The driver source code (the old version that was released before it became binary only) for those functions would change registers that weren’t listed in the manual or would set bits to values that the manual claimed were invalid.
+In other words the documentation is a mess, has been for several years now and qorvo don’t seem to have any interest in fixing it.
+To be honest the only reason I didn’t dismiss the DW3000 out of hand was because we already had a DW1000 product up and running. If I was starting from scratch I’d be looking very hard for an alternative part with any semblance of support.
+Another user has been attempting to assemble the information missing from the manual. Details can be found in this post: "Missing manual" for register-level access to DW3000 (without using API)
+frankbuss
+June 1, 2023,
+6:19pm
+17
+I guess it is a regulatory problem. It is the same for Bluetooth ICs: For example the low level radio control software of nRF chips is an undocumented binary blob and the IC is only certified with the manufacturer blob. But at least they have a simple standardized way to communicate with it with HCI, and all high level commands are fully documented. If Qorvo would add a small CPU core to their chip (like licence free RISC-V), it could be much easier as well.
+But looks like at least the new source code is cleaner. For example in the old code, there was a busy wait loop in waitforsysstatus, which caused Zephyr to freeze (I had to add delays). Looks like the new code uses timers and statemachines etc. instead. And maybe even the mutex and semaphore problem is fixed, so that I don’t have to maintain a Zephyr fork, we’ll see.
+AndyA
+June 2, 2023,
+8:11am
+18
+It’s not a regulatory radio issue, the radio isn’t sold as a certified device.
+Bluetooth you purchase a module that has been certified to follow both the FCC/CE radio requirements and also certified to follow the Bluetooth protocol specification.
+With the exception of the DWM1001C running PANS none of the DW1000/3000 parts are pre-certified modules. You need to perform your own FCC/CE approvals testing.
+And for these UWB radios there is no fixed protocol, you can choose to follow the IEEE standard or the apple implementation, but that is up to you. And there is no certification process for these that I’m aware off.
+My guess is that it’s more a IP protection move, the more you know about the internal registers the more you can guess the internal methods of operation. They have always been vague on some things like how the detection threshold is set.
+Or maybe it’s just laziness, they simply can’t be bothered to fully document things.
+1 Like
+frankbuss
+June 9, 2023,
+3:28pm
+19
+Meanwhile I got a DWM3000EVB Evaluation Board Kit, and a nRF52840-DK. I downloaded the new software, and followed the instruction in the Quick Start Guide. I connected the shield to the DK and flashed the file nRF52840DK-QANI-FreeRTOS_full_QNI_3_0_0.hex. Then I installed the “Qorvo Nearby Interaction” iOS App. The switch on the shield is at 3V3_DCDC (couldn’t find instructions in the quick start guide to change it, so this was as delivered). After reset, the 4 LEDs blink 3 times. I can see in the iOS App the device (but sometimes it shows “unknown”). But when I click on connect, it immediately disconnects, see this video:
+I have an iPhone 14 Pro, with iOS 16.5.
+alliv
+June 13, 2023,
+6:55pm
+20
+Thos could be an issue with BLE pairing during debugging, i.e. some paired information gets saved in both nRF and/or iphone…
+Try go to iphone settings->bluetooth and delete the devices from the list. Also !erase! the nRF chip before programming.
+1 Like
+frankbuss
+June 20, 2023,
+1:16am
+21
+The problem was that the phone was in airplane mode. Bluetooth and WiFi works in airplane mode, but looks like UWB doesn’t work in this mode. An error message form the app would be nice in this case.
+Meanwhile I’m nearly done with the integration of the library to Zephyr. Sometimes it needed a debugger, Ghidra disassembling, and a lot of reverse engineering work. E.g. I use WolfSSL to implement the AES functions. But somewhere inside the library there is a fira_crypto_test self test, which tests an error which results in a UWBMAC_EBADMSG error code (which is ultimately translated to EBADMSG). But WolfSSL reports this test as AES_CCM_AUTH_E. With source code would be done in a few minutes. Without needs a day playing with gdb and analyzing the disassembled code. Thanks Qorvo.
+1 Like
+next page →
+Home
+Categories
+Guidelines
+Terms of Service
+Privacy Policy
+Powered by Discourse, best viewed with JavaScript enabled

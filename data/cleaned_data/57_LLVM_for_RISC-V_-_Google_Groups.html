@@ -1,0 +1,28 @@
+LLVM for RISC-VGroupsConversationsAll groups and messagesSend feedback to GoogleHelpTrainingSign inGroups
+RISC-V SW DevConversationsAboutPrivacy • Terms
+Groups keyboard shortcuts have been updatedDismissSee shortcutsLLVM for RISC-V 105 viewsSkip to first unread messageAlexandra Larossaunread,Dec 13, 2020, 7:17:34 PM12/13/20Reply to authorSign in to reply to authorForwardSign in to forwardDeleteYou do not have permission to delete messages in this groupCopy linkReport messageShow original messageEither email addresses are anonymous for this group or you need the view member email addresses permission to view the original messageto RISC-V SW DevHello, all this is Alex I'm a newbie in the compiler world I'm trying to setup LLVM for RISC-V environment first, anybody of you can help me in setting up the environment of llvm for RISC-V and generating first assembly code for RISC-V through LLVM or any documentation available for setting up the environmentLooking forward to hear from you.cheers,AlexWei Wu (吴伟)unread,Dec 14, 2020, 2:40:24 AM12/14/20Reply to authorSign in to reply to authorForwardSign in to forwardDeleteYou do not have permission to delete messages in this groupCopy linkReport messageShow original messageEither email addresses are anonymous for this group or you need the view member email addresses permission to view the original messageto Alexandra Larossa, Mingjie Xing, RISC-V SW DevHi Alexandra,Glad to help. Mingjie Xing is working on RISC-V Vector Ext in LLVM. I cc'd him on this email. He may provide some hints soon.Welcome to the RISC-V community!
+--
+You received this message because you are subscribed to the Google Groups "RISC-V SW Dev" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to sw-dev+un...@groups.riscv.org.
+To view this discussion on the web visit https://groups.google.com/a/groups.riscv.org/d/msgid/sw-dev/b45c1c13-7786-4e29-acde-1a70542df08bn%40groups.riscv.org.
+-- Best wishes,Wei Wu (吴伟)
+Khem Rajunread,Dec 14, 2020, 4:48:21 AM12/14/20Reply to authorSign in to reply to authorForwardSign in to forwardDeleteYou do not have permission to delete messages in this groupCopy linkReport messageShow original messageEither email addresses are anonymous for this group or you need the view member email addresses permission to view the original messageto Alexandra Larossa, RISC-V SW DevHi Alexandra
+If you are interested in cross compilers for Linux using clang/llvm
+you can use meta-clang with yocto/openembedded
+https://github.com/kraj/meta-clang/blob/master/README.md
+for riscv you would also add meta-riscv
+https://github.com/riscv/meta-riscv/blob/master/README.md
+if you want full in one go then use yoe distro
+https://github.com/YoeDistro/yoe-distro/blob/master/README.md
+. ./qemuriscv64-envsetup.sh
+in conf/local.conf add
+TOOLCHAIN ?= "clang"
+CLANGSDK = "1"
+to use clang as the compiler.
+Thanks
+-Khem
+Message has been deletedAlexandra Larossaunread,Dec 15, 2020, 6:54:31 PM12/15/20Reply to authorSign in to reply to authorForwardSign in to forwardDeleteYou do not have permission to delete messages in this groupCopy linkReport messageShow original messageEither email addresses are anonymous for this group or you need the view member email addresses permission to view the original messageto Paidipally Kranthi, RISC-V SW Dev, raj....@gmail.comThank you so much Wei Wu and Khem for this overwhelming responseOn Tue, Dec 15, 2020 at 7:27 PM Paidipally Kranthi <paidipall...@gmail.com> wrote:hi All,I am new to RVV and tried executing simple vector ADD on top of RVV9.x. Compilation and build (RV32IMV option used) is fine.When i executed binary I get illegal instruction
+core   0: 0xffffffff80002348 (0xfd1ff0ef) jal     pc - 0x30
+core   0: 0xffffffff80002318 (0x0285c257) vadd.vx v4, v8, a1
+core   0: exception trap_illegal_instruction, epc 0xffffffff80002318
+core   0:           tval 0x000000000285c257I am not sure how to debug this. how would build succesful if instruction itself is not present or illegal?Any insight please? Highly appreciate helpThank you,Reply allReply to authorForwardMessage has been deleted0 new messagesSearchClear searchClose searchGoogle appsMain menu

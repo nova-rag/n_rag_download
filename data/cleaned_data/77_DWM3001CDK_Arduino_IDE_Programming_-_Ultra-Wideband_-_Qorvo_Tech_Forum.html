@@ -1,0 +1,39 @@
+DWM3001CDK Arduino IDE Programming - Ultra-Wideband - Qorvo Tech Forum
+Qorvo Tech Forum
+DWM3001CDK Arduino IDE Programming
+Wireless Connectivity
+Ultra-Wideband
+dwm3001cdk
+jakerad
+December 11, 2024,
+7:02pm
+1
+I’ve got a couple of the DWM3001CDK boards i am trying to use as a POC, I’d like to write some code for it and tap into the APIs to do some custom work.
+But I’d like to do more than just the command line work that is in the docs, has anyone been able to use this in another way to write some code around them?
+Basically I’d like to create 4 anchors, and at least 2 tags.
+I’d like to be able to get a position on the tags based on the distance to the anchors, and quadrangulate a 3d position of the tag, and be able to save that position on command.
+Any help pointing me in the right direction would be greatly appreciated.
+carlos.silva
+December 19, 2024,
+3:14pm
+2
+Hi @jakerad !
+If you download the DW3xxx & QM3xxx SDK v1.0.2 from Qorvo’s website you will find the driver folder with many examples (Drivers\API\Src\examples). The target is nRF52840-DK, but it won’t be hard to adapt it to nRF52833 (DW3001CDK SoC), some of the supporting files and info you’ll need are in the SDK sources (SDK\Firmware\DW3_QM33_SDK_1.0.2\Projects\DW3_QM33_SDK\FreeRTOS\DWM3001CDK).
+In the API\Src\examples, you can use one of the RX/TX examples to implement the RTLS system you idealized.
+Kind regards!
+AndyA
+December 19, 2024,
+5:29pm
+3
+Getting a basic point to point ranging system up and running based on the examples isn’t too hard. Generally people hit a couple of issues:
+Multiple responders - The examples generally assume one range initiator and one responder. Once you have multiple devices that can respond you need to add some means of addressing the device you want to measure to and then ensuring that un-addressed devices don’t respond.
+Multiple initiators - When two different devices can start a measurement you need to ensure they don’t both try to start at the same time, you need some means of sharing the time equally between devices. This generally requires some sort of protocol or basic communication between them.
+Update rate - if you only want a slow update rate this is all fairly simple, if there is lots of idle time it’s easy to avoid two things trying to talk at once. If you want a high update rate then you need to start trying to minimise the time for each range measurement and the time between measurements. Which generally requires more accurate synchronisation and coordination between devices.
+None of these are particularly UWB related issues, they are more general system design problems but there are a number of posts on this forum giving more details on all of them.
+There are very few posts here about position calculation. I’m not sure if that’s because once people are getting the range measurements they find that bit easy or because the people who would need help with that stage have given up before then.
+Home
+Categories
+Guidelines
+Terms of Service
+Privacy Policy
+Powered by Discourse, best viewed with JavaScript enabled

@@ -1,0 +1,2666 @@
+Privileged RISC-V ISA — CVA6
+documentation
+CVA6
+CVA6 Requirement Specification
+CVA6 User Manual
+CVA6 Design Document (deprecated)
+CV32A65X documentation
+Unprivileged RISC-V ISA
+Privileged RISC-V ISA
+CV32A65X DESIGN DOCUMENT
+CV32A60X documentation
+CV64A6_MMU documentation
+CVA6 APU
+CVA6
+CV32A65X documentation
+Privileged RISC-V ISA
+View page source
+Privileged RISC-V ISA
+The RISC-V Instruction Set Manual for CV32A65X: Volume II: Privileged Architecture
+The RISC-V Instruction Set Manual for CV32A65X: Volume II: Privileged Architecture
+version 20241101
+Table of Contents
+Preface
+1. Introduction
+1.1. RISC-V Privileged Software Stack Terminology
+1.2. Privilege Levels
+1.3. Debug Mode
+2. Control and Status Registers (CSRs)
+2.1. CSR Address Mapping Conventions
+2.2. CSR Listing
+2.3. CSR Field Specifications
+2.3.1. Reserved Writes Preserve Values, Reads Ignore Values (WPRI)
+2.3.2. Write/Read Only Legal Values (WLRL)
+2.3.3. Write Any Values, Reads Legal Values (WARL)
+2.4. CSR Field Modulation
+2.5. Implicit Reads of CSRs
+2.6. CSR Width Modulation
+2.7. Explicit Accesses to CSRs Wider than XLEN
+3. Machine-Level ISA, Version 1.13
+3.1. Machine-Level CSRs
+3.1.1. Machine ISA (misa) Register
+3.1.2. Machine Vendor ID (mvendorid) Register
+3.1.3. Machine Architecture ID (marchid) Register
+3.1.4. Machine Implementation ID (mimpid) Register
+3.1.5. Hart ID (mhartid) Register
+3.1.6. Machine Status (mstatus and mstatush) Registers
+3.1.6.1. Privilege and Global Interrupt-Enable Stack in mstatus register
+3.1.6.2. Double Trap Control in mstatus Register
+3.1.6.3. Base ISA Control in mstatus Register
+3.1.6.4. Memory Privilege in mstatus Register
+3.1.6.5. Endianness Control in mstatus and mstatush Registers
+3.1.6.6. Virtualization Support in mstatus Register
+3.1.6.7. Extension Context Status in mstatus Register
+3.1.6.8. Previous Expected Landing Pad (ELP) State in mstatus Register
+3.1.7. Machine Trap-Vector Base-Address (mtvec) Register
+3.1.8. Machine Trap Delegation (medeleg and mideleg) Registers
+3.1.9. Machine Interrupt (mip and mie) Registers
+3.1.10. Hardware Performance Monitor
+3.1.11. Machine Counter-Enable (mcounteren) Register
+3.1.12. Machine Counter-Inhibit (mcountinhibit) Register
+3.1.13. Machine Scratch (mscratch) Register
+3.1.14. Machine Exception Program Counter (mepc) Register
+3.1.15. Machine Cause (mcause) Register
+3.1.16. Machine Trap Value (mtval) Register
+3.1.17. Machine Configuration Pointer (mconfigptr) Register
+3.1.18. Machine Environment Configuration (menvcfg) Register
+3.1.19. Machine Security Configuration (mseccfg) Register
+3.2. Machine-Level Memory-Mapped Registers
+3.2.1. Machine Timer (mtime and mtimecmp) Registers
+3.3. Machine-Mode Privileged Instructions
+3.3.1. Environment Call and Breakpoint
+3.3.2. Trap-Return Instructions
+3.3.3. Wait for Interrupt
+3.3.4. Custom SYSTEM Instructions
+3.4. Reset
+3.5. Non-Maskable Interrupts
+3.6. Physical Memory Attributes
+3.6.1. Main Memory versus I/O Regions
+3.6.2. Supported Access Type PMAs
+3.6.3. Atomicity PMAs
+3.6.3.1. AMO PMA
+3.6.3.2. Reservability PMA
+3.6.4. Misaligned Atomicity Granule PMA
+3.6.5. Memory-Ordering PMAs
+3.6.6. Coherence and Cacheability PMAs
+3.6.7. Idempotency PMAs
+3.7. Physical Memory Protection
+3.7.1. Physical Memory Protection CSRs
+3.7.1.1. Address Matching
+3.7.1.2. Locking and Privilege Mode
+3.7.1.3. Priority and Matching Logic
+3.7.2. Physical Memory Protection and Paging
+4. "Smstateen/Ssstateen" Extensions, Version 1.0
+5. "Smcsrind/Sscsrind" Indirect CSR Access, Version 1.0
+6. "Smepmp" Extension for PMP Enhancements for memory access and execution prevention in Machine mode, Version 1.0
+7. "Smcntrpmf" Cycle and Instret Privilege Mode Filtering, Version 1.0
+8. "Smrnmi" Extension for Resumable Non-Maskable Interrupts, Version 1.0
+9. "Smcdeleg" Counter Delegation Extension, Version 1.0
+10. "Smdbltrp" Double Trap Extension, Version 1.0
+11. "Smctr" Control Transfer Records Extension, Version 1.0
+12. Supervisor-Level ISA, Version 1.13
+13. "Sstc" Extension for Supervisor-mode Timer Interrupts, Version 1.0
+14. "Sscofpmf" Extension for Count Overflow and Mode-Based Filtering, Version 1.0
+15. "H" Extension for Hypervisor Support, Version 1.0
+16. Control-flow Integrity (CFI)
+17. "Ssdbltrp" Double Trap Extension, Version 1.0
+18. Pointer Masking Extensions, Version 1.0.0
+19. RISC-V Privileged Instruction Set Listings
+20. History
+20.1. Research Funding at UC Berkeley
+Bibliography
+This document describes the RISC-V privileged architecture tailored for
+OpenHW Group CV32A65X.
+Not relevant parts (e.g. unsupported extensions) of the original
+specification are replaced by placeholders.
+Contributors to all versions of the spec in alphabetical order (please contact
+editors to suggest corrections): Krste Asanović, Peter Ashenden, Rimas
+Avižienis, Jacob Bachmeyer, Allen J. Baum, Jonathan Behrens, Paolo Bonzini, Ruslan Bukin,
+Christopher Celio, Chuanhua Chang, David Chisnall, Anthony Coulter, Palmer Dabbelt, Monte
+Dalrymple, Paul Donahue, Greg Favor, Dennis Ferguson,
+Marc Gauthier, Andy Glew,
+Gary Guo, Mike Frysinger, John Hauser, David Horner, Olof
+Johansson, David Kruckemyer, Yunsup Lee, Daniel Lustig, Andrew Lutomirski, Martin Maas, Prashanth Mundkur,
+Jonathan Neuschäfer, Rishiyur
+Nikhil, Stefan O’Rear, Albert Ou, John Ousterhout, David Patterson, Dmitri
+Pavlov, Kade Phillips, Josh Scheid, Colin Schmidt, Michael Taylor, Wesley Terpstra, Matt Thomas, Tommy Thorn, Ray
+VanDeWalker, Megan Wachs, Steve Wallach, Andrew Waterman, Claire Wolf, Adam Zabrocki,
+and Reinoud Zandijk..
+This document is released under a Creative Commons Attribution 4.0 International License.
+This document is a derivative of the RISC-V
+privileged specification version 1.9.1 released under following license: ©2010-2017 Andrew Waterman, Yunsup Lee, Rimas
+Avižienis,
+David Patterson, Krste Asanović. Creative Commons Attribution 4.0 International License.
+Contributors to CV32A65X versions of the spec in alphabetical order:
+Jean-Roch Coulon, André Sintzoff.
+Preface
+Preface to Version for CV32A65X
+This document describes the RISC-V privileged architecture tailored for
+OpenHW Group CV32A65X.
+Preface to Version 20241101
+This document describes the RISC-V privileged architecture. This
+release, version 20241101, contains the following versions of the RISC-V ISA
+modules:
+Module
+Version
+Status
+Machine ISA
+Smstateen Extension
+Smcsrind/Sscsrind Extension
+Smepmp Extension
+Smcntrpmf Extension
+Smrnmi Extension
+Smcdeleg Extension
+Smdbltrp Extension
+Supervisor ISA
+Svade Extension
+Svnapot Extension
+Svpbmt Extension
+Svinval Extension
+Svadu Extension
+Sstc Extension
+Sscofpmf Extension
+Ssdbltrp Extension
+Ssqosid Extension
+Hypervisor ISA
+Shlcofideleg Extension
+Svvptc Extension
+1.14
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.14
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+Draft
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Draft
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+The following changes have been made since version 1.13 of the Machine and
+Supervisor ISAs, which, while not strictly backwards compatible, are not
+anticipated to cause software portability problems in practice:
+(None yet)
+Additionally, the following compatible changes have been
+made to the Machine and Supervisor ISAs since version 1.13:
+Defined the mstateen0 P1P14 field.
+Finally, the following clarifications and document improvements have been made
+since the last document release:
+(None yet)
+Preface to Version 20241017
+This document describes the RISC-V privileged architecture. This
+release, version 20241017, contains the following versions of the RISC-V ISA
+modules:
+Module
+Version
+Status
+Machine ISA
+Smstateen Extension
+Smcsrind/Sscsrind Extension
+Smepmp
+Smcntrpmf
+Smrnmi Extension
+Smcdeleg
+Smdbltrp
+Supervisor ISA
+Svade Extension
+Svnapot Extension
+Svpbmt Extension
+Svinval Extension
+Svadu Extension
+Sstc
+Sscofpmf
+Ssdbltrp
+Hypervisor ISA
+Shlcofideleg
+Svvptc
+1.13
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.13
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+The following changes have been made since version 1.12 of the Machine and
+Supervisor ISAs, which, while not strictly backwards compatible, are not
+anticipated to cause software portability problems in practice:
+Redefined misa.MXL to be read-only, making MXLEN a constant.
+Added the constraint that SXLEN≥UXLEN.
+Additionally, the following compatible changes have been
+made to the Machine and Supervisor ISAs since version 1.12:
+Defined the misa.B field to reflect that the B extension has been
+implemented.
+Defined the misa.V field to reflect that the V extension has been
+implemented.
+Defined the RV32-only medelegh and hedelegh CSRs.
+Defined the misaligned atomicity granule PMA, superseding the proposed Zam
+extension.
+Allocated interrupt 13 for Sscofpmf LCOFI interrupt.
+Defined hardware error and software check exception codes.
+Specified synchronization requirements when changing the PBMTE fields
+in menvcfg and henvcfg.
+Exposed count-overflow interrupts to VS-mode via the Shlcofideleg extension.
+Relaxed behavior of some HINTs when MXLEN > XLEN.
+Finally, the following clarifications and document improvements have been made
+since the last document release:
+Transliterated the document from LaTeX into AsciiDoc.
+Included all ratified extensions through March 2024.
+Clarified that "platform- or custom-use" interrupts are actually
+"platform-use interrupts", where the platform can choose to make some custom.
+Clarified semantics of explicit accesses to CSRs wider than XLEN bits.
+Clarified that MXLEN≥SXLEN.
+Clarified that WFI is not a HINT instruction.
+Clarified that VS-stage page-table accesses set G-stage A/D bits.
+Clarified ordering rules when PBMT=IO is used on main-memory regions.
+Clarified ordering rules for hardware A/D bit updates.
+Clarified that, for a given exception cause, xtval might sometimes
+be set to a nonzero value but sometimes not.
+Clarified exception behavior of unimplemented or inaccessible CSRs.
+Clarified that Svpbmt allows implementations to override additional PMAs.
+Replaced the concept of vacant memory regions with inaccessible memory or I/O regions.
+Clarified that timer and count-overflow interrupts' arrival in
+interrupt-pending registers is not immediate.
+Clarified that MXR affects only explicit memory accesses.
+Preface to Version 20211203
+This document describes the RISC-V privileged architecture. This
+release, version 20211203, contains the following versions of the RISC-V
+ISA modules:
+Module
+Version
+Status
+Machine ISA
+Supervisor ISA
+Svnapot Extension
+Svpbmt Extension
+Svinval Extension
+Hypervisor ISA
+1.12
+1.12
+1.0
+1.0
+1.0
+1.0
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+Ratified
+The following changes have been made since version 1.11, which, while
+not strictly backwards compatible, are not anticipated to cause software
+portability problems in practice:
+Changed MRET and SRET to clear mstatus.MPRV when leaving M-mode.
+Reserved additional satp patterns for future use.
+Stated that the scause Exception Code field must implement bits 4–0
+at minimum.
+Relaxed I/O regions have been specified to follow RVWMO. The previous
+specification implied that PPO rules other than fences and
+acquire/release annotations did not apply.
+Constrained the LR/SC reservation set size and shape when using
+page-based virtual memory.
+PMP changes require an SFENCE.VMA on any hart that implements
+page-based virtual memory, even if VM is not currently enabled.
+Allowed for speculative updates of page table entry A bits.
+Clarify that if the address-translation algorithm non-speculatively
+reaches a PTE in which a bit reserved for future standard use is set, a
+page-fault exception must be raised.
+Additionally, the following compatible changes have been made since
+version 1.11:
+Removed the N extension.
+Defined the mandatory RV32-only CSR mstatush, which contains most of
+the same fields as the upper 32 bits of RV64’s mstatus.
+Defined the mandatory CSR mconfigptr, which if nonzero contains the
+address of a configuration data structure.
+Defined optional mseccfg and mseccfgh CSRs, which control the
+machine’s security configuration.
+Defined menvcfg, henvcfg, and senvcfg CSRs (and RV32-only
+menvcfgh and henvcfgh CSRs), which control various characteristics
+of the execution environment.
+Designated part of SYSTEM major opcode for custom use.
+Permitted the unconditional delegation of less-privileged interrupts.
+Added optional big-endian and bi-endian support.
+Made priority of load/store/AMO address-misaligned exceptions
+implementation-defined relative to load/store/AMO page-fault and
+access-fault exceptions.
+PMP reset values are now platform-defined.
+An additional 48 optional PMP registers have been defined.
+Slightly relaxed the atomicity requirement for A and D bit updates
+performed by the implementation.
+Clarify the architectural behavior of address-translation caches
+Added Sv57 and Sv57x4 address translation modes.
+Software breakpoint exceptions are permitted to write either 0 or the
+pc to xtval.
+Clarified that bare S-mode need not support the SFENCE.VMA
+instruction.
+Specified relaxed constraints for implicit reads of non-idempotent
+regions.
+Added the Svnapot Standard Extension, along with the N bit in Sv39,
+Sv48, and Sv57 PTEs.
+Added the Svpbmt Standard Extension, along with the PBMT bits in Sv39,
+Sv48, and Sv57 PTEs.
+Added the Svinval Standard Extension and associated instructions.
+Finally, the hypervisor architecture proposal has been extensively
+revised.
+Preface to Version 1.11
+This is version 1.11 of the RISC-V privileged architecture. The document
+contains the following versions of the RISC-V ISA modules:
+Module
+Version
+Status
+Machine ISA
+Supervisor ISA
+Hypervisor ISA
+1.11
+1.11
+0.3
+Ratified
+Ratified
+Draft
+Changes from version 1.10 include:
+Moved Machine and Supervisor spec to Ratified status.
+Improvements to the description and commentary.
+Added a draft proposal for a hypervisor extension.
+Specified which interrupt sources are reserved for standard use.
+Allocated some synchronous exception causes for custom use.
+Specified the priority ordering of synchronous exceptions.
+Added specification that xRET instructions may, but are not required
+to, clear LR reservations if A extension present.
+The virtual-memory system no longer permits supervisor mode to execute
+instructions from user pages, regardless of the SUM setting.
+Clarified that ASIDs are private to a hart, and added commentary about
+the possibility of a future global-ASID extension.
+SFENCE.VMA semantics have been clarified.
+Made the mstatus.MPP field WARL, rather than WLRL.
+Made the unused xip fields WPRI, rather than WIRI.
+Made the unused misa fields WARL, rather than WIRI.
+Made the unused pmpaddr and pmpcfg fields WARL, rather than WIRI.
+Required all harts in a system to employ the same PTE-update scheme as
+each other.
+Rectified an editing error that misdescribed the mechanism by which
+mstatus.xIE is written upon an exception.
+Described scheme for emulating misaligned AMOs.
+Specified the behavior of the misa and xepc registers in systems
+with variable IALIGN.
+Specified the behavior of writing self-contradictory values to the
+misa register.
+Defined the mcountinhibit CSR, which stops performance counters from
+incrementing to reduce energy consumption.
+Specified semantics for PMP regions coarser than four bytes.
+Specified contents of CSRs across XLEN modification.
+Moved PLIC chapter into its own document.
+Preface to Version 1.10
+This is version 1.10 of the RISC-V privileged architecture proposal.
+Changes from version 1.9.1 include:
+The previous version of this document was released under a Creative
+Commons Attribution 4.0 International License by the original authors,
+and this and future versions of this document will be released under the
+same license.
+The explicit convention on shadow CSR addresses has been removed to
+reclaim CSR space. Shadow CSRs can still be added as needed.
+The mvendorid register now contains the JEDEC code of the core
+provider as opposed to a code supplied by the Foundation. This avoids
+redundancy and offloads work from the Foundation.
+The interrupt-enable stack discipline has been simplified.
+An optional mechanism to change the base ISA used by supervisor and
+user modes has been added to the mstatus CSR, and the field previously
+called Base in misa has been renamed to MXL for consistency.
+Clarified expected use of XS to summarize additional extension state
+status fields in mstatus.
+Optional vectored interrupt support has been added to the mtvec and
+stvec CSRs.
+The SEIP and UEIP bits in the mip CSR have been redefined to support
+software injection of external interrupts.
+The mbadaddr register has been subsumed by a more general mtval
+register that can now capture bad instruction bits on an illegal
+instruction fault to speed instruction emulation.
+The machine-mode base-and-bounds translation and protection schemes
+have been removed from the specification as part of moving the virtual
+memory configuration to sptbr (now satp). Some of the motivation for
+the base and bound schemes are now covered by the PMP registers, but
+space remains available in mstatus to add these back at a later date
+if deemed useful.
+In systems with only M-mode, or with both M-mode and U-mode but
+without U-mode trap support, the medeleg and mideleg registers now
+do not exist, whereas previously they returned zero.
+Virtual-memory page faults now have mcause values distinct from
+physical-memory access faults. Page-fault exceptions can now be
+delegated to S-mode without delegating exceptions generated by PMA and
+PMP checks.
+An optional physical-memory protection (PMP) scheme has been proposed.
+The supervisor virtual memory configuration has been moved from the
+mstatus register to the sptbr register. Accordingly, the sptbr
+register has been renamed to satp (Supervisor Address Translation and
+Protection) to reflect its broadened role.
+The SFENCE.VM instruction has been removed in favor of the improved
+SFENCE.VMA instruction.
+The mstatus bit MXR has been exposed to S-mode via sstatus.
+The polarity of the PUM bit in sstatus has been inverted to shorten
+code sequences involving MXR. The bit has been renamed to SUM.
+Hardware management of page-table entry Accessed and Dirty bits has
+been made optional; simpler implementations may trap to software to set
+them.
+The counter-enable scheme has changed, so that S-mode can control
+availability of counters to U-mode.
+H-mode has been removed, as we are focusing on recursive
+virtualization support in S-mode. The encoding space has been reserved
+and may be repurposed at a later date.
+A mechanism to improve virtualization performance by trapping S-mode
+virtual-memory management operations has been added.
+The Supervisor Binary Interface (SBI) chapter has been removed, so
+that it can be maintained as a separate specification.
+Preface to Version 1.9.1
+This is version 1.9.1 of the RISC-V privileged architecture proposal.
+Changes from version 1.9 include:
+Numerous additions and improvements to the commentary sections.
+Change configuration string proposal to be use a search process that
+supports various formats including Device Tree String and flattened
+Device Tree.
+Made misa optionally writable to support modifying base and
+supported ISA extensions. CSR address of misa changed.
+Added description of debug mode and debug CSRs.
+Added a hardware performance monitoring scheme. Simplified the
+handling of existing hardware counters, removing privileged versions of
+the counters and the corresponding delta registers.
+Fixed description of SPIE in presence of user-level interrupts.
+1. Introduction
+This document describes the RISC-V privileged architecture, which covers
+all aspects of RISC-V systems beyond the unprivileged ISA, including
+privileged instructions as well as additional functionality required for
+running operating systems and attaching external devices.
+Commentary on our design decisions is formatted as in this paragraph,
+and can be skipped if the reader is only interested in the specification
+itself.
+We briefly note that the entire privileged-level design described in
+this document could be replaced with an entirely different
+privileged-level design without changing the unprivileged ISA, and
+possibly without even changing the ABI. In particular, this privileged
+specification was designed to run existing popular operating systems,
+and so embodies the conventional level-based protection model. Alternate
+privileged specifications could embody other more flexible
+protection-domain models. For simplicity of expression, the text is
+written as if this was the only possible privileged architecture.
+1.1. RISC-V Privileged Software Stack Terminology
+This section describes the terminology we use to describe components of
+the wide range of possible privileged software stacks for RISC-V.
+Figure 1 shows some of the possible software stacks
+that can be supported by the RISC-V architecture. The left-hand side
+shows a simple system that supports only a single application running on
+an application execution environment (AEE). The application is coded to
+run with a particular application binary interface (ABI). The ABI
+includes the supported user-level ISA plus a set of ABI calls to
+interact with the AEE. The ABI hides details of the AEE from the
+application to allow greater flexibility in implementing the AEE. The
+same ABI could be implemented natively on multiple different host OSs,
+or could be supported by a user-mode emulation environment running on a
+machine with a different native ISA.
+Our graphical convention represents abstract interfaces using black
+boxes with white text, to separate them from concrete instances of
+components implementing the interfaces.
+Figure 1. Different implementation stacks supporting various forms of privileged execution.
+The middle configuration shows a conventional operating system (OS) that
+can support multiprogrammed execution of multiple applications. Each
+application communicates over an ABI with the OS, which provides the
+AEE. Just as applications interface with an AEE via an ABI, RISC-V
+operating systems interface with a supervisor execution environment
+(SEE) via a supervisor binary interface (SBI). An SBI comprises the
+user-level and supervisor-level ISA together with a set of SBI function
+calls. Using a single SBI across all SEE implementations allows a single
+OS binary image to run on any SEE. The SEE can be a simple boot loader
+and BIOS-style IO system in a low-end hardware platform, or a
+hypervisor-provided virtual machine in a high-end server, or a thin
+translation layer over a host operating system in an architecture
+simulation environment.
+Most supervisor-level ISA definitions do not separate the SBI from the
+execution environment and/or the hardware platform, complicating
+virtualization and bring-up of new hardware platforms.
+The rightmost configuration shows a virtual machine monitor
+configuration where multiple multiprogrammed OSs are supported by a
+single hypervisor. Each OS communicates via an SBI with the hypervisor,
+which provides the SEE. The hypervisor communicates with the hypervisor
+execution environment (HEE) using a hypervisor binary interface (HBI),
+to isolate the hypervisor from details of the hardware platform.
+The ABI, SBI, and HBI are still a work-in-progress, but we are now
+prioritizing support for Type-2 hypervisors where the SBI is provided
+recursively by an S-mode OS.
+Hardware implementations of the RISC-V ISA will generally require
+additional features beyond the privileged ISA to support the various
+execution environments (AEE, SEE, or HEE).
+1.2. Privilege Levels
+At any time, a RISC-V hardware thread (hart) is running at some
+privilege level encoded as a mode in one or more CSRs (control and
+status registers). Three RISC-V privilege levels are currently defined
+as shown in Table 1.
+Table 1. RISC-V privilege levels.
+Level
+Encoding
+Name
+Abbreviation
+0
+1
+2
+3
+00
+01
+10
+11
+User/Application
+Supervisor
+Reserved
+Machine
+U
+S
+M
+Privilege levels are used to provide protection between different
+components of the software stack, and attempts to perform operations not
+permitted by the current privilege mode will cause an exception to be
+raised. These exceptions will normally cause traps into an underlying
+execution environment.
+In the description, we try to separate the privilege level for which
+code is written, from the privilege mode in which it runs, although the
+two are often tied. For example, a supervisor-level operating system can
+run in supervisor-mode on a system with three privilege modes, but can
+also run in user-mode under a classic virtual machine monitor on systems
+with two or more privilege modes. In both cases, the same
+supervisor-level operating system binary code can be used, coded to a
+supervisor-level SBI and hence expecting to be able to use
+supervisor-level privileged instructions and CSRs. When running a guest
+OS in user mode, all supervisor-level actions will be trapped and
+emulated by the SEE running in the higher-privilege level.
+The machine level has the highest privileges and is the only mandatory
+privilege level for a RISC-V hardware platform. Code run in machine-mode
+(M-mode) is usually inherently trusted, as it has low-level access to
+the machine implementation. M-mode can be used to manage secure
+execution environments on RISC-V. User-mode (U-mode) and supervisor-mode
+(S-mode) are intended for conventional application and operating system
+usage respectively.
+Each privilege level has a core set of privileged ISA extensions with
+optional extensions and variants. For example, machine-mode supports an
+optional standard extension for memory protection. Also, supervisor mode
+can be extended to support Type-2 hypervisor execution as described in
+Chapter 15.
+Implementations might provide anywhere from 1 to 3 privilege modes
+trading off reduced isolation for lower implementation cost, as shown in
+Table 2.
+Table 2. Supported combination of privilege modes.
+Number of levels
+Supported Modes
+Intended Usage
+1
+2
+3
+M
+M, U
+M, S, U
+Simple embedded systems
+Secure embedded systems
+Systems running Unix-like operating systems
+All hardware implementations must provide M-mode, as this is the only
+mode that has unfettered access to the whole machine. The simplest
+RISC-V implementations may provide only M-mode, though this will provide
+no protection against incorrect or malicious application code.
+The lock feature of the optional PMP facility can provide some limited
+protection even with only M-mode implemented.
+Many RISC-V implementations will also support at least user mode
+(U-mode) to protect the rest of the system from application code.
+Supervisor mode (S-mode) can be added to provide isolation between a
+supervisor-level operating system and the SEE.
+A hart normally runs application code in U-mode until some trap (e.g., a
+supervisor call or a timer interrupt) forces a switch to a trap handler,
+which usually runs in a more privileged mode. The hart will then execute
+the trap handler, which will eventually resume execution at or after the
+original trapped instruction in U-mode. Traps that increase privilege
+level are termed vertical traps, while traps that remain at the same
+privilege level are termed horizontal traps. The RISC-V privileged
+architecture provides flexible routing of traps to different privilege
+layers.
+Horizontal traps can be implemented as vertical traps that return
+control to a horizontal trap handler in the less-privileged mode.
+1.3. Debug Mode
+Implementations may also include a debug mode to support off-chip
+debugging and/or manufacturing test. Debug mode (D-mode) can be
+considered an additional privilege mode, with even more access than
+M-mode. The separate debug specification proposal describes operation of
+a RISC-V hart in debug mode. Debug mode reserves a few CSR addresses
+that are only accessible in D-mode, and may also reserve some portions
+of the physical address space on a platform.
+2. Control and Status Registers (CSRs)
+The SYSTEM major opcode is used to encode all privileged instructions in
+the RISC-V ISA. These can be divided into two main classes: those that
+atomically read-modify-write control and status registers (CSRs), which
+are defined in the Zicsr extension, and all other privileged
+instructions. The privileged architecture requires the Zicsr extension;
+which other privileged instructions are required depends on the
+privileged-architecture feature set.
+In addition to the unprivileged state described in Volume I of this
+manual, an implementation may contain additional CSRs, accessible by
+some subset of the privilege levels using the CSR instructions described
+in Volume I. In this chapter, we map out the CSR address space. The
+following chapters describe the function of each of the CSRs according
+to privilege level, as well as the other privileged instructions which
+are generally closely associated with a particular privilege level. Note
+that although CSRs and instructions are associated with one privilege
+level, they are also accessible at all higher privilege levels.
+Standard CSRs do not have side effects on reads but may have side
+effects on writes.
+2.1. CSR Address Mapping Conventions
+The standard RISC-V ISA sets aside a 12-bit encoding space (csr[11:0])
+for up to 4,096 CSRs. By convention, the upper 4 bits of the CSR address
+(csr[11:8]) are used to encode the read and write accessibility of the
+CSRs according to privilege level as shown in Table 3. The top two bits (csr[11:10]) indicate whether the register is read/write (00,01, or 10) or read-only (11). The next two bits (csr[9:8]) encode the lowest privilege level that can access the CSR.
+The CSR address convention uses the upper bits of the CSR address to
+encode default access privileges. This simplifies error checking in the
+hardware and provides a larger CSR space, but does constrain the mapping
+of CSRs into the address space.
+Implementations might allow a more-privileged level to trap otherwise
+permitted CSR accesses by a less-privileged level to allow these
+accesses to be intercepted. This change should be transparent to the
+less-privileged software.
+Instructions that access a non-existent CSR are reserved.
+Attempts to access a CSR without appropriate privilege level
+raise illegal-instruction exceptions or, as described in
+[sec:hcauses], virtual-instruction exceptions.
+Attempts to write a read-only register raise illegal-instruction exceptions.
+A read/write register might also contain some bits that are
+read-only, in which case writes to the read-only bits are ignored.
+Table 3 also indicates the convention to
+allocate CSR addresses between standard and custom uses. The CSR
+addresses designated for custom uses will not be redefined by future
+standard extensions.
+Machine-mode standard read-write CSRs 0x7A0-0x7BF are reserved for
+use by the debug system. Of these CSRs, 0x7A0-0x7AF are accessible
+to machine mode, whereas 0x7B0-0x7BF are only visible to debug mode.
+Implementations should raise illegal-instruction exceptions on
+machine-mode access to the latter set of registers.
+Effective virtualization requires that as many instructions run natively
+as possible inside a virtualized environment, while any privileged
+accesses trap to the virtual machine monitor. (Goldberg, 1974) CSRs that are read-only
+at some lower privilege level are shadowed into separate CSR addresses
+if they are made read-write at a higher privilege level. This avoids
+trapping permitted lower-privilege accesses while still causing traps on
+illegal accesses. Currently, the counters are the only shadowed CSRs.
+2.2. CSR Listing
+Table 4-Table 8 list the CSRs that
+have currently been allocated CSR addresses. The timers, counters, and
+floating-point CSRs are standard unprivileged CSRs. The other registers
+are used by privileged code, as described in the following chapters.
+Note that not all registers are required on all implementations.
+Table 3. Allocation of RISC-V CSR address ranges.
+CSR Address
+Hex
+Use and Accessibility
+[11:10]
+[9:8]
+[7:4]
+Unprivileged and User-Level CSRs
+00
+00
+XXXX
+0x000-0x0FF
+Standard read/write
+01
+00
+XXXX
+0x400-0x4FF
+Standard read/write
+10
+00
+XXXX
+0x800-0x8FF
+Custom read/write
+11
+00
+0XXX
+0xC00-0xC7F
+Standard read-only
+11
+00
+10XX
+0xC80-0xCBF
+Standard read-only
+11
+00
+11XX
+0xCC0-0xCFF
+Custom read-only
+Supervisor-Level CSRs
+00
+01
+XXXX
+0x100-0x1FF
+Standard read/write
+01
+01
+0XXX
+0x500-0x57F
+Standard read/write
+01
+01
+10XX
+0x580-0x5BF
+Standard read/write
+01
+01
+11XX
+0x5C0-0x5FF
+Custom read/write
+10
+01
+0XXX
+0x900-0x97F
+Standard read/write
+10
+01
+10XX
+0x980-0x9BF
+Standard read/write
+10
+01
+11XX
+0x9C0-0x9FF
+Custom read/write
+11
+01
+0XXX
+0xD00-0xD7F
+Standard read-only
+11
+01
+10XX
+0xD80-0xDBF
+Standard read-only
+11
+01
+11XX
+0xDC0-0xDFF
+Custom read-only
+Hypervisor and VS CSRs
+00
+10
+XXXX
+0x200-0x2FF
+Standard read/write
+01
+10
+0XXX
+0x600-0x67F
+Standard read/write
+01
+10
+10XX
+0x680-0x6BF
+Standard read/write
+01
+10
+11XX
+0x6C0-0x6FF
+Custom read/write
+10
+10
+0XXX
+0xA00-0xA7F
+Standard read/write
+10
+10
+10XX
+0xA80-0xABF
+Standard read/write
+10
+10
+11XX
+0xAC0-0xAFF
+Custom read/write
+11
+10
+0XXX
+0xE00-0xE7F
+Standard read-only
+11
+10
+10XX
+0xE80-0xEBF
+Standard read-only
+11
+10
+11XX
+0xEC0-0xEFF
+Custom read-only
+Machine-Level CSRs
+00
+11
+XXXX
+0x300-0x3FF
+Standard read/write
+01
+11
+0XXX
+0x700-0x77F
+Standard read/write
+01
+11
+100X
+0x780-0x79F
+Standard read/write
+01
+11
+1010
+0x7A0-0x7AF
+Standard read/write debug CSRs
+01
+11
+1011
+0x7B0-0x7BF
+Debug-mode-only CSRs
+01
+11
+11XX
+0x7C0-0x7FF
+Custom read/write
+10
+11
+0XXX
+0xB00-0xB7F
+Standard read/write
+10
+11
+10XX
+0xB80-0xBBF
+Standard read/write
+10
+11
+11XX
+0xBC0-0xBFF
+Custom read/write
+11
+11
+0XXX
+0xF00-0xF7F
+Standard read-only
+11
+11
+10XX
+0xF80-0xFBF
+Standard read-only
+11
+11
+11XX
+0xFC0-0xFFF
+Custom read-only
+Table 4. Currently allocated RISC-V unprivileged CSR addresses.
+Number
+Privilege
+Name
+Description
+Unprivileged Floating-Point CSRs
+0x001
+0x002
+0x003
+URW
+URW
+URW
+fflags
+frm
+fcsr
+Floating-Point Accrued Exceptions.
+Floating-Point Dynamic Rounding Mode.
+Floating-Point Control and Status Register (frm +fflags).
+Unprivileged Vector CSRs
+0x008
+0x009
+0x00A
+0x00F
+0xC20
+0xC21
+0xC22
+URW
+URW
+URW
+URW
+URO
+URO
+URO
+vstart
+vxsat
+vxrm
+vcsr
+vl
+vtype
+vlenb
+Vector start position.
+Fixed-point accrued saturation flag.
+Fixed-point rounding mode.
+Vector control and status register.
+Vector length.
+Vector data type register.
+Vector register length in bytes.
+Unprivileged Zicfiss extension CSR
+0x011
+URW
+ssp
+Shadow Stack Pointer.
+Unprivileged Entropy Source Extension CSR
+0x015
+URW
+seed
+Seed for cryptographic random bit generators.
+Unprivileged Zcmt Extension CSR
+0x017
+URW
+jvt
+Table jump base vector and control register.
+Unprivileged Counter/Timers
+0xC00
+0xC01
+0xC02
+0xC03
+0xC04
+0xC1F
+0xC80
+0xC81
+0xC82
+0xC83
+0xC84
+0xC9F
+URO
+URO
+URO
+URO
+URO
+URO
+URO
+URO
+URO
+URO
+URO
+URO
+cycle
+time
+instret
+hpmcounter3
+hpmcounter4
+⋮
+hpmcounter31
+cycleh
+timeh
+instreth
+hpmcounter3h
+hpmcounter4h
+⋮
+hpmcounter31h
+Cycle counter for RDCYCLE instruction.
+Timer for RDTIME instruction.
+Instructions-retired counter for RDINSTRET instruction.
+Performance-monitoring counter.
+Performance-monitoring counter.
+Performance-monitoring counter.
+Upper 32 bits of cycle, RV32 only.
+Upper 32 bits of time, RV32 only.
+Upper 32 bits of instret, RV32 only.
+Upper 32 bits of hpmcounter3, RV32 only.
+Upper 32 bits of hpmcounter4, RV32 only.
+Upper 32 bits of hpmcounter31, RV32 only.
+Table 5. Currently allocated RISC-V supervisor-level CSR addresses.
+Number
+Privilege
+Name
+Description
+Supervisor Trap Setup
+0x100
+0x104
+0x105
+0x106
+SRW
+SRW
+SRW
+SRW
+sstatus
+sie
+stvec
+scounteren
+Supervisor status register.
+Supervisor interrupt-enable register.
+Supervisor trap handler base address.
+Supervisor counter enable.
+Supervisor Configuration
+0x10A
+SRW
+senvcfg
+Supervisor environment configuration register.
+Supervisor Counter Setup
+0x120
+SRW
+scountinhibit
+Supervisor counter-inhibit register.
+Supervisor Trap Handling
+0x140
+0x141
+0x142
+0x143
+0x144
+0xDA0
+SRW
+SRW
+SRW
+SRW
+SRW
+SRO
+sscratch
+sepc
+scause
+stval
+sip
+scountovf
+Supervisor scratch register.
+Supervisor exception program counter.
+Supervisor trap cause.
+Supervisor trap value.
+Supervisor interrupt pending.
+Supervisor count overflow.
+Supervisor Protection and Translation
+0x180
+SRW
+satp
+Supervisor address translation and protection.
+Debug/Trace Registers
+0x5A8
+SRW
+scontext
+Supervisor-mode context register.
+Supervisor State Enable Registers
+0x10C
+0x10D
+0x10E
+0x10F
+SRW
+SRW
+SRW
+SRW
+sstateen0
+sstateen1
+sstateen2
+sstateen3
+Supervisor State Enable 0 Register.
+Supervisor State Enable 1 Register.
+Supervisor State Enable 2 Register.
+Supervisor State Enable 3 Register.
+Table 6. Currently allocated RISC-V hypervisor and VS CSR addresses.
+Number
+Privilege
+Name
+Description
+Hypervisor Trap Setup
+0x600
+0x602
+0x603
+0x604
+0x606
+0x607
+0x612
+HRW
+HRW
+HRW
+HRW
+HRW
+HRW
+HRW
+hstatus
+hedeleg
+hideleg
+hie
+hcounteren
+hgeie
+hedelegh
+Hypervisor status register.
+Hypervisor exception delegation register.
+Hypervisor interrupt delegation register.
+Hypervisor interrupt-enable register.
+Hypervisor counter enable.
+Hypervisor guest external interrupt-enable register.
+Upper 32 bits of hedeleg, RV32 only.
+Hypervisor Trap Handling
+0x643
+0x644
+0x645
+0x64A
+0xE12
+HRW
+HRW
+HRW
+HRW
+HRO
+htval
+hip
+hvip
+htinst
+hgeip
+Hypervisor trap value.
+Hypervisor interrupt pending.
+Hypervisor virtual interrupt pending.
+Hypervisor trap instruction (transformed).
+Hypervisor guest external interrupt pending.
+Hypervisor Configuration
+0x60A
+0x61A
+HRW
+HRM
+henvcfg
+henvcfgh
+Hypervisor environment configuration register.
+Upper 32 bits of henvcfg, RV32 only.
+Hypervisor Protection and Translation
+0x680
+HRW
+hgatp
+Hypervisor guest address translation and protection.
+Debug/Trace Registers
+0x6A8
+HRW
+hcontext
+Hypervisor-mode context register.
+Hypervisor Counter/Timer Virtualization Registers
+0x605
+0x615
+HRW
+HRW
+htimedelta
+htimedeltah
+Delta for VS/VU-mode timer.
+Upper 32 bits of htimedelta, RV32 only.
+Hypervisor State Enable Registers
+0x60C
+0x60D
+0x60E
+0x60F
+0x61C
+0x61D
+0x61E
+0x61F
+HRW
+HRW
+HRW
+HRW
+HRW
+HRW
+HRW
+HRW
+hstateen0
+hstateen1
+hstateen2
+hstateen3
+hstateen0h
+hstateen1h
+hstateen2h
+hstateen3h
+Hypervisor State Enable 0 Register.
+Hypervisor State Enable 1 Register.
+Hypervisor State Enable 2 Register.
+Hypervisor State Enable 3 Register.
+Upper 32 bits of Hypervisor State Enable 0 Register, RV32 only.
+Upper 32 bits of Hypervisor State Enable 1 Register, RV32 only.
+Upper 32 bits of Hypervisor State Enable 2 Register, RV32 only.
+Upper 32 bits of Hypervisor State Enable 3 Register, RV32 only.
+Virtual Supervisor Registers
+0x200
+0x204
+0x205
+0x240
+0x241
+0x242
+0x243
+0x244
+0x280
+HRW
+HRW
+HRW
+HRW
+HRW
+HRW
+HRW
+HRW
+HRW
+vsstatus
+vsie
+vstvec
+vsscratch
+vsepc
+vscause
+vstval
+vsip
+vsatp
+Virtual supervisor status register.
+Virtual supervisor interrupt-enable register.
+Virtual supervisor trap handler base address.
+Virtual supervisor scratch register.
+Virtual supervisor exception program counter.
+Virtual supervisor trap cause.
+Virtual supervisor trap value.
+Virtual supervisor interrupt pending.
+Virtual supervisor address translation and protection.
+Table 7. Currently allocated RISC-V machine-level CSR addresses.
+Number
+Privilege
+Name
+Description
+Machine Information Registers
+0xF11
+0xF12
+0xF13
+0xF14
+0xF15
+MRO
+MRO
+MRO
+MRO
+MRO
+mvendorid
+marchid
+mimpid
+mhartid
+mconfigptr
+Vendor ID.
+Architecture ID.
+Implementation ID.
+Hardware thread ID.
+Pointer to configuration data structure.
+Machine Trap Setup
+0x300
+0x301
+0x302
+0x303
+0x304
+0x305
+0x306
+0x310
+0x312
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+mstatus
+misa
+medeleg
+mideleg
+mie
+mtvec
+mcounteren
+mstatush
+medelegh
+Machine status register.
+ISA and extensions
+Machine exception delegation register.
+Machine interrupt delegation register.
+Machine interrupt-enable register.
+Machine trap-handler base address.
+Machine counter enable.
+Additional machine status register, RV32 only.
+Upper 32 bits of medeleg, RV32 only.
+Machine Trap Handling
+0x340
+0x341
+0x342
+0x343
+0x344
+0x34A
+0x34B
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+mscratch
+mepc
+mcause
+mtval
+mip
+mtinst
+mtval2
+Machine scratch register.
+Machine exception program counter.
+Machine trap cause.
+Machine trap value.
+Machine interrupt pending.
+Machine trap instruction (transformed).
+Machine second trap value.
+Machine Configuration
+0x30A
+0x31A
+0x747
+0x757
+MRW
+MRW
+MRW
+MRW
+menvcfg
+menvcfgh
+mseccfg
+mseccfgh
+Machine environment configuration register.
+Upper 32 bits of menvcfg, RV32 only.
+Machine security configuration register.
+Upper 32 bits of mseccfg, RV32 only.
+Machine Memory Protection
+0x3A0
+0x3A1
+0x3A2
+0x3A3
+0x3AE
+0x3AF
+0x3B0
+0x3B1
+0x3EF
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+pmpcfg0
+pmpcfg1
+pmpcfg2
+pmpcfg3
+⋯
+pmpcfg14
+pmpcfg15
+pmpaddr0
+pmpaddr1
+⋯
+pmpaddr63
+Physical memory protection configuration.
+Physical memory protection configuration, RV32 only.
+Physical memory protection configuration.
+Physical memory protection configuration, RV32 only.
+Physical memory protection configuration.
+Physical memory protection configuration, RV32 only.
+Physical memory protection address register.
+Physical memory protection address register.
+Physical memory protection address register.
+Machine State Enable Registers
+0x30C
+0x30D
+0x30E
+0x30F
+0x31C
+0x31D
+0x31E
+0x31F
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+mstateen0
+mstateen1
+mstateen2
+mstateen3
+mstateen0h
+mstateen1h
+mstateen2h
+mstateen3h
+Machine State Enable 0 Register.
+Machine State Enable 1 Register.
+Machine State Enable 2 Register.
+Machine State Enable 3 Register.
+Upper 32 bits of Machine State Enable 0 Register, RV32 only.
+Upper 32 bits of Machine State Enable 1 Register, RV32 only.
+Upper 32 bits of Machine State Enable 2 Register, RV32 only.
+Upper 32 bits of Machine State Enable 3 Register, RV32 only.
+Table 8. Currently allocated RISC-V machine-level CSR addresses.
+Number
+Privilege
+Name
+Description
+Machine Non-Maskable Interrupt Handling
+0x740
+0x741
+0x742
+0x744
+MRW
+MRW
+MRW
+MRW
+mnscratch
+mnepc
+mncause
+mnstatus
+Resumable NMI scratch register.
+Resumable NMI program counter.
+Resumable NMI cause.
+Resumable NMI status.
+Machine Counter/Timers
+0xB00
+0xB02
+0xB03
+0xB04
+0xB1F
+0xB80
+0xB82
+0xB83
+0xB84
+0xB9F
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+mcycle
+minstret
+mhpmcounter3
+mhpmcounter4
+⋮
+mhpmcounter31
+mcycleh
+minstreth
+mhpmcounter3h
+mhpmcounter4h
+⋮
+mhpmcounter31h
+Machine cycle counter.
+Machine instructions-retired counter.
+Machine performance-monitoring counter.
+Machine performance-monitoring counter.
+Machine performance-monitoring counter.
+Upper 32 bits of mcycle, RV32 only.
+Upper 32 bits of minstret, RV32 only.
+Upper 32 bits of mhpmcounter3, RV32 only.
+Upper 32 bits of mhpmcounter4, RV32 only.
+Upper 32 bits of mhpmcounter31, RV32 only.
+Machine Counter Setup
+0x320
+0x323
+0x324
+0x33F
+0x723
+0x724
+0x73F
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+MRW
+mcountinhibit
+mhpmevent3
+mhpmevent4
+⋮
+mhpmevent31
+mhpmevent3h
+mhpmevent4h
+⋮
+mhpmevent31h
+Machine counter-inhibit register.
+Machine performance-monitoring event selector.
+Machine performance-monitoring event selector.
+Machine performance-monitoring event selector.
+Upper 32 bits of mhpmevent3, RV32 only.
+Upper 32 bits of mhpmevent4, RV32 only.
+Upper 32 bits of mhpmevent31, RV32 only.
+Debug/Trace Registers (shared with Debug Mode)
+0x7A0
+0x7A1
+0x7A2
+0x7A3
+0x7A8
+MRW
+MRW
+MRW
+MRW
+MRW
+tselect
+tdata1
+tdata2
+tdata3
+mcontext
+Debug/Trace trigger register select.
+First Debug/Trace trigger data register.
+Second Debug/Trace trigger data register.
+Third Debug/Trace trigger data register.
+Machine-mode context register.
+Debug Mode Registers
+0x7B0
+0x7B1
+0x7B2
+0x7B3
+DRW
+DRW
+DRW
+DRW
+dcsr
+dpc
+dscratch0
+dscratch1
+Debug control and status register.
+Debug program counter.
+Debug scratch register 0.
+Debug scratch register 1.
+2.3. CSR Field Specifications
+The following definitions and abbreviations are used in specifying the
+behavior of fields within the CSRs.
+2.3.1. Reserved Writes Preserve Values, Reads Ignore Values (WPRI)
+Some whole read/write fields are reserved for future use. Software
+should ignore the values read from these fields, and should preserve the
+values held in these fields when writing values to other fields of the
+same register. For forward compatibility, implementations that do not
+furnish these fields must make them read-only zero. These fields are
+labeled WPRI in the register descriptions.
+To simplify the software model, any backward-compatible future
+definition of previously reserved fields within a CSR must cope with the
+possibility that a non-atomic read/modify/write sequence is used to
+update other fields in the CSR. Alternatively, the original CSR
+definition must specify that subfields can only be updated atomically,
+which may require a two-instruction clear bit/set bit sequence in
+general that can be problematic if intermediate values are not legal.
+2.3.2. Write/Read Only Legal Values (WLRL)
+Some read/write CSR fields specify behavior for only a subset of
+possible bit encodings, with other bit encodings reserved. Software
+should not write anything other than legal values to such a field, and
+should not assume a read will return a legal value unless the last write
+was of a legal value, or the register has not been written since another
+operation (e.g., reset) set the register to a legal value. These fields
+are labeled WLRL in the register descriptions.
+Hardware implementations need only implement enough state bits to
+differentiate between the supported values, but must always return the
+complete specified bit-encoding of any supported value when read.
+[CVA6] CVA6 does not raise an
+illegal-instruction exception if an instruction attempts to write a
+non-supported value to a WLRL field. CVA6 returns the last written
+legal value on the read of a WLRL filed.
+2.3.3. Write Any Values, Reads Legal Values (WARL)
+Some read/write CSR fields are only defined for a subset of bit
+encodings, but allow any value to be written while guaranteeing to
+return a legal value whenever read. Assuming that writing the CSR has no
+other side effects, the range of supported values can be determined by
+attempting to write a desired setting then reading to see if the value
+was retained. These fields are labeled WARL in the register descriptions.
+Implementations will not raise an exception on writes of unsupported
+values to a WARL field. Implementations can return any legal value on the
+read of a WARL field when the last write was of an illegal value, but the
+legal value returned should deterministically depend on the illegal
+written value and the architectural state of the hart.
+2.4. CSR Field Modulation
+If a write to one CSR changes the set of legal values allowed for a
+field of a second CSR, then unless specified otherwise, the second CSR’s
+field immediately gets an UNSPECIFIED value from among its new legal values. This
+is true even if the field’s value before the write remains legal after
+the write; the value of the field may be changed in consequence of the
+write to the controlling CSR.
+As a special case of this rule, the value written to one CSR may control
+whether a field of a second CSR is writable (with multiple legal values)
+or is read-only. When a write to the controlling CSR causes the second
+CSR’s field to change from previously read-only to now writable, that
+field immediately gets an UNSPECIFIED but legal value, unless specified otherwise.
+Some CSR fields are, when writable, defined as aliases of other CSR
+fields. Let x be such a CSR field, and let y be the CSR field it aliases when writable. If a write to a controlling CSR causes field x to change from previously read-only to now writable, the new value of x is not UNSPECIFIED but instead immediately reflects the existing value of its alias y, as required.
+A change to the value of a CSR for this reason is not a write to the
+affected CSR and thus does not trigger any side effects specified for
+that CSR.
+2.5. Implicit Reads of CSRs
+Implementations sometimes perform implicit reads of CSRs. (For
+example, all S-mode instruction fetches implicitly read the satp CSR.)
+Unless otherwise specified, the value returned by an implicit read of a
+CSR is the same value that would have been returned by an explicit read
+of the CSR, using a CSR-access instruction in a sufficient privilege
+mode.
+2.6. CSR Width Modulation
+If the width of a CSR is changed (for example, by changing SXLEN or
+UXLEN, as described in Section 3.1.6.3), the
+values of the writable fields and bits of the new-width CSR are,
+unless specified otherwise, determined from the previous-width CSR as
+though by this algorithm:
+The value of the previous-width CSR is copied to a temporary register
+of the same width.
+For the read-only bits of the previous-width CSR, the bits at the same
+positions in the temporary register are set to zeros.
+The width of the temporary register is changed to the new width. If
+the new width W is narrower than the previous width, the
+least-significant W bits of the temporary register are
+retained and the more-significant bits are discarded. If the new width
+is wider than the previous width, the temporary register is
+zero-extended to the wider width.
+Each writable field of the new-width CSR takes the value of the bits
+at the same positions in the temporary register.
+Changing the width of a CSR is not a read or write of the CSR and thus
+does not trigger any side effects.
+2.7. Explicit Accesses to CSRs Wider than XLEN
+If a standard CSR is wider than XLEN bits, then an explicit read
+of the CSR returns the register’s least-significant XLEN bits,
+and an explicit write to the CSR modifies only the register’s
+least-significant XLEN bits, leaving the upper bits unchanged.
+Some standard CSRs, such as the counter CSRs of extension
+Zicntr, are always 64 bits, even when XLEN=32 (RV32).
+For each such 64-bit CSR (for example, counter time),
+a corresponding 32-bit high-half CSR is usually defined with
+the same name but with the letter ‘h’ appended at the end (timeh).
+The high-half CSR aliases bits 63:32 of its namesake
+64-bit CSR, thus providing a way for RV32 software
+to read and modify the otherwise-unreachable 32 bits.
+Standard high-half CSRs are accessible only when
+the base RISC-V instruction set is RV32 (XLEN=32).
+For RV64 (when XLEN=64), the addresses of all standard high-half CSRs
+are reserved, so an attempt to access a high-half CSR
+typically raises an illegal-instruction exception.
+3. Machine-Level ISA, Version 1.13
+This chapter describes the machine-level operations available in
+machine-mode (M-mode), which is the highest privilege mode in a RISC-V
+hart. M-mode is used for low-level access to a hardware platform and
+is the first mode entered at reset. M-mode can also be used to implement
+features that are too difficult or expensive to implement in hardware
+directly. The RISC-V machine-level ISA contains a common core that is
+extended depending on which other privilege levels are supported and
+other details of the hardware implementation.
+3.1. Machine-Level CSRs
+3.1.1. Machine ISA (misa) Register
+The misa CSR is a WARL read-write register reporting the ISA supported by the hart.
+Figure 2. Machine ISA register (misa)
+[CVA6] The MXL (Machine XLEN) field encodes the native base integer ISA width as
+shown in Table 9. The MXL field is read-only.
+In CVA6, the misa register returns the MXL field which indicates the
+effective XLEN in M-mode, a constant termed MXLEN.
+Table 9. Encoding of MXL field in misa
+MXL
+XLEN
+1
+2
+3
+32
+64
+128
+The misa CSR is MXLEN bits wide.
+[CVA6] The Extensions field encodes the presence of the standard extensions,
+with a single bit per letter of the alphabet (bit 0 encodes presence of
+extension "A" , bit 1 encodes presence of extension "B", through to
+bit 25 which encodes "Z"). The "I" bit will be set for RV32I, RV64I,
+and RV128I base ISAs, and the "E" bit will be set for RV32E and RV64E.
+In CVA6, the Extensions field is not writeable, the presence of standard
+extensions corresponds to the hardware reset value and cannot be modified
+by writing in the register.
+Table 10. Encoding of Extensions field in misa.
+All bits that are reserved for future use must return zero when read.
+Bit
+Character
+Description
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+Atomic extension
+B extension
+Compressed extension
+Double-precision floating-point extension
+RV32E/64E base ISA
+Single-precision floating-point extension
+Reserved
+Hypervisor extension
+RV32I/64I/128I base ISA
+Reserved
+Reserved
+Reserved
+Integer Multiply/Divide extension
+Tentatively reserved for User-Level Interrupts extension
+Reserved
+Tentatively reserved for Packed-SIMD extension
+Quad-precision floating-point extension
+Reserved
+Supervisor mode implemented
+Reserved
+User mode implemented
+Vector extension
+Reserved
+Non-standard extensions present
+Reserved
+Reserved
+The "U" and "S" bits will be set if there is support for user and
+supervisor modes respectively.
+The "X" bit will be set if there are any non-standard extensions.
+When the "B" bit is 1, the implementation supports the instructions provided by the
+Zba, Zbb, and Zbs extensions. When the "B" bit is 0, it indicates that the
+implementation may not support one or more of the Zba, Zbb, or Zbs extensions.
+When the "M" bit is 1, the implementation supports all multiply and
+division instructions defined by the M extension. When the "M" bit
+is 0, it indicates that the implementation may not support those
+instructions. However if the Zmmul extension is supported then
+the multiply instructions it specifies are supported irrespective
+of the value of the "M" bit.
+3.1.2. Machine Vendor ID (mvendorid) Register
+[CVA6] The mvendorid CSR is a 32-bit read-only register providing the JEDEC
+manufacturer ID of the provider of the core.
+In CVA6, mvendorid is implemented and returns the commercial implementation
+id supplied to OpenHW Group organization, 0x602.
+Figure 3. Vendor ID register (mvendorid)
+3.1.3. Machine Architecture ID (marchid) Register
+[CVA6] The marchid CSR is an MXLEN-bit read-only register encoding the base
+microarchitecture of the hart.
+In CVA6, marchid is implemented and returns the base microarchitecture
+of the hart supplied to CVA6, 0x3.
+Figure 4. Machine Architecture ID (marchid) register
+3.1.4. Machine Implementation ID (mimpid) Register
+The mimpid CSR provides a unique encoding of the version of the
+processor implementation.
+[CVA6] This register is readable,
+but a value of 0 is returned to indicate that the
+field is not implemented.
+Figure 5. Machine Implementation ID (mimpid) register
+3.1.5. Hart ID (mhartid) Register
+[CV32A65X] The mhartid CSR is an MXLEN-bit read-only register containing the
+integer ID of the hardware thread running the code. This register is
+readable. In CV32A65X-based system, only one hart is implemented.
+Hart ID is zero.
+Figure 6. Hart ID (mhartid) register
+3.1.6. Machine Status (mstatus and mstatush) Registers
+[CV32A65X] The mstatus register is an MXLEN-bit read/write register formatted as
+shown in Figure 7. The mstatus register
+keeps track of and controls the hart’s current operating state.
+Figure 7. Machine-mode status (mstatus) register for RV32
+[CV32A65X] mstatush is a 32-bit read/write register formatted as
+shown in Figure 8.
+Figure 8. Additional machine-mode status (mstatush) register
+for RV32.
+3.1.6.1. Privilege and Global Interrupt-Enable Stack in mstatus register
+[CV32A65X] As only M-mode is implemented, the instructions and
+registers related to less privilege modes are not implemented.
+Global interrupt-enable bit, MIE, is provided for M-mode.
+This bit is primarily used to guarantee atomicity with respect to
+interrupt handlers in the current privilege mode.
+[CV32A65X] When a hart is executing in privilege mode M, interrupts are globally
+enabled when MIE=1 and globally disabled when MIE=0.
+[CV32A65X] An MRET instruction is used to return from a trap in M-mode. When
+executing an MRET instruction, MIE is set to MPIE; MPIE is set to 1;
+and MPP keeps M value.
+[CV32A65X] Privilege mode S and U are not implemented, MPP field is
+WARL field that can hold only privilege mode M, 11 read only, and SPP
+and UPP are read-only 0.
+3.1.6.2. Double Trap Control in mstatus Register
+[CV32A65X] As Double Trap Control (Smdbltrp extension) is not implemented,
+MDT field is read-only 0.
+3.1.6.3. Base ISA Control in mstatus Register
+[CV32A65X] The SXL and UXL fields do not exist.
+3.1.6.4. Memory Privilege in mstatus Register
+[CV32A65X] As U-Mode is not implemented, the MPRV (Modify PRiVilege) bit is read-only 0.
+Loads and stores behave as normal, using the translation and protection
+mechanisms of the current privilege mode.
+[CV32A65X] As S-mode is not implemented, MXR and SUM are read-only 0.
+3.1.6.5. Endianness Control in mstatus and mstatush Registers
+The MBE, SBE, and UBE bits in mstatus and mstatush are WARL fields that
+control the endianness of memory accesses other than instruction
+fetches. Instruction fetches are always little-endian.
+MBE controls whether non-instruction-fetch memory accesses made from
+M-mode (assuming mstatus.MPRV=0) are little-endian (MBE=0) or
+big-endian (MBE=1).
+It is always little-endian in M-Mode, the MBE is read-only zero.
+S-Mode is not implemented, SBE is read-only 0.
+U-Mode is not implemented, UBE is read-only 0.
+3.1.6.6. Virtualization Support in mstatus Register
+The TVM (Trap Virtual Memory) bit is a WARL field that supports intercepting
+supervisor virtual-memory management operations.
+S-Mode is not implemented, TVM is read-only 0.
+The TW (Timeout Wait) bit is a WARL field that supports intercepting the WFI
+instruction (see Section 3.3.3).
+TW is read-only 0 because there are no modes less privileged
+than M.
+The TSR (Trap SRET) bit is a WARL field that supports intercepting the
+supervisor exception return instruction, SRET.
+As it does not implement S-Mode, TSR is read-only 0.
+3.1.6.7. Extension Context Status in mstatus Register
+Supporting substantial extensions is one of the primary goals of RISC-V,
+and hence we define a standard interface to allow unchanged
+privileged-mode code, particularly a supervisor-level OS, to support
+arbitrary user-mode state extensions.
+[CV32A65X] The FS[1:0] and VS[1:0] WARL fields and the XS[1:0] read-only field are used
+to reduce the cost of context save and restore by setting and tracking
+the current state of the floating-point unit and any other user-mode
+extensions respectively.
+As neither the F extension nor S-mode is implemented, then
+FS is read-only zero.
+As neither the v registers nor S-mode is implemented, then
+VS is read-only zero.
+As no additional user extensions require new state, the
+XS field is read-only zero.
+[CV32A65X] The SD bit is a read-only bit that summarizes whether either the FS, VS,
+or XS fields signal the presence of some dirty state that will require
+saving extended user context to memory.
+[CV32A65X] As FS, XS, and VS are all read-only zero, SD is also always
+zero.
+[CV32A65X] When an extension’s status is set to Off, any instruction that attempts
+to read or write the corresponding state will cause an
+illegal-instruction exception.
+3.1.6.8. Previous Expected Landing Pad (ELP) State in mstatus Register
+[CV32A65X] As the Zicfilp extension is not supported,
+the SPELP and MPELP fields are read-only zero.
+3.1.7. Machine Trap-Vector Base-Address (mtvec) Register
+The mtvec register is an MXLEN-bit WARL read/write register that holds
+trap vector configuration, consisting of a vector base address (BASE)
+and a vector mode (MODE).
+Figure 9. Encoding of mtvec MODE field.
+[CV32A65X] The mtvec register is writable. The value in the BASE field must
+always be aligned on a 4-byte boundary. mtvec is always accessed in
+Mode=Direct.
+Table 11. Encoding of mtvec MODE field.
+Value
+Name
+Description
+0
+1
+≥2
+Direct
+Vectored
+---
+All traps set pc to BASE.
+Asynchronous interrupts set pc to BASE+4×cause.
+Reserved
+The encoding of the MODE field is shown in
+Table 11. When MODE=Direct, all traps into
+machine mode cause the pc to be set to the address in the BASE field.
+When MODE=Vectored, all synchronous exceptions into machine mode cause
+the pc to be set to the address in the BASE field, whereas interrupts
+cause the pc to be set to the address in the BASE field plus four
+times the interrupt cause number. For example, a machine-mode timer
+interrupt (see Table 12) causes the pc
+to be set to BASE+0x1c.
+An implementation may have different alignment constraints for different
+modes. In particular, MODE=Vectored may have stricter alignment
+constraints than MODE=Direct.
+3.1.8. Machine Trap Delegation (medeleg and mideleg) Registers
+[CV32A65X] All traps at any privilege level are handled in machine
+mode.
+[CV32A65X] As S-mode is not implemented, the medeleg and mideleg registers do not exist.
+The SPP, SPIE, SIE fields of mstatus are read-only zero.
+3.1.9. Machine Interrupt (mip and mie) Registers
+The mip register is an MXLEN-bit read/write register containing
+information on pending interrupts, while mie is the corresponding
+MXLEN-bit read/write register containing interrupt enable bits.
+Interrupt cause number i (as reported in CSR mcause,
+Section 3.1.15) corresponds with bit i in both mip and
+mie. Bits 15:0 are allocated to standard interrupt causes only, while
+bits 16 and above are designated for platform use.
+Figure 10. Machine Interrupt-Pending (mip) register.
+Figure 11. Machine Interrupt-Enable (mie) register
+[CV32A65X] As only M-Mode is implemented, an interrupt i will trap
+to M-mode (causing the privilege mode to change to M-mode) if all of the
+following are true: (a) the MIE bit in the mstatus register is set;
+(b) bit i is set in both mip and mie.
+[CV32A65X] These conditions for an interrupt trap to occur must be evaluated in a
+bounded amount of time from when an interrupt becomes, or ceases to be,
+pending in mip, and must also be evaluated immediately following the
+execution of an MRET instruction or an explicit write to a CSR on
+which these interrupt trap conditions expressly depend (including mip,
+mie, mstatus, and mideleg).
+[CV32A65X] Each individual bit in register mip is read-only. If interrupt i
+can become pending but bit i in mip is read-only, the implementation
+must provide some other mechanism for clearing the pending interrupt.
+[CV32A65X] A bit in mie must be writable if the corresponding interrupt can ever
+become pending. Bits of mie that are not writable must be read-only
+zero.
+[CV32A65X] The standard portions (bits 15:0) of registers mip and mie are
+formatted as shown in Figure 12 and Figure 13 respectively.
+Figure 12. Standard portion (bits 15:0) of mip.
+Figure 13. Standard portion (bits 15:0) of mie.
+Bits mip.MEIP and mie.MEIE are the interrupt-pending and
+interrupt-enable bits for machine-level external interrupts. MEIP is
+read-only in mip, and is set and cleared by a platform-specific
+interrupt controller.
+Bits mip.MTIP and mie.MTIE are the interrupt-pending and
+interrupt-enable bits for machine timer interrupts. MTIP is read-only in
+mip, and is cleared by writing to the memory-mapped machine-mode timer
+compare register.
+As the system has only one hart then mip.MSIP and mie.MSIE are
+read-only zeros.
+As supervisor mode is not implemented, bits SEIP, STIP, and SSIP of
+mip and SEIE, STIE, and SSIE of mie are read-only zeros.
+As the Sscofpmf extension is not implemented, mip.LCOFIP and mie.LCOFIE are read-only zeros.
+Multiple simultaneous interrupts destined for M-mode are handled in the
+following decreasing priority order: MEI, MSI, MTI.
+As only S-Mode is not implemented, the corresponding bits in sip and sie are read-only zero.
+3.1.10. Hardware Performance Monitor
+M-mode includes a basic hardware performance-monitoring facility. The
+mcycle CSR counts the number of clock cycles executed by the processor
+core on which the hart is running. The minstret CSR counts the number
+of instructions the hart has retired. The mcycle and minstret
+registers have 64-bit precision on all RV32 and RV64 harts.
+The counter registers have an arbitrary value after the hart is reset,
+and can be written with a given value. Any CSR write takes effect after
+the writing instruction has otherwise completed. The mcycle CSR may be
+shared between harts on the same core, in which case writes to mcycle
+will be visible to those harts. The platform should provide a mechanism
+to indicate which harts share an mcycle CSR.
+[CV32A65X] The hardware performance monitor includes 29 additional 64-bit event
+counters, mhpmcounter3-mhpmcounter31. The event selector CSRs,
+mhpmevent3-mhpmevent31, are 64-bit WARL registers that control which
+event causes the corresponding counter to increment. The meaning of
+these events is defined by the platform, but event 0 is defined to mean
+"no event." In CV32A65X all counters are implemented, but
+both the counter and its corresponding event
+selector are read-only 0.
+Figure 14. Hardware performance monitor counters.
+The mhpmcounters are WARL registers that support up to 64 bits of
+precision on RV32 and RV64.
+When XLEN=32, reads of the mcycle, minstret, mhpmcountern, and mhpmeventn
+CSRs return bits 31-0 of the corresponding register, and writes change
+only bits 31-0; reads of the mcycleh, minstreth, and mhpmcounternh
+CSRs return bits 63-32 of the corresponding register, and writes change
+only bits 63-32.
+As the Sscofpmf extension is not implemented, the mhpmeventnh CSRs
+are not provided.
+3.1.11. Machine Counter-Enable (mcounteren) Register
+The counter-enable mcounteren register is a 32-bit register that
+controls the availability of the hardware performance-monitoring
+counters to the next-lower privileged mode.
+[CV32A65X] As U-mode is not implemented, the mcounteren register does not exist.
+3.1.12. Machine Counter-Inhibit (mcountinhibit) Register
+Figure 15. Counter-inhibit mcountinhibit register
+[CV32A65X] The mcountinhibit register is not implemented, the implementation
+behaves as though the register were set to zero.
+3.1.13. Machine Scratch (mscratch) Register
+The mscratch register is an MXLEN-bit read/write register dedicated
+for use by machine mode. Typically, it is used to hold a pointer to a
+machine-mode hart-local context space and swapped with a user register
+upon entry to an M-mode trap handler.
+Figure 16. Machine-mode scratch register.
+3.1.14. Machine Exception Program Counter (mepc) Register
+mepc is an MXLEN-bit read/write register formatted as shown in
+Figure 17. The low bit of mepc (mepc[0]) is
+always zero.
+mepc is a WARL register that must be able to hold all valid virtual
+addresses. It need not be capable of holding all possible invalid
+addresses. Prior to writing mepc, implementations may convert an
+invalid address into some other invalid address that mepc is capable
+of holding.
+When a trap is taken into M-mode, mepc is written with the virtual
+address of the instruction that was interrupted or that encountered the
+exception. Otherwise, mepc is never written by the implementation,
+though it may be explicitly written by software.
+Figure 17. Machine exception program counter register.
+3.1.15. Machine Cause (mcause) Register
+The mcause register is an MXLEN-bit read-write register formatted as
+shown in Figure 18. When a trap is taken into
+M-mode, mcause is written with a code indicating the event that
+caused the trap. Otherwise, mcause is never written by the
+implementation, though it may be explicitly written by software.
+The Interrupt bit in the mcause register is set if the trap was caused
+by an interrupt. The Exception Code field contains a code identifying
+the last exception or interrupt. Table 12 lists
+the possible machine-level exception codes. The Exception Code is a
+WLRL field, so is only guaranteed to hold supported exception codes.
+Figure 18. Machine Cause (mcause) register.
+[CV32A65X] Note that load and load-reserved instructions generate load exceptions,
+whereas store and store-conditional instructions generate
+store exceptions.
+[CVA6] If an instruction may raise multiple synchronous exceptions, the
+decreasing priority order of
+Table 13 indicates which
+exception is taken and reported in mcause.
+There is no custom synchronous exceptions.
+Table 12. Machine cause (mcause) register values after trap.
+Interrupt
+Exception Code
+Description
+1
+1
+1
+1
+0
+1
+2
+3
+Reserved
+Supervisor software interrupt
+Reserved
+Machine software interrupt
+1
+1
+1
+1
+4
+5
+6
+7
+Reserved
+Supervisor timer interrupt
+Reserved
+Machine timer interrupt
+1
+1
+1
+1
+8
+9
+10
+11
+Reserved
+Supervisor external interrupt
+Reserved
+Machine external interrupt
+1
+1
+1
+1
+12
+13
+14-15
+≥16
+Reserved
+Counter-overflow interrupt
+Reserved
+Designated for platform use
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20-23
+24-31
+32-47
+48-63
+≥64
+Instruction address misaligned
+Instruction access fault
+Illegal instruction
+Breakpoint
+Load address misaligned
+Load access fault
+Store/AMO address misaligned
+Store/AMO access fault
+Environment call from U-mode
+Environment call from S-mode
+Reserved
+Environment call from M-mode
+Instruction page fault
+Load page fault
+Reserved
+Store/AMO page fault
+Double trap
+Reserved
+Software check
+Hardware error
+Reserved
+Designated for custom use
+Reserved
+Designated for custom use
+Reserved
+Table 13. Synchronous exception priority in decreasing priority order.
+Priority
+Exc.Code
+Description
+Highest
+3
+Instruction address breakpoint
+12, 1
+During instruction address translation:
+First encountered page fault or access fault
+1
+With physical address for instruction:
+Instruction access fault
+2
+0
+8,9,11
+3
+3
+Illegal instruction
+Instruction address misaligned
+Environment call
+Environment break
+Load/store/AMO address breakpoint
+4,6
+Optionally:
+Load/store/AMO address misaligned
+13, 15, 5, 7
+During address translation for an explicit memory access:
+First encountered page fault or access fault
+5,7
+With physical address for an explicit memory access:
+Load/store/AMO access fault
+Lowest
+4,6
+If not higher priority:
+Load/store/AMO address misaligned
+[CV32A65X] Load/store address-misaligned exceptions have
+lower priority than load/store access-fault
+exceptions.
+3.1.16. Machine Trap Value (mtval) Register
+[CV32A65X] The mtval register is an MXLEN-bit read-write register
+holding constant value zero.
+3.1.17. Machine Configuration Pointer (mconfigptr) Register
+The mconfigptr register is an MXLEN-bit read-only CSR that holds the physical
+address of a configuration data structure.
+[CV32A65X] The mconfigptr register is implemented, but it is read-only 0 to indicate the
+configuration data structure does not exist.
+3.1.18. Machine Environment Configuration (menvcfg) Register
+The menvcfg CSR is a 64-bit read/write register that controls
+certain characteristics of the execution environment for modes less
+privileged than M.
+[CV32A65X] As XLEN=32, menvcfgh is a 32-bit read/write register
+that aliases bits 63:32 of menvcfg.
+[CV32A65X] As U-mode is not supported, then registers menvcfg and menvcfgh do
+not exist.
+3.1.19. Machine Security Configuration (mseccfg) Register
+mseccfg is an optional 64-bit read/write register,
+that controls security features.
+As XLEN=32, mseccfgh is a 32-bit read/write register
+that aliases bits 63:32 of mseccfg.
+[CV32A65X] As Zkr, Smepmp, and Smmpm extensions are not implemented,
+mseccfg and mseccfgh do not exist.
+3.2. Machine-Level Memory-Mapped Registers
+3.2.1. Machine Timer (mtime and mtimecmp) Registers
+Platforms provide a real-time counter, exposed as a memory-mapped
+machine-mode read-write register, mtime. mtime must increment at
+constant frequency, and the platform must provide a mechanism for
+determining the period of an mtime tick. The mtime register will
+wrap around if the count overflows.
+The mtime register has a 64-bit precision on all RV32 and RV64
+systems. Platforms provide a 64-bit memory-mapped machine-mode timer
+compare register (mtimecmp). A machine timer interrupt becomes pending
+whenever mtime contains a value greater than or equal to mtimecmp,
+treating the values as unsigned integers. The interrupt remains posted
+until mtimecmp becomes greater than mtime (typically as a result of
+writing mtimecmp). The interrupt will only be taken if interrupts are
+enabled and the MTIE bit is set in the mie register.
+Figure 19. Machine time register (memory-mapped control register).
+Figure 20. Machine time compare register (memory-mapped control register).
+If the result of the comparison between mtime and mtimecmp changes, it is
+guaranteed to be reflected in MTIP eventually, but not necessarily
+immediately.
+In RV32, memory-mapped writes to mtimecmp modify only one 32-bit part
+of the register. The following code sequence sets a 64-bit mtimecmp
+value without spuriously generating a timer interrupt due to the
+intermediate value of the comparand:
+Sample code for setting the 64-bit time comparand in RV32 assuming a little-endian memory system and that the registers live in a strongly ordered I/O region.
+Storing -1 to the low-order bits of mtimecmp prevents mtimecmp from temporarily becoming smaller than the lesser of the old and new values.
+# New comparand is in a1:a0.
+li t0, -1
+la t1, mtimecmp
+sw t0, 0(t1)
+# No smaller than old value.
+sw a1, 4(t1)
+# No smaller than new value.
+sw a0, 0(t1)
+# New value.
+3.3. Machine-Mode Privileged Instructions
+3.3.1. Environment Call and Breakpoint
+[CV32A65X] The ECALL instruction is used to make a request to the supporting
+execution environment. When executed M-mode, it
+generates an environment-call-from-M-mode
+exception, and performs no other operation.
+The EBREAK instruction is used by debuggers to cause control to be
+transferred back to a debugging environment.
+Unless overridden by an external debug environment, EBREAK raises
+a breakpoint exception and performs no other operation.
+ECALL and EBREAK cause the receiving privilege mode’s epc register to
+be set to the address of the ECALL or EBREAK instruction itself, not
+the address of the following instruction. As ECALL and EBREAK cause
+synchronous exceptions, they are not considered to retire, and should
+not increment the minstret CSR.
+3.3.2. Trap-Return Instructions
+Instructions to return from trap are encoded under the PRIV minor
+opcode.
+[CV32A65X] To return after handling a trap, there are separate trap return
+instructions per privilege level, MRET and SRET. MRET is always
+provided. In CV32A65X, SRET is not provided as supervisor mode is not supported, and
+raises an illegal-instruction exception. In addition to manipulating
+the privilege stack as described in Section 3.1.6.1,
+MRET sets the pc to the value stored in the mepc register.
+3.3.3. Wait for Interrupt
+[CV32A65X] The Wait for Interrupt instruction (WFI) informs the
+implementation that the current hart can be stalled until an interrupt
+might need servicing. This instruction
+cannot raise an illegal-instruction exception because TW=0 in mstatus, as
+described in Section 3.1.6.6.
+If an enabled interrupt is present or later becomes present while the
+hart is stalled, the interrupt trap will be taken on the following
+instruction, i.e., execution resumes in the trap handler and mepc =
+pc + 4.
+Implementations are permitted to resume execution for any reason, even if an
+enabled interrupt has not become pending.
+Hence, a legal implementation is to
+simply implement the WFI instruction as a NOP.
+[CV32A65X] The WFI instruction can also be executed when interrupts are disabled.
+The operation of WFI must be unaffected by the global interrupt bits in
+mstatus (MIE), but should
+honor the individual interrupt enables (e.g, MTIE) (i.e.,
+implementations should avoid resuming the hart if the interrupt is
+pending but not individually enabled). WFI is also required to resume
+execution for locally enabled interrupts pending,
+regardless of the global interrupt enable.
+If the event that causes the hart to resume execution does not cause an
+interrupt to be taken, execution will resume at pc + 4, and software
+must determine what action to take, including looping back to repeat the
+WFI if there was no actionable event.
+3.3.4. Custom SYSTEM Instructions
+The subspace of the SYSTEM major opcode shown in Figure 21 is designated for custom use. It is recommended that these instructions use bits 29:28 to designate the
+minimum required privilege mode, as do other SYSTEM instructions.
+Figure 21. SYSTEM instruction encodings designated for custom use.
+3.4. Reset
+[CV32A65X] Privilege mode is always M.
+As little-endian memory accesses are supported,
+the mstatus/mstatush field MBE is reset to 0.
+Upon reset, the mstatus fields MIE and MPRV are reset to 0.
+The misa register is set as described in Section 3.1.1.
+The pc is set to 0x80000000 reset vector.
+The mcause register is set to a value indicating the cause of the reset.
+Writable PMP registers’ A and L fields are set to 0.
+No WARL field contains an illegal value. All other hart state is UNSPECIFIED.
+As CV32A65X does not distinguished different reset conditions,
+The mcause returns 0 after reset.
+3.5. Non-Maskable Interrupts
+Non-maskable interrupts (NMIs) are only used for hardware error
+conditions, and cause an immediate jump to an implementation-defined NMI
+vector running in M-mode regardless of the state of a hart’s interrupt
+enable bits. The mepc register is written with the virtual address of
+the instruction that was interrupted, and mcause is set to a value
+indicating the source of the NMI. The NMI can thus overwrite state in an
+active machine-mode interrupt handler.
+[CV32A65X] Upon NMI, the high Interrupt bit of mcause is set to indicate
+that this was an interrupt. As CV32A65X does not distinguish sources
+of NMIs, the mcause register returns 0 in the Exception Code.
+Unlike resets, NMIs do not reset processor state, enabling diagnosis,
+reporting, and possible containment of the hardware error.
+3.6. Physical Memory Attributes
+The physical memory map for a complete system includes various address
+ranges, some corresponding to memory regions and some to memory-mapped
+control registers, portions of which might not be accessible.
+Some
+memory regions might not support reads, writes, or execution; some might
+not support subword or subblock accesses; some might not support atomic
+operations; and some might not support cache coherence or might have
+different memory models. Similarly, memory-mapped control registers vary
+in their supported access widths, support for atomic operations, and
+whether read and write accesses have associated side effects. In RISC-V
+systems, these properties and capabilities of each region of the
+machine’s physical address space are termed physical memory attributes
+(PMAs). This section describes RISC-V PMA terminology and how RISC-V
+systems implement and check PMAs.
+[CV32A65X] PMA is not implemented by CV32A65X but information
+is sent outside the processor to be able to check PMA outside processor.
+These checkers are based on the following information contained in the
+memory accesses requested by the processor.
+- The information which indicates whether memory access is read, write or
+execution,
+- The access length information to check the subword and subblock access rights.
+3.6.1. Main Memory versus I/O Regions
+The most important characterization of a given memory address range is
+whether it holds regular main memory or I/O devices.
+Regular main memory is required to have a number of properties,
+specified below, whereas I/O devices can have a much broader range of
+attributes. Memory regions that do not fit into regular main memory, for
+example, device scratchpad RAMs, are categorized as I/O regions.
+What previous versions of this specification termed vacant regions are
+no longer a distinct category; they are now described as I/O regions that are
+not accessible (i.e. lacking read, write, and execute permissions).
+Main memory regions that are not accessible are also allowed.
+3.6.2. Supported Access Type PMAs
+Access types specify which access widths, from 8-bit byte to long
+multi-word burst, are supported, and also whether misaligned accesses
+are supported for each access width.
+Main memory regions always support read and write of all access widths
+required by the attached devices, and can specify whether instruction
+fetch is supported.
+I/O regions can specify which combinations of read, write, or execute
+accesses to which data widths are supported.
+For systems with page-based virtual memory, I/O and memory regions can
+specify which combinations of hardware page-table reads and hardware
+page-table writes are supported.
+3.6.3. Atomicity PMAs
+[CV32A65X] Atomic extension is not implemented.
+3.6.3.1. AMO PMA
+[CV32A65X] Atomic extension is not implemented.
+3.6.3.2. Reservability PMA
+[CV32A65X] Atomic extension is not implemented.
+3.6.4. Misaligned Atomicity Granule PMA
+[CV32A65X] Atomic extension is not implemented.
+3.6.5. Memory-Ordering PMAs
+[CV32A65X] As CV32A65X is dedicated to a one hart
+platform without any DMA, no memory-ordering mechanism is implemented.
+3.6.6. Coherence and Cacheability PMAs
+[CV32A65X] Caches are not implemented. No cache-coherence scheme
+is implemented.
+3.6.7. Idempotency PMAs
+[CV32A65X] All memory accesses are idempotent.
+3.7. Physical Memory Protection
+To support secure processing and contain faults, it is desirable to
+limit the physical addresses accessible by software running on a hart.
+An optional physical memory protection (PMP) unit provides per-hart
+machine-mode control registers to allow physical memory access
+privileges (read, write, execute) to be specified for each physical
+memory region. The PMP values are checked in parallel with the PMA
+checks described in Section 3.6.
+[CV32A65X] The granularity of PMP access control settings are as small as four bytes.
+[CV32A65X] PMP checks applies to M-mode accesses, in which case the PMP registers
+themselves are locked, so that even M-mode software cannot change them
+until the hart is reset. In effect, PMP can revoke permissions from
+M-mode, which by default has full permissions.
+PMP violations are always trapped precisely at the processor.
+3.7.1. Physical Memory Protection CSRs
+PMP entries are described by an 8-bit configuration register and one
+MXLEN-bit address register. Some PMP settings additionally use the
+address register associated with the preceding PMP entry. 64 PMP
+entries are implemented. The lowest-numbered PMP entries must be
+implemented first. All PMP CSR fields are WARL and 56 upper entries are
+read-only zero. PMP CSRs are only accessible to M-mode.
+[CV32A65X] The PMP configuration registers are densely packed into CSRs to minimize
+context-switch time. For CV32A65X, sixteen CSRs, pmpcfg0–pmpcfg15, hold
+the configurations pmp0cfg–pmp63cfg for the 64 PMP entries, as shown
+in Figure 22.
+The 14 upper PMP configuration CSRs, pmpcfg2-pmpcfg15, are read-only zero.
+Figure 22. RV32 PMP configuration CSR layout.
+[CV32A65X] The PMP address registers are CSRs named pmpaddr0-pmpaddr63. Each
+PMP address register encodes bits 33-2 of a 34-bit physical address for
+RV32, as shown in Figure 23. Not all
+physical address bits may be implemented, and so the pmpaddr registers
+are WARL.
+The 56 upper PMP address CSRs, pmpaddr8-pmpaddr63, are read-only zero.
+Figure 23. PMP address register format, RV32.
+Figure 24 shows the layout of a PMP configuration
+register. The R, W, and X bits, when set, indicate that the PMP entry
+permits read, write, and instruction execution, respectively. When one
+of these bits is clear, the corresponding access type is denied. The R,
+W, and X fields form a collective WARL field for which the combinations with R=0 and W=1 are reserved. The remaining two fields, A and L, are described in the following sections.
+Figure 24. PMP configuration register format.
+Attempting to fetch an instruction from a PMP region that does not have
+execute permissions raises an instruction access-fault exception.
+Attempting to execute a load or load-reserved instruction which accesses
+a physical address within a PMP region without read permissions raises a
+load access-fault exception. Attempting to execute a store,
+store-conditional, or AMO instruction which accesses a physical address
+within a PMP region without write permissions raises a store
+access-fault exception.
+3.7.1.1. Address Matching
+The A field in a PMP entry’s configuration register encodes the
+address-matching mode of the associated PMP address register. The
+encoding of this field is shown in Table 14.
+When A=0, this PMP entry is disabled and matches no addresses. Two other
+address-matching modes are supported: naturally aligned power-of-2
+regions (NAPOT), including the special case of naturally aligned
+four-byte regions (NA4); and the top boundary of an arbitrary range
+(TOR). These modes support four-byte granularity.
+[CV32A65X] Two address-matching modes are supported: disabled and TOR.
+Table 14. Encoding of A field in PMP configuration registers.
+A
+Name
+Description
+0
+1
+2
+3
+OFF
+TOR
+NA4
+NAPOT
+Null region (disabled)
+Top of range
+Not supported
+Not supported
+If TOR is selected, the associated address register forms the top of the
+address range, and the preceding PMP address register forms the bottom
+of the address range. If PMP entry i's A field is set to
+TOR, the entry matches any address y such that pmpaddri-1≤y<pmpaddri (irrespective of the value of pmpcfgi-1). If PMP entry 0’s A field is set to TOR, zero is used for the lower bound, and so it matches
+any address y<pmpaddr0.
+[CV32A65X] The PMP grain is 8 bytes ( with G = 1)
+and must be the same across all PMP regions.
+As .A[1] is always clear, i.e. the mode is OFF or TOR,
+then bit [0] is read-only zero.
+If the current XLEN is greater than MXLEN, the PMP address registers are
+zero-extended from MXLEN to XLEN bits for the purposes of address
+matching.
+3.7.1.2. Locking and Privilege Mode
+The L bit indicates that the PMP entry is locked, i.e., writes to the
+configuration register and associated address registers are ignored.
+Locked PMP entries remain locked until the hart is reset. If PMP entry
+i is locked, writes to pmpicfg and pmpaddri are ignored. Additionally, if PMP
+entry i is locked and pmpicfg.A is set
+to TOR, writes to pmpaddri-1 are ignored.
+[CV32A65X] In addition to locking the PMP entry, the L bit indicates whether the
+R/W/X permissions are enforced on M-mode accesses. When the L
+bit is clear, any M-mode access matching the PMP entry will succeed.
+3.7.1.3. Priority and Matching Logic
+PMP entries are statically prioritized. The lowest-numbered PMP entry
+that matches any byte of an access determines whether that access
+succeeds or fails. The matching PMP entry must match all bytes of an
+access, or the access fails, irrespective of the L, R, W, and X bits.
+For example, if a PMP entry is configured to match the four-byte range
+0xC–0xF, then an 8-byte access to the range 0x8–0xF will fail,
+assuming that PMP entry is the highest-priority entry that matches those
+addresses.
+If a PMP entry matches all bytes of an access, then the L, R, W, and X
+bits determine whether the access succeeds or fails. If the L bit is
+clear and the privilege mode of the access is M, the access succeeds.
+[CV32A65X] If no PMP entry matches an M-mode access, the access succeeds.
+On some implementations, misaligned loads, stores, and instruction
+fetches may also be decomposed into multiple accesses, some of which may
+succeed before an access-fault exception occurs. In particular, a
+portion of a misaligned store that passes the PMP check may become
+visible, even if another portion fails the PMP check. The same behavior
+may manifest for stores wider than XLEN bits (e.g., the FSD instruction
+in RV32D), even when the store address is naturally aligned.
+3.7.2. Physical Memory Protection and Paging
+[CV32A65X] As page-based virtual memory systems is not implemented, memory accesses
+check the PMP settings synchronously.
+4. "Smstateen/Ssstateen" Extensions, Version 1.0
+CV32A65X: This extension is not supported.
+5. "Smcsrind/Sscsrind" Indirect CSR Access, Version 1.0
+CV32A65X: This extension is not supported.
+6. "Smepmp" Extension for PMP Enhancements for memory access and execution prevention in Machine mode, Version 1.0
+CV32A65X: This extension is not supported.
+7. "Smcntrpmf" Cycle and Instret Privilege Mode Filtering, Version 1.0
+CV32A65X: This extension is not supported.
+8. "Smrnmi" Extension for Resumable Non-Maskable Interrupts, Version 1.0
+CV32A65X: This extension is not supported.
+9. "Smcdeleg" Counter Delegation Extension, Version 1.0
+CV32A65X: This extension is not supported.
+10. "Smdbltrp" Double Trap Extension, Version 1.0
+CV32A65X: This extension is not supported.
+11. "Smctr" Control Transfer Records Extension, Version 1.0
+CV32A65X: This extension is not supported.
+12. Supervisor-Level ISA, Version 1.13
+CV32A65X: This extension is not supported.
+13. "Sstc" Extension for Supervisor-mode Timer Interrupts, Version 1.0
+CV32A65X: This extension is not supported.
+14. "Sscofpmf" Extension for Count Overflow and Mode-Based Filtering, Version 1.0
+CV32A65X: This extension is not supported.
+15. "H" Extension for Hypervisor Support, Version 1.0
+CV32A65X: This extension is not supported.
+16. Control-flow Integrity (CFI)
+CV32A65X: The Zicfilp extension is not supported.
+17. "Ssdbltrp" Double Trap Extension, Version 1.0
+CV32A65X: This extension is not supported.
+18. Pointer Masking Extensions, Version 1.0.0
+CV32A65X: These extensions are not supported.
+19. RISC-V Privileged Instruction Set Listings
+This chapter presents instruction-set listings for all instructions
+defined in the RISC-V Privileged Architecture.
+The instruction-set listings for unprivileged instructions, including
+the ECALL and EBREAK instructions, are provided in Volume I of this
+manual.
+Figure 25. RISC-V Privileged Instructions
+20. History
+20.1. Research Funding at UC Berkeley
+Development of the RISC-V architecture and implementations has been
+partially funded by the following sponsors.
+Par Lab: Research supported by Microsoft (Award #024263) and Intel
+(Award #024894) funding and by matching funding by U.C. Discovery (Award
+#DIG07-10227). Additional support came from Par Lab affiliates Nokia,
+NVIDIA, Oracle, and Samsung.
+Project Isis: DoE Award DE-SC0003624.
+ASPIRE Lab: DARPA PERFECT program, Award HR0011-12-2-0016. DARPA
+POEM program Award HR0011-11-C-0100. The Center for Future Architectures
+Research (C-FAR), a STARnet center funded by the Semiconductor Research
+Corporation. Additional support from ASPIRE industrial sponsor, Intel,
+and ASPIRE affiliates, Google, Huawei, Nokia, NVIDIA, Oracle, and
+Samsung.
+The content of this paper does not necessarily reflect the position or
+the policy of the US government and no official endorsement should be
+inferred.
+Bibliography
+Goldberg, R. P. (1974). Survey of virtual machine research. Computer, 7(6), 34–45.
+Version 20241101
+Previous
+Next
+© Copyright 2017-2020, ETH Zurich and University of Bologna, 2020-present OpenHW Group.
+Built with Sphinx using a
+theme
+provided by Read the Docs.

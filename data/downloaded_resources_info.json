@@ -1,0 +1,674 @@
+[
+  {
+    "url": "https://en.wikipedia.org/wiki/FiRa_Consortium",
+    "filename": "FiRa_Consortium",
+    "resource_type": "HTML",
+    "source": "Wikipedia",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/1_FiRa_Consortium_-_Wikipedia.html"
+  },
+  {
+    "url": "https://www.nxp.com/docs/en/supporting-information/FIRA-CONSORTIUM-ONE-PAGER.pdf",
+    "filename": "FIRA-CONSORTIUM-ONE-PAGER",
+    "resource_type": "PDF",
+    "source": "NXP",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/2_FiRa_Consortium.pdf"
+  },
+  {
+    "url": "https://www.carloalbertoboano.com/documents/stocker22uwb154z.pdf",
+    "filename": "uwb154z_性能研究",
+    "resource_type": "PDF",
+    "source": "carloalbertoboano.com",
+    "category": "一些领域相关paper",
+    "path": "data/downloads/3_On_the_Performance_of_IEEE_802.15.4z-Compliant_Ultra-Wideband_Devices_-_Carlo_Alberto_Boano.pdf"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/RISC-V",
+    "filename": "RISC-V",
+    "resource_type": "HTML",
+    "source": "Wikipedia",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/4_RISC-V_-_Wikipedia.html"
+  },
+  {
+    "url": "https://www.wevolver.com/article/risc-v-architecture",
+    "filename": "RISC-V架构指南",
+    "resource_type": "HTML",
+    "source": "Wevolver",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/5_RISC-V_Architecture__A_Comprehensive_Guide_to_the_Open-Source_ISA_-_Wevolver.html"
+  },
+  {
+    "url": "https://riscv.org/home/",
+    "filename": "RISC-V官网首页",
+    "resource_type": "HTML",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/6_Home___RISC-V_International.html"
+  },
+  {
+    "url": "https://riscv.org/about/",
+    "filename": "RISC-V组织介绍",
+    "resource_type": "HTML",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/7_About_RISC-V_International.html"
+  },
+  {
+    "url": "https://www.freertos.org/",
+    "filename": "FreeRTOS官网",
+    "resource_type": "HTML",
+    "source": "FreeRTOS",
+    "category": "FreeRTOS文档",
+    "path": "data/downloads/8_FreeRTOS__-_FreeRTOS_.html"
+  },
+  {
+    "url": "https://img.antpedia.com/standard/files/pdfs_ora/20230203/IEEE%20802.15.4z-2020.pdf",
+    "filename": "IEEE_802.15.4z-2020标准",
+    "resource_type": "PDF",
+    "source": "antpedia.com",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/11_IEEE_802.15.4z-2020.pdf.pdf"
+  },
+  {
+    "url": "https://onlinedocs.microchip.com/oxy/GUID-8D1A0DF1-A110-4894-8415-16544C2C110C-en-US-1/GUID-339827C2-60A3-4A93-963E-269FCD3FE8A2.html",
+    "filename": "Microchip_UWB标准文档",
+    "resource_type": "HTML",
+    "source": "Microchip Online docs",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/12_5_IEEE_802.15.4z-2020_UWB_Standard_-_Microchip_Online_docs.html"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/IEEE_802.15.4",
+    "filename": "IEEE_802.15.4",
+    "resource_type": "HTML",
+    "source": "Wikipedia",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/13_IEEE_802.15.4_-_Wikipedia.4"
+  },
+  {
+    "url": "https://www.qorvo.com/products/p/DWM3001CDK",
+    "filename": "DWM3001CDK",
+    "resource_type": "HTML",
+    "source": "Qorvo",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/14_DWM3001CDK_-_Qorvo.html"
+  },
+  {
+    "url": "https://www.qorvo.com/products/p/DWM3001C",
+    "filename": "DWM3001C",
+    "resource_type": "HTML",
+    "source": "Qorvo",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/15_DWM3001CDK.html"
+  },
+  {
+    "url": "https://www.qorvo.com/products/p/DWM3000EVB",
+    "filename": "DWM3000EVB",
+    "resource_type": "HTML",
+    "source": "Qorvo",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/16_DWM3000EVB_-_Qorvo.html"
+  },
+  {
+    "url": "https://www.qorvo.com/products/p/DWM3000",
+    "filename": "DWM3000",
+    "resource_type": "HTML",
+    "source": "Qorvo",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/17_DWM3000_-_Qorvo.html"
+  },
+  {
+    "url": "https://www.qorvo.com/products/p/DW3110",
+    "filename": "DW3110",
+    "resource_type": "HTML",
+    "source": "Qorvo",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/18_DW3110_-_Qorvo.html"
+  },
+  {
+    "url": "https://www.qorvo.com/products/p/DW3120",
+    "filename": "DW3120",
+    "resource_type": "HTML",
+    "source": "Qorvo",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/19_DW3120_-_Qorvo.html"
+  },
+  {
+    "url": "https://www.firaconsortium.org/resource-hub/specifications",
+    "filename": "FiRa规范资源",
+    "resource_type": "HTML",
+    "source": "FiRa Consortium",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/20_Purchase_Specifications___FiRa_Consortium.html"
+  },
+  {
+    "url": "https://www.firaconsortium.org/news/press-releases/2025/01/fira-consortium-unveils-fira-core-3-0-specifications-and-certification",
+    "filename": "FiRa3.0标准发布",
+    "resource_type": "HTML",
+    "source": "FiRa Consortium",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/21_FiRa_Consortium_Unveils_FiRa_Core_3.0_Specifications_and_Certification_Program.html"
+  },
+  {
+    "url": "https://www.firaconsortium.org/certifications/technical-specifications",
+    "filename": "FiRa技术规范",
+    "resource_type": "HTML",
+    "source": "FiRa Consortium",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/23_Technical_Specifications___FiRa_Consortium.html"
+  },
+  {
+    "url": "https://www.firaconsortium.org/certifications/test-specifications",
+    "filename": "FiRa测试规范",
+    "resource_type": "HTML",
+    "source": "FiRa Consortium",
+    "category": "UWB的Rifa标准文档",
+    "path": "data/downloads/24_Test_Specifications___FiRa_Consortium.html"
+  },
+  {
+    "url": "https://five-embeddev.com/riscv-user-isa-manual/Priv-v1.12/intro.html",
+    "filename": "RISC-V用户级ISA手册",
+    "resource_type": "HTML",
+    "source": "Five EmbedDev",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/26_RISC-V_Instruction_Set_Manual__Volume_I__RISC-V_User-Level_ISA___Five_EmbedDev.html"
+  },
+  {
+    "url": "https://cs.brown.edu/courses/csci1952y/2024/assets/docs/riscv-spec-v2.2.pdf",
+    "filename": "RISC-V规范v2.2",
+    "resource_type": "PDF",
+    "source": "Brown Computer Science",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/27_The_RISC-V_Instruction_Set_Manual_-_Brown_Computer_Science.pdf"
+  },
+  {
+    "url": "https://gcc.gnu.org/onlinedocs/gcc/RISC-V-Options.html",
+    "filename": "RISC-V_GCC选项",
+    "resource_type": "HTML",
+    "source": "GNU",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/28_RISC-V_Options__Using_the_GNU_Compiler_Collection__GCC__.html"
+  },
+  {
+    "url": "https://riscv-europe.org/summit/2025/",
+    "filename": "RISC-V欧洲峰会2025",
+    "resource_type": "HTML",
+    "source": "RISC-V Summit Europe",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/29_Welcome_-_RISC-V_Summit_Europe_2025.html"
+  },
+  {
+    "url": "https://riscv.org/members/join/individual/",
+    "filename": "RISC-V个人会员",
+    "resource_type": "HTML",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/30_Individual_Membership___RISC-V_International.html"
+  },
+  {
+    "url": "https://riscv.org/members/join/",
+    "filename": "RISC-V会员加入",
+    "resource_type": "HTML",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/31_Join_RISC-V.html"
+  },
+  {
+    "url": "https://community.riscv.org/",
+    "filename": "RISC-V社区",
+    "resource_type": "HTML",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/32_RISC-V_International.html"
+  },
+  {
+    "url": "https://riscv.org/",
+    "filename": "RISC-V官网",
+    "resource_type": "HTML",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/33_RISC-V_International.html"
+  },
+  {
+    "url": "https://lf-riscv.atlassian.net/wiki/display/HOME/RISC-V+Technical+Specifications",
+    "filename": "RISC-V技术规范",
+    "resource_type": "HTML",
+    "source": "RISC-V Tech Hub (Atlassian)",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/34_ISA_Specifications_-_Home_-_RISC-V_Tech_Hub.html"
+  },
+  {
+    "url": "https://shd.mit.edu/2025/recitations/riscv.html",
+    "filename": "MIT安全硬件设计课程",
+    "resource_type": "HTML",
+    "source": "MIT Secure Hardware Design",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/35_Binary_Exploitation_and_RISC-V_Warmup___6.5950_6.5951_-_MIT_Secure_Hardware_Design.html"
+  },
+  {
+    "url": "https://docs.openhwgroup.org/projects/cva6-user-manual/04_cv32a65x/riscv/priv.html",
+    "filename": "CVA6文档",
+    "resource_type": "HTML",
+    "source": "OpenHW Group",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/36_Privileged_RISC-V_ISA___CVA6_documentation.html"
+  },
+  {
+    "url": "https://www.scs.stanford.edu/~zyedidia/docs/riscv/riscv-privileged.pdf",
+    "filename": "RISC-V特权架构",
+    "resource_type": "PDF",
+    "source": "Stanford Secure Computer Systems Group",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/37_The_RISC-V_Instruction_Set_Manual_-_Stanford_Secure_Computer_Systems_Group.pdf"
+  },
+  {
+    "url": "https://tools.cloudbear.ru/docs/riscv-privileged-1.13-20241017.pdf",
+    "filename": "RISC-V特权文档1.13",
+    "resource_type": "PDF",
+    "source": "cloudbear.ru",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/38_The_RISC-V_Instruction_Set_Manual__Volume_II__Privileged_Architecture.pdf"
+  },
+  {
+    "url": "http://cs107e.github.io/readings/riscv-privileged-20190608-1.pdf",
+    "filename": "RISC-V特权指南CS107e",
+    "resource_type": "PDF",
+    "source": "CS107e",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/39_The_RISC-V_Instruction_Set_Manual_-_CS107e.pdf"
+  },
+  {
+    "url": "https://people.eecs.berkeley.edu/~krste/papers/riscv-privileged-v1.9.1.pdf",
+    "filename": "RISC-V特权v1.9.1",
+    "resource_type": "PDF",
+    "source": "Berkeley EECS",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/40_The_RISC-V_Instruction_Set_Manual_-_People__EECS.pdf"
+  },
+  {
+    "url": "https://riscv.org/wp-content/uploads/2024/12/riscv-debug-release.pdf",
+    "filename": "RISC-V调试支持",
+    "resource_type": "PDF",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/41_RISC-V_External_Debug_Support_Version_0.13.2_d5029366d59e8563c08b6b9435f82573b603e48e.pdf"
+  },
+  {
+    "url": "https://training.linuxfoundation.org/certification/linux-foundation-risc-v-foundational-associate/",
+    "filename": "RISC-V基础认证",
+    "resource_type": "HTML",
+    "source": "Linux Foundation Training",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/42_RISC-V_Foundational_Associate__RVFA_.html"
+  },
+  {
+    "url": "https://riscv.org/wp-content/uploads/2024/12/riscv-calling.pdf",
+    "filename": "RISC-V调用约定",
+    "resource_type": "PDF",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/43_Calling_Convention_-_RISC-V.pdf"
+  },
+  {
+    "url": "https://llvm.org/docs/RISCVUsage.html",
+    "filename": "LLVM_RISC-V使用指南",
+    "resource_type": "HTML",
+    "source": "LLVM",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/44_User_Guide_for_RISC-V_Target___LLVM_21.0.0git_documentation.html"
+  },
+  {
+    "url": "https://riscv.org/specifications/ratified/",
+    "filename": "RISC-V已批准规范",
+    "resource_type": "HTML",
+    "source": "RISC-V International",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/45_RISC-V_Ratified_Specifications.html"
+  },
+  {
+    "url": "https://code.ornl.gov/llvm-doe/llvm-project/-/blob/3b75a5c4c84d17d6647ba079391722ed9be09f85/llvm/docs/RISCVUsage.rst",
+    "filename": "LLVM_RISC-V使用指南源码",
+    "resource_type": "HTML",
+    "source": "GitLab (ORNL)",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/46_llvm_docs_RISCVUsage.rst___3b75a5c4c84d17d6647ba079391722ed9be09f85___llvm-doe___llvm-project___GitLab.rst"
+  },
+  {
+    "url": "https://releases.llvm.org/17.0.1/docs/RISCVUsage.html",
+    "filename": "LLVM17_RISC-V使用指南",
+    "resource_type": "HTML",
+    "source": "LLVM",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/47_User_Guide_for_RISC-V_Target___LLVM_17.0.1_documentation.html"
+  },
+  {
+    "url": "https://gcc.gnu.org/onlinedocs/gcc.pdf",
+    "filename": "GCC编译器文档",
+    "resource_type": "PDF",
+    "source": "GNU",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/49_Using_the_GNU_Compiler_Collection.pdf"
+  },
+  {
+    "url": "https://xpack-dev-tools.github.io/riscv-none-elf-gcc-xpack/docs/getting-started/",
+    "filename": "xPack_RISC-V_GCC入门",
+    "resource_type": "HTML",
+    "source": "xPack",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/50_Getting_Started___xPack_GNU_RISC-V_Embedded_GCC.html"
+  },
+  {
+    "url": "https://gnu-mcu-eclipse.github.io/blog/2018/05/06/riscv-none-gcc-v7-2-0-3-20180506-released/",
+    "filename": "RISC-V嵌入式GCC发布",
+    "resource_type": "HTML",
+    "source": "GNU MCU Eclipse",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/51_GNU_MCU_Eclipse_RISC-V_Embedded_GCC_v7.2.0-3-20180506_released.html"
+  },
+  {
+    "url": "https://www.llvm.org/docs/RISCV/RISCVVectorExtension.html",
+    "filename": "RISC-V向量扩展",
+    "resource_type": "HTML",
+    "source": "LLVM",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/53_RISC-V_Vector_Extension___LLVM_21.0.0git_documentation.html"
+  },
+  {
+    "url": "https://releases.llvm.org/16.0.0/docs/RISCVUsage.html",
+    "filename": "LLVM16_RISC-V使用指南",
+    "resource_type": "HTML",
+    "source": "LLVM",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/54_User_Guide_for_RISC-V_Target___LLVM_16.0.0_documentation.html"
+  },
+  {
+    "url": "https://groups.google.com/a/groups.riscv.org/g/sw-dev/c/8JCVG678W7I",
+    "filename": "LLVM_RISC-V讨论组",
+    "resource_type": "HTML (Google Group)",
+    "source": "Google Groups",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/57_LLVM_for_RISC-V_-_Google_Groups.html"
+  },
+  {
+    "url": "https://rocm.docs.amd.com/projects/llvm-project/en/docs-6.4.0/LLVM/llvm/html/RISCVUsage.html",
+    "filename": "AMD_RISC-V使用指南",
+    "resource_type": "HTML",
+    "source": "AMD ROCm Docs",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/58_User_Guide_for_RISC-V_Target___LLVM_19.0.0git_documentation.html"
+  },
+  {
+    "url": "https://runtimerec.com/how-to-debug-risc-v-applications/",
+    "filename": "RISC-V应用调试指南",
+    "resource_type": "HTML",
+    "source": "RunTime Recruitment",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/59_How_to_Debug_RISC-V_Applications_-_RunTime_Recruitment.html"
+  },
+  {
+    "url": "https://shakti.org.in/docs/RISC-V-GDB-tutorial.pdf",
+    "filename": "RISC-V_GDB教程",
+    "resource_type": "PDF",
+    "source": "Shakti Processor",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/60_RISC-V_GDB_Tutorial_-_Shakti_Processor.pdf"
+  },
+  {
+    "url": "https://wiki.qemu.org/Documentation/Platforms/RISCV",
+    "filename": "QEMU_RISC-V文档",
+    "resource_type": "HTML (Wiki)",
+    "source": "QEMU",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/61_Documentation_Platforms_RISCV_-_QEMU.html"
+  },
+  {
+    "url": "https://www.sourceware.org/gdb/documentation/",
+    "filename": "GDB文档",
+    "resource_type": "HTML",
+    "source": "Sourceware",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/62_GDB_Documentation_-_Sourceware.html"
+  },
+  {
+    "url": "https://risc-v-getting-started-guide.readthedocs.io/_/downloads/en/latest/pdf/",
+    "filename": "RISC-V入门指南PDF",
+    "resource_type": "PDF",
+    "source": "Read the Docs",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/64_PDF_-_RISC-V_-_Getting_Started_Guide.pdf"
+  },
+  {
+    "url": "https://stackoverflow.com/questions/67385543/riscv64-linux-gnu-gdb-on-ubuntu-20-04",
+    "filename": "Ubuntu上RISC-V_GDB讨论",
+    "resource_type": "HTML",
+    "source": "Stack Overflow",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/65_riscv64-linux-gnu-gdb_on_ubuntu_20.04_-_Stack_Overflow.html"
+  },
+  {
+    "url": "https://sourceware.org/gdb/current/onlinedocs/gdb.html/index.html",
+    "filename": "GDB当前文档",
+    "resource_type": "HTML",
+    "source": "Sourceware",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/66_Top__Debugging_with_GDB__-_sourceware.org.html"
+  },
+  {
+    "url": "https://riseproject.dev/",
+    "filename": "RISC-V软件生态系统",
+    "resource_type": "HTML",
+    "source": "RISE Project (Linux Foundation)",
+    "category": "RISC-V框架相关文档",
+    "path": "data/downloads/67_Rise__RISC-V_Software_Ecosystem___Linux_Foundation_Project.html"
+  },
+  {
+    "url": "https://www.freertos.org/Documentation/01-FreeRTOS-quick-start/01-Beginners-guide/00-Overview",
+    "filename": "FreeRTOS入门指南",
+    "resource_type": "HTML",
+    "source": "FreeRTOS",
+    "category": "FreeRTOS文档",
+    "path": "data/downloads/69_Beginner_s_guides_to_FreeRTOS.html"
+  },
+  {
+    "url": "https://www.freertos.org/Documentation/02-Kernel/07-Books-and-manual/01-RTOS_book",
+    "filename": "FreeRTOS内核文档",
+    "resource_type": "HTML",
+    "source": "FreeRTOS",
+    "category": "FreeRTOS文档",
+    "path": "data/downloads/70_FreeRTOS_Documentation_-_FreeRTOS_.html"
+  },
+  {
+    "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-getting-started.html",
+    "filename": "AWS_FreeRTOS入门",
+    "resource_type": "HTML",
+    "source": "AWS Documentation",
+    "category": "FreeRTOS文档",
+    "path": "data/downloads/71_Get_Started_with_FreeRTOS_-_AWS_Documentation.html"
+  },
+  {
+    "url": "https://www.freertos.org/Documentation/02-Kernel/07-Books-and-manual/01-Code/01-Zip-files",
+    "filename": "FreeRTOS示例代码",
+    "resource_type": "HTML",
+    "source": "FreeRTOS",
+    "category": "FreeRTOS文档",
+    "path": "data/downloads/72_FreeRTOS_Book_Examples.html"
+  },
+  {
+    "url": "https://www.freertos.org/Documentation/00-Overview",
+    "filename": "FreeRTOS文档概览",
+    "resource_type": "HTML",
+    "source": "FreeRTOS",
+    "category": "FreeRTOS文档",
+    "path": "data/downloads/73_FreeRTOS_documentation_-_FreeRTOS_.html"
+  },
+  {
+    "url": "https://www.freertos.org/Documentation/RTOS_book.html",
+    "filename": "FreeRTOS书籍",
+    "resource_type": "HTML",
+    "source": "FreeRTOS",
+    "category": "FreeRTOS文档",
+    "path": "data/downloads/75_FreeRTOS_Documentation_-_FreeRTOS_.html"
+  },
+  {
+    "url": "https://www.qorvo.com/products/p/QM33120WDK1",
+    "filename": "QM33120WDK1",
+    "resource_type": "HTML",
+    "source": "Qorvo",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/76_QM33120WDK1_-_Qorvo.html"
+  },
+  {
+    "url": "https://forum.qorvo.com/t/dwm3001cdk-arduino-ide-programming/21072",
+    "filename": "DWM3001CDK_Arduino编程",
+    "resource_type": "HTML (Forum)",
+    "source": "Qorvo Tech Forum",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/77_QM33120WDK1.html"
+  },
+  {
+    "url": "https://forum.qorvo.com/t/new-release-of-dw3000-and-qm33-sdk-dw3-qm33-sdk-v1-0-2/19160",
+    "filename": "DW3000和QM33_SDK发布",
+    "resource_type": "HTML (Forum)",
+    "source": "Qorvo Tech Forum",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/78_New_release_of_DW3000_and_QM33_SDK__DW3_QM33_SDK_v1.0.2_-_Qorvo_Tech_Forum.html"
+  },
+  {
+    "url": "https://www.farnell.com/datasheets/4509030.pdf",
+    "filename": "DWM3001CDK快速入门",
+    "resource_type": "PDF",
+    "source": "Farnell",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/79_DW3000和QM33_SDK发布.html"
+  },
+  {
+    "url": "https://forum.qorvo.com/t/getting-started-with-the-dwm3001c/13430",
+    "filename": "DWM3001C入门指南",
+    "resource_type": "HTML (Forum)",
+    "source": "Qorvo Tech Forum",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/80_DWM3001CDK快速入门.pdf"
+  },
+  {
+    "url": "https://github.com/Uberi/DWM3001CDK-demo-firmware",
+    "filename": "DWM3001CDK-demo-firmware",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/82_DWM3001CDK-demo-firmware_git"
+  },
+  {
+    "url": "https://forums.estimote.com/t/new-android-uwb-sdk-updated-on-github/12311",
+    "filename": "Android_UWB_SDK更新",
+    "resource_type": "HTML (Forum)",
+    "source": "Estimote Forums",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/82_New_Android_UWB_SDK_updated_on_Github_-_Estimote_Forums.html"
+  },
+  {
+    "url": "https://github.com/Uberi/DWM3001C-starter-firmware",
+    "filename": "DWM3001C-starter-firmware",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/84_DWM3001C-starter-firmware_git"
+  },
+  {
+    "url": "https://forum.qorvo.com/t/getting-started-with-dwm3001cdke/11801",
+    "filename": "DWM3001CDKE入门指南",
+    "resource_type": "HTML (Forum)",
+    "source": "Qorvo Tech Forum",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/84_DWM3001C-starter-firmware.txt"
+  },
+  {
+    "url": "https://forum.qorvo.com/t/qorvo-nearby-interaction-software-package-v-3-0-release/13390",
+    "filename": "Qorvo邻近交互软件包",
+    "resource_type": "HTML (Forum)",
+    "source": "Qorvo Tech Forum",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/85_DWM3001CDKE入门指南.html"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-core",
+    "filename": "uwb-core",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core_git"
+  },
+  {
+    "url": "https://doc.riot-os.org/group__pkg__uwb__dw1000.html",
+    "filename": "RIOT_OS_DW1000驱动",
+    "resource_type": "HTML",
+    "source": "RIOT OS Docs",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/87_uwb-core.txt"
+  },
+  {
+    "url": "https://github.com/osomprivacy/uwb-stack",
+    "filename": "uwb-stack",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/89_uwb-stack_git"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-apps",
+    "filename": "uwb-apps",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/90_uwb-apps_git"
+  },
+  {
+    "url": "https://github.com/Decawave/uwb-dw1000",
+    "filename": "uwb-dw1000",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/91_uwb-dw1000_git"
+  },
+  {
+    "url": "https://github.com/Decawave/dwm1001-examples",
+    "filename": "dwm1001-examples",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/94_dwm1001-examples_git"
+  },
+  {
+    "url": "https://github.com/br101/libdeca",
+    "filename": "libdeca",
+    "resource_type": "GitHub (GitHub Repository)",
+    "source": "GitHub",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/97_libdeca_git"
+  },
+  {
+    "url": "https://docs.nordicsemi.com/bundle/ncs-latest/page/zephyr/boards/qorvo/index.html",
+    "filename": "Nordic_Qorvo文档",
+    "resource_type": "HTML",
+    "source": "Nordic Semiconductor Docs",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/97_Qorvo__Inc._-_Technical_Documentation.html"
+  },
+  {
+    "url": "https://forum.qorvo.com/c/wireless-connectivity/ultra-wideband/5",
+    "filename": "Qorvo_UWB论坛",
+    "resource_type": "HTML (Forum)",
+    "source": "Qorvo Tech Forum",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/98_Latest_Ultra-Wideband_topics_-_Qorvo_Tech_Forum.html"
+  },
+  {
+    "url": "https://forum.qorvo.com/t/dw3300q-stm32-sdk-documentation/18064",
+    "filename": "DW3300Q_STM32_SDK文档",
+    "resource_type": "HTML (Forum)",
+    "source": "Qorvo Tech Forum",
+    "category": "公开芯片SDK",
+    "path": "data/downloads/99_Qorvo_UWB论坛.html"
+  }
+]

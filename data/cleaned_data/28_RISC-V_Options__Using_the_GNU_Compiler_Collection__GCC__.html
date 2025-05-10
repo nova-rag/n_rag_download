@@ -1,0 +1,409 @@
+RISC-V Options (Using the GNU Compiler Collection (GCC))
+Next: RL78 Options, Previous: PRU Options, Up: Machine-Dependent Options   [Contents][Index]
+3.20.40 RISC-V Options ¶
+These command-line options are defined for RISC-V targets:
+-mbranch-cost=n ¶
+Set the cost of branches to roughly n instructions.
+-mplt ¶
+-mno-plt
+When generating PIC code, do or don’t allow the use of PLTs. Ignored for
+non-PIC.
+The default is -mplt.
+-mabi=ABI-string ¶
+Specify integer and floating-point calling convention.
+ABI-string
+contains two parts: the size of integer types and the registers used for
+floating-point types.
+For example ‘-march=rv64ifd -mabi=lp64d’ means that
+‘long’ and pointers are 64-bit (implicitly defining ‘int’ to be
+32-bit), and that floating-point values up to 64 bits wide are passed in F
+registers.
+Contrast this with ‘-march=rv64ifd -mabi=lp64f’, which still
+allows the compiler to generate code that uses the F and D extensions but only
+allows floating-point values up to 32 bits long to be passed in registers; or
+‘-march=rv64ifd -mabi=lp64’, in which no floating-point arguments will be
+passed in registers.
+The default for this argument is system dependent, users who want a specific
+calling convention should specify one explicitly.
+The valid calling
+conventions are: ‘ilp32’, ‘ilp32f’, ‘ilp32d’, ‘lp64’,
+‘lp64f’, and ‘lp64d’.
+Some calling conventions are impossible to
+implement on some ISAs: for example, ‘-march=rv32if -mabi=ilp32d’ is
+invalid because the ABI requires 64-bit values be passed in F registers, but F
+registers are only 32 bits wide.
+There are also the ‘ilp32e’ ABI that can
+only be used with the ‘rv32e’ architecture and the ‘lp64e’ ABI that
+can only be used with the ‘rv64e’.
+Those ABIs are not well specified at
+present, and are subject to change.
+-mfdiv ¶
+-mno-fdiv
+Do or don’t use hardware floating-point divide and square root instructions.
+This requires the F or D extensions for floating-point registers.
+The default
+is to use them if the specified architecture has these instructions.
+-mfence-tso ¶
+-mno-fence-tso
+Do or don’t use the ‘fence.tso’ instruction, which is unimplemented on
+some processors (including those from T-Head).
+If the ‘fence.tso’
+instruction is not available then a stronger fence is used instead.
+-mdiv ¶
+-mno-div
+Do or don’t use hardware instructions for integer division.
+This requires the
+M extension.
+The default is to use them if the specified architecture has
+these instructions.
+-misa-spec=ISA-spec-string ¶
+Specify the version of the RISC-V Unprivileged (formerly User-Level)
+ISA specification to produce code conforming to.
+The possibilities
+for ISA-spec-string are:
+2.2
+Produce code conforming to version 2.2.
+20190608
+Produce code conforming to version 20190608.
+20191213
+Produce code conforming to version 20191213.
+The default is -misa-spec=20191213 unless GCC has been configured
+with --with-isa-spec= specifying a different default version.
+-march=ISA-string ¶
+Generate code for given RISC-V ISA (e.g. ‘rv64im’).
+ISA strings must be
+lower-case.
+Examples include ‘rv64i’, ‘rv32g’, ‘rv32e’, and
+‘rv32imaf’. Additionally, a special value help
+(-march=help) is accepted to list all supported extensions.
+The syntax of the ISA string is defined as follows:
+The string must start with ‘rv32’ or ‘rv64’, followed by
+‘i’, ‘e’, or ‘g’, referred to as the base ISA.
+The subsequent part of the string is a list of extension names. Extension
+names can be categorized as multi-letter (e.g. ‘zba’) and single-letter
+(e.g. ‘v’). Single-letter extensions can appear consecutively,
+but multi-letter extensions must be separated by underscores.
+An underscore can appear anywhere after the base ISA. It has no specific
+effect but is used to improve readability and can act as a separator.
+Extension names may include an optional version number, following the
+syntax ‘<major>p<minor>’ or ‘<major>’, (e.g. ‘m2p1’ or
+‘m2’).
+Supported extension are listed below:
+Extension NameSupported VersionDescription
+i2.0, 2.1Base integer extension.
+e2.0Reduced base integer extension.
+g-General-purpose computing base extension, ‘g’ will expand to
+‘i’, ‘m’, ‘a’, ‘f’, ‘d’, ‘zicsr’ and
+‘zifencei’.
+m2.0Integer multiplication and division extension.
+a2.0, 2.1Atomic extension.
+f2.0, 2.2Single-precision floating-point extension.
+d2.0, 2.2Double-precision floating-point extension.
+c2.0Compressed extension.
+h1.0Hypervisor extension.
+v1.0Vector extension.
+zicsr2.0Control and status register access extension.
+zifencei2.0Instruction-fetch fence extension.
+zicond1.0Integer conditional operations extension.
+za64rs1.0Reservation set size of 64 bytes.
+za128rs1.0Reservation set size of 128 bytes.
+zawrs1.0Wait-on-reservation-set extension.
+zba1.0Address calculation extension.
+zbb1.0Basic bit manipulation extension.
+zbc1.0Carry-less multiplication extension.
+zbs1.0Single-bit operation extension.
+zfinx1.0Single-precision floating-point in integer registers extension.
+zdinx1.0Double-precision floating-point in integer registers extension.
+zhinx1.0Half-precision floating-point in integer registers extension.
+zhinxmin1.0Minimal half-precision floating-point in integer registers extension.
+zbkb1.0Cryptography bit-manipulation extension.
+zbkc1.0Cryptography carry-less multiply extension.
+zbkx1.0Cryptography crossbar permutation extension.
+zkne1.0AES Encryption extension.
+zknd1.0AES Decryption extension.
+zknh1.0Hash function extension.
+zkr1.0Entropy source extension.
+zksed1.0SM4 block cipher extension.
+zksh1.0SM3 hash function extension.
+zkt1.0Data independent execution latency extension.
+zk1.0Standard scalar cryptography extension.
+zkn1.0NIST algorithm suite extension.
+zks1.0ShangMi algorithm suite extension.
+zihintntl1.0Non-temporal locality hints extension.
+zihintpause1.0Pause hint extension.
+zicboz1.0Cache-block zero extension.
+zicbom1.0Cache-block management extension.
+zicbop1.0Cache-block prefetch extension.
+zic64b1.0Cache block size isf 64 bytes.
+ziccamoa1.0Main memory supports all atomics in A.
+ziccif1.0Main memory supports instruction fetch with atomicity requirement.
+zicclsm1.0Main memory supports misaligned loads/stores.
+ziccrse1.0Main memory supports forward progress on LR/SC sequences.
+zicntr2.0Standard extension for base counters and timers.
+zihpm2.0Standard extension for hardware performance counters.
+ztso1.0Total store ordering extension.
+zve32x1.0Vector extensions for embedded processors.
+zve32f1.0Vector extensions for embedded processors.
+zve64x1.0Vector extensions for embedded processors.
+zve64f1.0Vector extensions for embedded processors.
+zve64d1.0Vector extensions for embedded processors.
+zvl32b1.0Minimum vector length standard extensions
+zvl64b1.0Minimum vector length standard extensions
+zvl128b1.0Minimum vector length standard extensions
+zvl256b1.0Minimum vector length standard extensions
+zvl512b1.0Minimum vector length standard extensions
+zvl1024b1.0Minimum vector length standard extensions
+zvl2048b1.0Minimum vector length standard extensions
+zvl4096b1.0Minimum vector length standard extensions
+zvbb1.0Vector basic bit-manipulation extension.
+zvbc1.0Vector carryless multiplication extension.
+zvkb1.0Vector cryptography bit-manipulation extension.
+zvkg1.0Vector GCM/GMAC extension.
+zvkned1.0Vector AES block cipher extension.
+zvknha1.0Vector SHA-2 secure hash extension.
+zvknhb1.0Vector SHA-2 secure hash extension.
+zvksed1.0Vector SM4 Block Cipher extension.
+zvksh1.0Vector SM3 Secure Hash extension.
+zvkn1.0Vector NIST Algorithm Suite extension, ‘zvkn’ will expand to
+‘zvkned’, ‘zvknhb’, ‘zvkb’ and ‘zvkt’.
+zvknc1.0Vector NIST Algorithm Suite with carryless multiply extension, ‘zvknc’
+will expand to ‘zvkn’ and ‘zvbc’.
+zvkng1.0Vector NIST Algorithm Suite with GCM extension, ‘zvkng’ will expand
+to ‘zvkn’ and ‘zvkg’.
+zvks1.0Vector ShangMi algorithm suite extension, ‘zvks’ will expand
+to ‘zvksed’, ‘zvksh’, ‘zvkb’ and ‘zvkt’.
+zvksc1.0Vector ShangMi algorithm suite with carryless multiplication extension,
+‘zvksc’ will expand to ‘zvks’ and ‘zvbc’.
+zvksg1.0Vector ShangMi algorithm suite with GCM extension, ‘zvksg’ will expand
+to ‘zvks’ and ‘zvkg’.
+zvkt1.0Vector data independent execution latency extension.
+zfh1.0Half-precision floating-point extension.
+zfhmin1.0Minimal half-precision floating-point extension.
+zvfh1.0Vector half-precision floating-point extension.
+zvfhmin1.0Vector minimal half-precision floating-point extension.
+zvfbfmin1.0Vector BF16 converts extension.
+zfa1.0Additional floating-point extension.
+zmmul1.0Integer multiplication extension.
+zca1.0Integer compressed instruction extension.
+zcf1.0Compressed single-precision floating point loads and stores extension.
+zcd1.0Compressed double-precision floating point loads and stores extension.
+zcb1.0Simple compressed instruction extension.
+zce1.0Compressed instruction extensions for embedded processors.
+zcmp1.0Compressed push pop extension.
+zcmt1.0Table jump instruction extension.
+smaia1.0Advanced interrupt architecture extension.
+smepmp1.0PMP Enhancements for memory access and execution prevention on Machine mode.
+smstateen1.0State enable extension.
+ssaia1.0Advanced interrupt architecture extension for supervisor-mode.
+sscofpmf1.0Count overflow & filtering extension.
+ssstateen1.0State-enable extension for supervisor-mode.
+sstc1.0Supervisor-mode timer interrupts extension.
+svinval1.0Fine-grained address-translation cache invalidation extension.
+svnapot1.0NAPOT translation contiguity extension.
+svpbmt1.0Page-based memory types extension.
+xcvmac1.0Core-V multiply-accumulate extension.
+xcvalu1.0Core-V miscellaneous ALU extension.
+xcvelw1.0Core-V event load word extension.
+xtheadba1.0T-head address calculation extension.
+xtheadbb1.0T-head basic bit-manipulation extension.
+xtheadbs1.0T-head single-bit instructions extension.
+xtheadcmo1.0T-head cache management operations extension.
+xtheadcondmov1.0T-head conditional move extension.
+xtheadfmemidx1.0T-head indexed memory operations for floating-point registers extension.
+xtheadfmv1.0T-head double floating-point high-bit data transmission extension.
+xtheadint1.0T-head acceleration interruption extension.
+xtheadmac1.0T-head multiply-accumulate extension.
+xtheadmemidx1.0T-head indexed memory operation extension.
+xtheadmempair1.0T-head two-GPR memory operation extension.
+xtheadsync1.0T-head multi-core synchronization extension.
+xventanacondops1.0Ventana integer conditional operations extension.
+When -march= is not specified, use the setting from -mcpu.
+If both -march and -mcpu= are not specified, the default for
+this argument is system dependent, users who want a specific architecture
+extensions should specify one explicitly.
+When the RISC-V specifications define an extension as depending on other
+extensions, GCC will implicitly add the dependent extensions to the enabled
+extension set if they weren’t added explicitly.
+-mcpu=processor-string ¶
+Use architecture of and optimize the output for the given processor, specified
+by particular CPU name.
+Permissible values for this option are: ‘sifive-e20’, ‘sifive-e21’,
+‘sifive-e24’, ‘sifive-e31’, ‘sifive-e34’, ‘sifive-e76’,
+‘sifive-s21’, ‘sifive-s51’, ‘sifive-s54’, ‘sifive-s76’,
+‘sifive-u54’, ‘sifive-u74’, ‘sifive-x280’, ‘sifive-xp450’,
+‘sifive-x670’, ‘thead-c906’, ‘tt-ascalon-d8’, ‘xiangshan-nanhu’,
+‘xt-c908’, ‘xt-c908v’, ‘xt-c910’, ‘xt-c910v2’,
+‘xt-c920’, ‘xt-c920v2’.
+Note that -mcpu does not override -march or -mtune.
+-mtune=processor-string ¶
+Optimize the output for the given processor, specified by microarchitecture or
+particular CPU name.
+Permissible values for this option are:
+‘generic-ooo’, ‘rocket’, ‘sifive-3-series’,
+‘sifive-5-series’, ‘sifive-7-series’, ‘size’,
+‘sifive-p400-series’, ‘sifive-p600-series’, and all valid options for
+-mcpu=.
+When -mtune= is not specified, use the setting from -mcpu,
+the default is ‘rocket’ if both are not specified.
+The ‘size’ choice is not intended for use by end-users.
+This is used
+when -Os is specified.
+It overrides the instruction cost info
+provided by -mtune=, but does not override the pipeline info.
+This
+helps reduce code size while still giving good performance.
+-mpreferred-stack-boundary=num ¶
+Attempt to keep the stack boundary aligned to a 2 raised to num
+byte boundary.
+If -mpreferred-stack-boundary is not specified,
+the default is 4 (16 bytes or 128-bits).
+Warning: If you use this switch, then you must build all modules with
+the same value, including any libraries.
+This includes the system libraries
+and startup modules.
+-msmall-data-limit=n ¶
+Put global and static data smaller than n bytes into a special section
+(on some targets).
+-msave-restore ¶
+-mno-save-restore
+Do or don’t use smaller but slower prologue and epilogue code that uses
+library function calls.
+The default is to use fast inline prologues and
+epilogues.
+-mmovcc ¶
+-mno-movcc
+Do or don’t produce branchless conditional-move code sequences even with
+targets that do not have specific instructions for conditional operations.
+If enabled, sequences of ALU operations are produced using base integer
+ISA instructions where profitable.
+-minline-atomics ¶
+-mno-inline-atomics
+Do or don’t use smaller but slower subword atomic emulation code that uses
+libatomic function calls.
+The default is to use fast inline subword atomics
+that do not require libatomic.
+-minline-strlen ¶
+-mno-inline-strlen
+Do or do not attempt to inline strlen calls if possible.
+Inlining will only be done if the string is properly aligned
+and instructions for accelerated processing are available.
+The default is to not inline strlen calls.
+-minline-strcmp ¶
+-mno-inline-strcmp
+Do or do not attempt to inline strcmp calls if possible.
+Inlining will only be done if the strings are properly aligned
+and instructions for accelerated processing are available.
+The default is to not inline strcmp calls.
+The --param riscv-strcmp-inline-limit=n parameter controls
+the maximum number of bytes compared by the inlined code.
+The default value is 64.
+-minline-strncmp ¶
+-mno-inline-strncmp
+Do or do not attempt to inline strncmp calls if possible.
+Inlining will only be done if the strings are properly aligned
+and instructions for accelerated processing are available.
+The default is to not inline strncmp calls.
+The --param riscv-strcmp-inline-limit=n parameter controls
+the maximum number of bytes compared by the inlined code.
+The default value is 64.
+-mshorten-memrefs ¶
+-mno-shorten-memrefs
+Do or do not attempt to make more use of compressed load/store instructions by
+replacing a load/store of ’base register + large offset’ with a new load/store
+of ’new base + small offset’.
+If the new base gets stored in a compressed
+register, then the new load/store can be compressed.
+Currently targets 32-bit
+integer load/stores only.
+-mstrict-align ¶
+-mno-strict-align
+Do not or do generate unaligned memory accesses.
+The default is set depending
+on whether the processor we are optimizing for supports fast unaligned access
+or not.
+-mscalar-strict-align ¶
+-mno-scalar-strict-align
+Do not or do generate unaligned memory accesses.
+The default is set depending
+on whether the processor we are optimizing for supports fast unaligned access
+or not.
+This is an alias for -mstrict-align.
+-mvector-strict-align ¶
+-mno-vector-strict-align
+Do not or do generate unaligned vector memory accesses.
+The default is set
+to off unless the processor we are optimizing for explicitly supports
+element-misaligned vector memory access.
+-mcmodel=medlow ¶
+Generate code for the medium-low code model. The program and its statically
+defined symbols must lie within a single 2 GiB address range and must lie
+between absolute addresses −2 GiB and +2 GiB. Programs can be statically
+or dynamically linked. This is the default code model unless GCC has been
+configured with --with-cmodel= specifying a different default code
+model.
+-mcmodel=medany ¶
+Generate code for the medium-any code model. The program and its statically
+defined symbols must be within any single 2 GiB address range. Programs can be
+statically or dynamically linked.
+The code generated by the medium-any code model is position-independent, but is
+not guaranteed to function correctly when linked into position-independent
+executables or libraries.
+-mcmodel=large ¶
+Generate code for a large code model, which has no restrictions on size or
+placement of symbols.
+-mexplicit-relocs
+-mno-exlicit-relocs
+Use or do not use assembler relocation operators when dealing with symbolic
+addresses.
+The alternative is to use assembler macros instead, which may
+limit optimization.
+-mrelax ¶
+-mno-relax
+Take advantage of linker relaxations to reduce the number of instructions
+required to materialize symbol addresses. The default is to take advantage of
+linker relaxations.
+-mriscv-attribute ¶
+-mno-riscv-attribute
+Emit (do not emit) RISC-V attribute to record extra information into ELF
+objects.
+This feature requires at least binutils 2.32.
+-mcsr-check ¶
+-mno-csr-check
+Enables or disables the CSR checking.
+-malign-data=type ¶
+Control how GCC aligns variables and constants of array, structure, or union
+types.
+Supported values for type are ‘xlen’ which uses x register
+width as the alignment value, and ‘natural’ which uses natural alignment.
+‘xlen’ is the default.
+-mbig-endian ¶
+Generate big-endian code.
+This is the default when GCC is configured for a
+‘riscv64be-*-*’ or ‘riscv32be-*-*’ target.
+-mlittle-endian ¶
+Generate little-endian code.
+This is the default when GCC is configured for a
+‘riscv64-*-*’ or ‘riscv32-*-*’ but not a ‘riscv64be-*-*’ or
+‘riscv32be-*-*’ target.
+-mstack-protector-guard=guard ¶
+-mstack-protector-guard-reg=reg
+-mstack-protector-guard-offset=offset
+Generate stack protection code using canary at guard.
+Supported
+locations are ‘global’ for a global canary or ‘tls’ for per-thread
+canary in the TLS block.
+With the latter choice the options
+-mstack-protector-guard-reg=reg and
+-mstack-protector-guard-offset=offset furthermore specify
+which register to use as base register for reading the canary,
+and from what offset from that base register. There is no default
+register or offset as this is entirely for use within the Linux
+kernel.
+-mtls-dialect=desc ¶
+Use TLS descriptors as the thread-local storage mechanism for dynamic accesses
+of TLS variables.
+-mtls-dialect=trad ¶
+Use traditional TLS as the thread-local storage mechanism for dynamic accesses
+of TLS variables.
+This is the default.
+Next: RL78 Options, Previous: PRU Options, Up: Machine-Dependent Options   [Contents][Index]

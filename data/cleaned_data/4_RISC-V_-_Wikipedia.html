@@ -1,0 +1,1242 @@
+RISC-V - Wikipedia
+Jump to content
+Main menu
+Main menu
+move to sidebar
+hide
+Navigation
+Main pageContentsCurrent eventsRandom articleAbout WikipediaContact us
+Contribute
+HelpLearn to editCommunity portalRecent changesUpload fileSpecial pages
+Search
+Search
+Appearance
+Donate
+Create account
+Log in
+Personal tools
+Donate Create account Log in
+Pages for logged out editors learn more
+ContributionsTalk
+Contents
+move to sidebar
+hide
+(Top)
+1
+History
+Toggle History subsection
+1.1
+Foundations
+1.2
+Awards
+2
+Rationale
+3
+ISA base and extensions
+Toggle ISA base and extensions subsection
+3.1
+Standard extensions
+3.2
+Profiles and platforms
+4
+Design
+Toggle Design subsection
+4.1
+Register sets
+4.2
+Memory access
+4.3
+Immediates
+4.4
+Subroutine calls, jumps, and branches
+4.5
+Arithmetic and logic sets
+4.6
+Atomic memory operations
+4.7
+Compressed subset
+4.8
+Embedded subset
+4.9
+Privileged instruction set
+4.10
+Bit manipulation
+4.11
+Packed SIMD
+4.12
+Vector set
+4.13
+External debug system
+5
+Implementations
+Toggle Implementations subsection
+5.1
+Existing
+5.2
+In development
+5.3
+Open source
+6
+End-user hardware
+7
+Software
+8
+Development tools
+9
+See also
+10
+Notes
+11
+References
+12
+Further reading
+13
+External links
+Toggle the table of contents
+RISC-V
+29 languages
+العربيةCatalàČeštinaDeutschEestiΕλληνικάEspañolEuskaraفارسیFrançais한국어ItalianoעבריתMagyarNederlands日本語Norsk bokmålPolskiPortuguêsRuna SimiРусскийSuomiSvenskaTürkçeУкраїнськаTiếng Việt吴语粵語中文
+Edit links
+ArticleTalk
+English
+ReadEditView history
+Tools
+Tools
+move to sidebar
+hide
+Actions
+ReadEditView history
+General
+What links hereRelated changesUpload filePermanent linkPage informationCite this pageGet shortened URLDownload QR code
+Print/export
+Download as PDFPrintable version
+In other projects
+Wikimedia CommonsWikidata item
+Appearance
+move to sidebar
+hide
+From Wikipedia, the free encyclopedia
+Open-source CPU instruction set architecture
+This article's lead section may be too short to adequately summarize the key points. Please consider expanding the lead to provide an accessible overview of all important aspects of the article. (March 2025)
+RISC-VDesignerUniversity of California, BerkeleyBits32, 64, 128Introduced6 August 2014 (10 years ago) (2014-08-06)[1]Version
+unprivileged ISA 20191213,[2]
+privileged ISA 20211203[3]
+DesignRISCTypeLoad–storeEncodingVariableBranchingCompare-and-branchEndiannessLittle[2]: 9 [a]Page size4 KiBExtensions
+M: Multiplication
+A: Atomics – LR/SC & fetch-and-op
+F: Floating point (32-bit)
+D: FP Double (64-bit)
+Q: FP Quad (128-bit)
+Zicsr:	Control and status register support
+Zifencei: Load/store fence
+C: Compressed instructions (16-bit)
+J: Interpreted or JIT-compiled language support
+OpenYes, royalty freeRegistersGeneral-purpose
+16
+32
+(Includes one always-zero register)Floating point
+32
+(Optional; width depends on available extensions)
+RISC-V[b] (pronounced "risk-five"[2]: 1 ) is an open standard instruction set architecture (ISA) based on established reduced instruction set computer (RISC) principles. The project commenced in 2010 at the University of California, Berkeley. It transferred to the RISC-V Foundation in 2015, and from there to RISC-V International, a Swiss non-profit entity, in November 2019.[5][6] Similar to several other RISC ISAs, e.g. Amber (ARMv2) or OpenRISC, RISC-V is offered under royalty-free open-source licenses.[7] The documents defining the RISC-V instruction set architecture (ISA) are offered under a Creative Commons license or a BSD License.
+Mainline support for RISC-V was added to the Linux 5.17 kernel in 2022, along with its toolchain.[8] In July 2023, RISC-V, in its 64-bit variant called riscv64,[9] was included as an official architecture of Linux distribution Debian, in its unstable version.[10] The goal of this project was "to have Debian ready to install and run on systems implementing a variant of the RISC-V ISA."[11] Gentoo also supports RISC-V.[12] Fedora supports RISC-V as an alternative architecture as of 2025.[13][14]
+The openSUSE Project added RISC-V support in 2018.[15]
+Some RISC-V International members, such as SiFive, Andes Technology, Synopsys, Alibaba's Damo Academy, Raspberry Pi, and Akeana,[16][17] offer or have announced commercial systems on a chip (SoCs) that incorporate one or more RISC-V compatible CPU cores.[18]
+History[edit]
+The term RISC dates from about 1980.[19] Before then, there was some knowledge (see John Cocke) that simpler computers can be effective, but the design principles were not widely described. Simple, effective computers have always been of academic interest, and resulted in the RISC instruction set DLX for the first edition of Computer Architecture: A Quantitative Approach in 1990 of which David Patterson was a co-author, and he later participated in the RISC-V origination. DLX was intended for educational use; academics and hobbyists implemented it using field-programmable gate arrays (FPGA), but it was never truly intended for commercial deployment. ARM CPUs, versions 2 and earlier, had a public-domain instruction set and are still supported by the GNU Compiler Collection (GCC), a popular free-software compiler. Three open-source cores exist for this ISA, but were never manufactured.[20][21] OpenRISC, OpenPOWER, and OpenSPARC / LEON cores are offered, by a number of vendors, and have mainline GCC and Linux kernel support.[22][23][24]
+Krste Asanović at the University of California, Berkeley, had a research requirement for an open-source computer system, and in 2010, he decided to develop and publish one in a "short, three-month project over the summer" with several of his graduate students. The plan was to aid both academic and industrial users.[25] David Patterson at Berkeley joined the collaboration as he was the originator of the Berkeley RISC,[19] and the RISC-V is the eponymous fifth generation of his long series of cooperative RISC-based research projects at the University of California, Berkeley (RISC-I and RISC-II published in 1981 by Patterson, who refers[26] to the SOAR architecture[27] from 1984 as "RISC-III" and the SPUR architecture[28] from 1988 as "RISC-IV"). At this stage, students provided initial software, simulations, and CPU designs.[29]
+First Raven1 bring up ST28nm at Berkeley Wireless Research Center (BWRC) June 2012
+The RISC-V authors and their institution originally sourced the ISA documents[30] and several CPU designs under BSD licenses, which allow derivative works—such as RISC-V chip designs—to be either open and free, or closed and proprietary. The ISA specification itself (i.e., the encoding of the instruction set) was published in 2011 as open source,[31] with all rights reserved. The actual technical report (an expression of the specification) was later placed under a Creative Commons license to permit enhancement by external contributors through the RISC-V Foundation, and later RISC-V International.
+A full history of RISC-V has been published on the RISC-V International website.[32]
+Foundations[edit]
+Commercial users require an ISA to be stable before they can use it in a product that may last many years. To address this issue, the RISC-V Foundation was formed in 2015 to own, maintain, and publish intellectual property related to RISC-V's definition.[33] The original authors and owners have surrendered their rights to the foundation.[citation needed] The foundation is led by CEO Calista Redmond, who took on the role in 2019 after leading open infrastructure projects at IBM.[34][failed verification]
+The founding members of RISC-V were: Andes Technology, Antmicro, Bluespec, Ceva, Codasip, Cortus, Esperanto Technologies, Espressif Systems, ETH Zurich, Google, IBM, ICT, IIT Madras, Lattice Semiconductor, LowRISC, Microchip Technology, the MIT Computer Science and Artificial Intelligence Laboratory, Qualcomm, Rambus, Rumble Development, SiFive, Syntacore and Technolution.[35]
+In November 2019, the RISC-V Foundation announced that it would relocate to Switzerland, citing concerns over U.S. trade regulations.[36][37] As of March 2020, the organization was named RISC-V International, a Swiss nonprofit business association.[38]
+As of 2019[update], RISC-V International freely publishes the documents defining RISC-V and permits unrestricted use of the ISA for design of software and hardware. However, only members of RISC-V International can vote to approve changes, and only member organizations use the trademarked compatibility logo.[39]
+The Linux Foundation Europe started the RISC-V Software Ecosystem (RISE) initiative on May 31, 2023. The goal of RISE is to increase the availability of software for high-performance and power-efficient RISC-V processors running high-level operating systems for a range of market segments by bringing together a large number of hardware and software vendors. Red Hat, Samsung, Qualcomm, Nvidia, MediaTek, Intel, and Google are among the initial members.[40]
+Awards[edit]
+2017: The Linley Group's Analyst's Choice Award for Best Technology (for the instruction set)[41]
+Rationale[edit]
+This section contains promotional content. Please help improve it by removing promotional language and inappropriate external links, and by adding encyclopedic text written from a neutral point of view. (March 2025) (Learn how and when to remove this message)
+RISC-V processor prototype, January 2013
+CPU design requires design expertise in several specialties: electronic digital logic, compilers, and operating systems. To cover the costs of such a team, commercial vendors of processor intellectual property (IP), such as Arm Ltd. and MIPS Technologies, charge royalties for the use of their designs and patents.[42][43][44] They also often require non-disclosure agreements before releasing documents that describe their designs' detailed advantages. In many cases, they never describe the reasons for their design choices.
+RISC-V was begun with a goal to make a practical ISA that was open-sourced, usable academically, and deployable in any hardware or software design without royalties.[2]: 1 [25] Also, justifying rationales for each design decision of the project are explained, at least in broad terms. The RISC-V authors are academics who have substantial experience in computer design, and the RISC-V ISA is a direct development from a series of academic computer-design projects, especially Berkeley RISC. RISC-V was originated in part to aid all such projects.[2]: 1 [25]
+To build a large, continuing community of users and thereby accumulate designs and software, the RISC-V ISA designers intentionally support a wide variety of practical use cases: compact, performance, and low-power real-world implementations[2]: 1–2, 153–154 [45] without over-architecting for a given microarchitecture.[2]: 1 [46][47][48] The requirements of a large base of contributors is part of the reason why RISC-V was engineered to address many possible uses.
+The designers' primary assertion is that the instruction set is the key interface in a computer as it is situated at the interface between the hardware and the software. If a good instruction set were open and available for use by all, then it can dramatically reduce the cost of software by enabling far more reuse. It should also trigger increased competition among hardware providers, who can then devote more resources toward design and less for software support.[25]
+The designers maintain that new principles are becoming rare in instruction set design, as the most successful designs of the last forty years have grown increasingly similar. Of those that failed, most did so because their sponsoring companies were financially unsuccessful, not because the instruction sets were technically poor. Thus, a well-designed open instruction set designed using well-established principles should attract long-term support by many vendors.[25]
+RISC-V also encourages academic usage. The simplicity of the integer subset permits basic student exercises, and is a simple enough ISA to enable software to control research machines. The variable-length ISA provides room for instruction set extensions for both student exercises and research,[2]: 7  and the separated privileged instruction set permits research in operating system support without redesigning compilers.[3] RISC-V's open intellectual property paradigm allows derivative designs to be published, reused, and modified.[49]
+ISA base and extensions[edit]
+RISC-V has a modular design, consisting of alternative base parts, with added optional extensions. The ISA base and its extensions are developed in a collective effort between industry, the research community and educational institutions. The base specifies instructions (and their encoding), control flow, registers (and their sizes), memory and addressing, logic (i.e., integer) manipulation, and ancillaries. The base alone can implement a simplified general-purpose computer, with full software support, including a general-purpose compiler.
+Standard extensions[edit]
+The standard extensions are specified to work with all of the standard bases, and with each other without conflict.
+Many RISC-V computers might implement the compressed instructions extension to reduce power consumption, code size, and memory use.[2]: 97–99  There are also future plans to support hypervisors and virtualization.[3]
+Together with the supervisor extension, S, an RVGC instruction set, which includes one of the RV base instruction sets, the G collection of extensions (which includes "I", meaning that the base is non-embedded), and the C extension, defines all instructions needed to conveniently support a general purpose operating system.[2]: 129, 154
+ISA base and extensions
+Name
+Description
+Version
+Status[A]
+Instruction count
+Base
+RVWMO
+Weak memory ordering
+2.0
+Ratified
+RV32I
+Base integer instruction set, 32-bit
+2.1
+Ratified
+40
+RV32E
+Base integer instruction set (embedded), 32-bit, 16 registers
+2.0
+Ratified
+40
+RV64I
+Base integer instruction set, 64-bit
+2.1
+Ratified
+52
+RV64E
+Base integer instruction set (embedded), 64-bit
+2.0
+Ratified
+52
+RV128I
+Base integer instruction set, 128-bit
+1.7
+Open
+64
+Extension
+M
+Standard extension for integer multiplication and division
+2.0
+Ratified
+8 (RV32)13 (RV64)
+A
+Standard extension for atomic instructions
+2.1
+Ratified
+11 (RV32)22 (RV64)
+F
+Standard extension for single-precision floating-point
+2.2
+Ratified
+26 (RV32)30 (RV64)
+D
+Standard extension for double-precision floating-point
+2.2
+Ratified
+26 (RV32)32 (RV64)
+Zicsr
+Control and status register (CSR) instructions
+2.0
+Ratified
+6
+Zifencei
+Instruction-fetch fence
+2.0
+Ratified
+1
+G
+Shorthand for the IMAFD_Zicsr_Zifencei base and extensions[2]: 129
+—
+—
+Q
+Standard extension for quad-precision floating-point
+2.2
+Ratified
+28 (RV32)32 (RV64)
+L
+Standard extension for decimal floating-point
+0.0
+Open
+C
+Standard extension for compressed instructions
+2.0
+Ratified
+40
+B
+Standard extension for bit manipulation
+1.0
+Ratified
+29 (RV32)41 (RV64)[50][51]
+J
+Standard extension for dynamically translated languages
+0.0
+Open
+T
+Standard extension for transactional memory
+0.0
+Open
+P
+Standard extension for packed-SIMD instructions
+0.9.10
+Open
+V
+Standard extension for vector operations
+1.0
+Open
+187[52]
+Zk
+Standard extension for scalar cryptography
+1.0.1
+Ratified
+49[53]
+H
+Standard extension for hypervisor
+1.0
+Ratified
+15
+S
+Standard extension for supervisor-level instructions
+1.12
+Ratified
+4
+Zam
+Misaligned atomics
+0.1
+Open
+Zihintpause
+Pause hint
+2.0
+Ratified
+Zihintntl
+Non-temporal locality hints
+0.3
+Ratified
+Zfa
+Additional floating-point instructions
+1.0
+Ratified
+Zfh
+Half-precision floating-point
+1.0
+Ratified
+Zfhmin
+Minimal half-precision floating-point
+1.0
+Ratified
+Zfinx
+Single-precision floating-point in integer register
+1.0
+Ratified
+Zdinx
+Double-precision floating-point in integer register
+1.0
+Ratified
+Zhinx
+Half-precision floating-point in integer register
+1.0
+Ratified
+Zhinxmin
+Minimal half-precision floating-point in integer register
+1.0
+Ratified
+Zmmul
+Multiplication subset of the M extension
+1.0
+Ratified
+Ztso
+Total store ordering
+1.0
+Ratified
+^ Frozen parts are expected to have their final feature set and to receive only clarifications before being ratified.
+32-bit RISC-V instruction formats
+Format
+Bit
+31
+30
+29
+28
+27
+26
+25
+24
+23
+22
+21
+20
+19
+18
+17
+16
+15
+14
+13
+12
+11
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+Register/register
+funct7
+rs2
+rs1
+funct3
+rd
+opcode
+Immediate
+imm[11:0]
+rs1
+funct3
+rd
+opcode
+Store
+imm[11:5]
+rs2
+rs1
+funct3
+imm[4:0]
+opcode
+Branch
+[12]
+imm[10:5]
+rs2
+rs1
+funct3
+imm[4:1]
+[11]
+opcode
+Upper immediate
+imm[31:12]
+rd
+opcode
+Jump
+[20]
+imm[10:1]
+[11]
+imm[19:12]
+rd
+opcode
+opcode (7 bits): Partially specifies one of the 6 types of instruction formats.
+funct7 (7 bits) and funct3 (3 bits): These two fields extend the opcode field to specify the operation to be performed.
+rs1 (5 bits) and rs2 (5 bits): Specify, by index, the first and second operand registers respectively (i.e., source registers).
+rd (5 bits): Specifies, by index, the destination register to which the computation result will be directed.
+To name the combinations of functions that may be implemented, a nomenclature is defined to specify them in Chapter 27 of the current ratified Unprivileged ISA Specification. The instruction set base is specified first, coding for RISC-V, the register bit-width, and the variant; e.g., RV64I or RV32E. Then follows letters specifying implemented extensions, in the order of the above table. Each letter may be followed by a major optionally followed by "p" and a minor option number. It defaults to 0 if a minor version number is absent, and 1.0 if all of a version number is absent. Thus RV64IMAFD may be written as RV64I1p0M1p0A1p0F1p0D1p0 or more simply as RV64I1M1A1F1D1. Underscores may be used between extensions for readability, for example RV32I2_M2_A2.
+The modular instruction set of the RV32IMAC variant. This is a 32-bit CPU with the Base Integer ISA (RV32I) and the ISA extensions for Integer Multiplication and Division (RV32M), Atomic Instructions (RV32A), and Compressed Instructions (RV32C).
+The base, extended integer & floating-point calculations, with synchronization primitives for multi-core computing, are considered to be necessary for general-purpose computing, and thus we have the shorthand, "G".
+A small 32-bit computer for an embedded system might be RV32EC. A large 64-bit computer might be RV64GC; i.e., RV64IMAFDCZicsr_Zifencei.
+With the growth in the number of extensions, the standard now provides for extensions to be named by a single "Z" followed by an alphabetical name and an optional version number. For example, Zifencei names the instruction-fetch extension. Zifencei2 and Zifencei2p0 name version 2.0 of the same. The first letter following the "Z" by convention indicates the most closely related alphabetical extension category, IMAFDQLCBJTPVN. Thus the Zam extension for misaligned atomics relates to the "A" standard extension. Unlike single character extensions, Z extensions must be separated by underscores, grouped by category and then alphabetically within each category. For example, Zicsr_Zifencei_Zam.
+Extensions specific to supervisor privilege level are named in the same way using "S" for prefix. Extensions specific to hypervisor level are named using "H" for prefix. Machine level extensions are prefixed with the three letters "Zxm". Supervisor, hypervisor and machine level instruction set extensions are named after less privileged extensions.
+RISC-V developers may create their own non-standard instruction set extensions. These follow the "Z" naming convention, but with "X" as the prefix. They should be specified after all standard extensions, and if multiple non-standard extensions are listed, they should be listed alphabetically.
+Profiles and platforms[edit]
+Profiles and platforms for standard ISA choice lists are under discussion.
+This flexibility can be used to highly optimize a specialized design by including only the exact set of ISA features required for an application, but the same flexibility also leads to a combinatorial explosion in possible ISA choices. Profiles specify a much smaller common set of ISA choices that capture the most value for most users, and which thereby enable the software community to focus resources on building a rich software ecosystem.
+— [54]
+The RISC-V Profiles (RVI20, RVA20, RVA22) are version 1.0 as at March 2023.[55][56]
+The RVA23 and RVB23 Profiles are version 1.0 as at October 2024. RVA23U64 makes the V Vector extensions mandatory, it was optional in RVA22U64.[57]
+The platform specification defines a set of platforms that specify requirements for interoperability between software and hardware. The Platform Policy defines the various terms used in this platform specification. The platform policy also provides the needed detail regarding the scope, coverage, naming, versioning, structure, life cycle and compatibility claims for the platform specification.
+[58]
+Design[edit]
+As a RISC architecture, the RISC-V ISA is a load–store architecture. Its floating-point instructions use IEEE 754 floating-point. Notable features of the RISC-V ISA include: instruction bit field locations chosen to simplify the use of multiplexers in a CPU,[2]: 17  a design that is architecturally neutral,[dubious – discuss] and a fixed location for the sign bit of immediate values to speed up sign extension.[2]: 17
+The instruction set is designed for a wide range of uses. The base instruction set has a fixed length of 32-bit naturally aligned instructions, and the ISA supports variable length extensions where each instruction can be any number of 16-bit parcels in length.[2]: 7–10  Extensions support small embedded systems, personal computers, supercomputers with vector processors, and warehouse-scale parallel computers.
+The instruction set specification defines 32-bit and 64-bit address space variants. The specification includes a description of a 128-bit flat address space variant, as an extrapolation of 32- and 64-bit variants, but the 128-bit ISA remains "not frozen" intentionally, because as of 2023[update], there is still little practical experience with such large memory systems.[2]: 41
+Unlike other academic designs which are typically optimized only for simplicity of exposition, the designers intended that the RISC-V instruction set be usable for practical computers. As of June 2019, version 2.2 of the user-space ISA[59] and version 1.11 of the privileged ISA[3] are frozen, permitting software and hardware development to proceed. The user-space ISA, now renamed the Unprivileged ISA, was updated, ratified and frozen as version 20191213.[2] An external debug specification is available as a draft, version 0.13.2.[60]
+Register sets[edit]
+Assembler mnemonics for RISC-V integer and floating-point registers, and their role in the first standard calling convention.[2]: 137
+Registername
+Symbolicname
+Description
+Saved by
+32 integer registers
+x0
+zero
+Always zero
+x1
+ra
+Return address
+Caller
+x2
+sp
+Stack pointer
+Callee
+x3
+gp
+Global pointer
+x4
+tp
+Thread pointer
+x5
+t0
+Temporary / alternate return address
+Caller
+x6–7
+t1–2
+Temporaries
+Caller
+x8
+s0/fp
+Saved register / frame pointer
+Callee
+x9
+s1
+Saved register
+Callee
+x10–11
+a0–1
+Function arguments / return values
+Caller
+x12–17
+a2–7
+Function arguments
+Caller
+x18–27
+s2–11
+Saved registers
+Callee
+x28–31
+t3–6
+Temporaries
+Caller
+32 floating-point extension registers
+f0–7
+ft0–7
+Floating-point temporaries
+Caller
+f8–9
+fs0–1
+Floating-point saved registers
+Callee
+f10–11
+fa0–1
+Floating-point arguments/return values
+Caller
+f12–17
+fa2–7
+Floating-point arguments
+Caller
+f18–27
+fs2–11
+Floating-point saved registers
+Callee
+f28–31
+ft8–11
+Floating-point temporaries
+Caller
+RISC-V has 32 integer registers (or 16 in the embedded variant),[2]: 13, 33  and when the floating-point extension is implemented, an additional 32 floating-point registers.[2]: 63  Except for memory access instructions, instructions address only registers.
+The first integer register is a zero register, and the remainder are general-purpose registers. A store to the zero register has no effect, and a read always provides 0. Using the zero register as a placeholder makes for a simpler instruction set.
+Control and status registers exist, but user-mode programs can access only those used for performance measurement and floating-point management.
+No instructions exist to save and restore multiple registers. Those were thought to be needless, too complex, and perhaps too slow.[49]
+Memory access[edit]
+Like many RISC designs, RISC-V is a load–store architecture: instructions address only registers, with load and store instructions conveying data to and from memory.
+Most load and store instructions include a 12-bit offset and two register identifiers. One register is the base register. The other register is the destination (for a load) or the source (for a store).
+The offset is added to a base register to get the address.[2]: 24  Forming the address as a base register plus offset allows single instructions to access data structures. For example, if the base register points to the top of a stack, single instructions can access a subroutine's local variables in the stack. Likewise the load and store instructions can access a record-style structure or a memory-mapped I/O device. Using the constant zero register as a base address allows single instructions to access memory near address zero.
+Memory is addressed as 8-bit bytes, with instructions being in little-endian order,[2]: 9–10  and with data being in the byte order defined by the execution environment interface in which code is running.[2]: 3, 9–10, 24  Words, up to the register size, can be accessed with the load and store instructions.
+RISC-V was originally specified as little-endian to resemble other familiar, successful computers, for example, x86.[2]: 9–10  This also reduces a CPU's complexity and costs slightly less because it reads all sizes of words in the same order. For example, the RISC-V instruction set decodes starting at the lowest-addressed byte of the instruction. Big-endian and bi-endian variants were defined for support of legacy code bases that assume big-endianness.[2]: 9–10  The privileged ISA defines bits in the mstatus and mstatush registers that indicate and, optionally, control whether M-mode, S-mode, and U-mode memory accesses other than instruction fetches are little-endian or big-endian; those bits may be read-only, in which case the endianness of the implementation is hardwired, or may be writable.[3]: 23–24
+An execution environment interface may allow accessed memory addresses not to be aligned to their word width, but accesses to aligned addresses may be faster; for example, simple CPUs may implement unaligned accesses with slow software emulation driven from an alignment failure interrupt.[2]: 3, 24–25
+Like many RISC instruction sets (and some complex instruction set computer (CISC) instruction sets, such as x86 and IBM System/360 and its successors through z/Architecture), RISC-V lacks address-modes that write back to the registers. For example, it does not auto-increment.[2]: 24
+RISC-V manages memory systems that are shared between CPUs or threads by ensuring a thread of execution always sees its memory operations in the programmed order. But between threads and I/O devices, RISC-V is simplified: it doesn't guarantee the order of memory operations, except by specific instructions, such as fence.
+A fence instruction guarantees that the results of predecessor operations are visible to successor operations of other threads or I/O devices. fence can guarantee the order of combinations of both memory and memory-mapped I/O operations. E.g. it can separate memory read and write operations, without affecting I/O operations. Or, if a system can operate I/O devices in parallel with memory, fence doesn't force them to wait for each other. One CPU with one thread may decode fence as nop.
+Some RISC CPUs (such as MIPS, PowerPC, DLX, and Berkeley's RISC-I) place 16 bits of offset in the loads and stores. They set the upper 16 bits by a load upper word instruction. This permits upper-halfword values to be set easily, without shifting bits. However, most use of the upper half-word instruction makes 32-bit constants, like addresses. RISC-V uses a SPARC-like combination of 12-bit offsets and 20-bit set upper instructions. The smaller 12-bit offset helps compact, 32-bit load and store instructions select two of 32 registers yet still have enough bits to support RISC-V's variable-length instruction coding.[2]: 16
+Immediates[edit]
+RISC-V handles 32-bit constants and addresses with instructions that set the upper 20 bits of a 32-bit register. Load upper immediate lui loads 20 bits into bits 31 through 12. Then a second instruction such as addi can set the bottom 12 bits. Small numbers or addresses can be formed by using the zero register instead of lui.
+This method is extended to permit position-independent code by adding an instruction, auipc that generates 20 upper address bits by adding an offset to the program counter and storing the result into a base register. This permits a program to generate 32-bit addresses that are relative to the program counter.
+The base register can often be used as-is with the 12-bit offsets of the loads and stores. If needed, addi can set the lower 12 bits of a register. In 64-bit and 128-bit ISAs,lui and auipc sign-extend the result to get the larger address.[2]: 37
+Some fast CPUs may interpret combinations of instructions as single fused instructions. lui or auipc are good candidates to fuse with jalr, addi, loads or stores.
+Subroutine calls, jumps, and branches[edit]
+RISC-V's subroutine call jal (jump and link) places its return address in a register. This is faster in many computer designs, because it saves a memory access compared to systems that push a return address directly on a stack in memory. jal has a 20-bit signed (two's complement) offset. The offset is multiplied by 2, then added to the PC (program counter) to generate a relative address to a 32-bit instruction. If the resulting address is not 32-bit aligned (i.e. evenly divisible by 4), the CPU may force an exception.[2]: 20–23, Section 2.5
+RISC-V CPUs jump to calculated addresses using a jump and link-register, jalr instruction. jalr is similar to jal, but gets its destination address by adding a 12-bit offset to a base register. (In contrast,jal adds a larger 20-bit offset to the PC.)
+jalr's bit format is like the register-relative loads and stores. Like them, jalr can be used with the instructions that set the upper 20 bits of a base register to make 32-bit branches, either to an absolute address (using lui) or a PC-relative one (using auipc for position-independent code). (Using a constant zero base address allows single-instruction calls to a small (the offset), fixed positive or negative address.)
+RISC-V recycles jal and jalr to get unconditional 20-bit PC-relative jumps and unconditional register-based 12-bit jumps. Jumps just make the linkage register 0 so that no return address is saved.[2]: 20–23, Section 2.5
+RISC-V also recycles jalr to return from a subroutine: To do this, jalr's base register is set to be the linkage register saved by jal or jalr. jalr's offset is zero and the linkage register is zero, so that there is no offset, and no return address is saved.
+Like many RISC designs, in a subroutine call, a RISC-V compiler must use individual instructions to save registers to the stack at the start, and then restore these from the stack on exit. RISC-V has no save multiple or restore multiple register instructions. These were thought to make the CPU too complex, and possibly slow.[61] This can take more code space. Designers planned to reduce code size with library routines to save and restore registers.[62]
+RISC-V has no condition code register or carry bit. The designers believed that condition codes make fast CPUs more complex by forcing interactions between instructions in different stages of execution. This choice makes multiple-precision arithmetic more complex. Also, a few numerical tasks need more energy. As a result, predication (the conditional execution of instructions) is not supported. The designers claim that very fast, out-of-order CPU designs do predication anyway, by doing the comparison branch and conditional code in parallel, then discarding the unused path's effects. They also claim that even in simpler CPUs, predication is less valuable than branch prediction, which can prevent most stalls associated with conditional branches. Code without predication is larger, with more branches, but they also claim that a compressed instruction set (such as RISC-V's set C) solves that problem in most cases.[49][failed verification]
+Instead, RISC-V has short branches that perform comparisons: equal, not-equal, less-than, unsigned less-than, greater-than or equal and unsigned greater-than or equal. Ten comparison-branch operations are implemented with only six instructions, by reversing the order of operands in the assembler. For example, branch if greater than can be done by less-than with a reversed order of operands.[2]: 20–23, Section 2.5
+The comparing branches have a twelve-bit signed range, and jump relative to the PC.[2]: 20–23, Section 2.5
+Unlike some RISC architectures, RISC-V does not include a branch delay slot, a position after a branch instruction that can be filled with an instruction that is executed whether or not the branch is taken.[2]: 20–23, Section 2.5  RISC-V omits a branch delay slot because it complicates multicycle CPUs, superscalar CPUs, and long pipelines. Dynamic branch predictors have succeeded well enough to reduce the need for delayed branches.[49]
+On the first encounter with a branch, RISC-V CPUs should assume that a negative relative branch (i.e. the sign bit of the offset is "1") will be taken.[2]: 20–23, Section 2.5  This assumes that a backward branch is a loop, and provides a default direction so that simple pipelined CPUs can fill their pipeline of instructions. Other than this, RISC-V does not require branch prediction, but core implementations are allowed to add it. RV32I reserves a "HINT" instruction space that presently does not contain any hints on branches;[2]: 28–29, Section 2.9  RV64I does the same.[2]: 38–39, Section 5.4
+Arithmetic and logic sets[edit]
+RISC-V segregates math into a minimal set of integer instructions (set I) with add, subtract, shift, bitwise logic and comparing-branches. These can simulate most of the other RISC-V instruction sets with software. (The atomic instructions are a notable exception.) RISC-V integer instructions lack the count leading zero and bit-field operations normally used to speed software floating-point in a pure-integer processor, However, while nominally in the bit manipulation extension, the ratified Zbb, Zba and Zbs extensions contain further integer instructions including a count leading zero instruction.
+The integer multiplication instructions (set M) include signed and unsigned multiply and divide. Double-precision integer multiplies and divides are included, as multiplies and divides that produce the high word of the result. The ISA document recommends that implementors of CPUs and compilers fuse a standardized sequence of high and low multiply and divide instructions to one operation if possible.[2]: 43–45
+The floating-point instructions (set F) include single-precision arithmetic and also comparison-branches similar to the integer arithmetic. It requires an additional set of 32 floating-point registers. These are separate from the integer registers. The double-precision floating point instructions (set D) generally assume that the floating-point registers are 64-bit (i.e., double-width), and the F subset is coordinated with the D set. A quad-precision 128-bit floating-point ISA (Q) is also defined.[2]: 63–82  RISC-V computers without floating-point can use a floating-point software library.
+RISC-V does not cause exceptions on arithmetic errors, including overflow,[2]: 17–20  underflow, subnormal, and divide by zero.[2]: 44–45  Instead, both integer and floating-point arithmetic produce reasonable default values, and floating-point instructions set status bits.[2]: 66  Divide-by-zero can be discovered by one branch after the division.[2]: 44–45  The status bits can be tested by an operating system or periodic interrupt.
+Atomic memory operations[edit]
+RISC-V supports computers that share memory between multiple CPUs and threads. RISC-V's standard memory consistency model is release consistency. That is, loads and stores may generally be reordered, but some loads may be designated as acquire operations which must precede later memory accesses, and some stores may be designated as release operations which must follow earlier memory accesses.[2]: 83–94
+The base instruction set includes minimal support in the form of a fence instruction to enforce memory ordering.[2]: 26–27  Although this is sufficient (fence r, rw provides acquire and fence rw, w provides release), combined operations can be more efficient.[2]: Chapter 8
+The atomic memory operation extension supports two types of atomic memory operations for release consistency. First, it provides general purpose load-reserved lr and store-conditional sc instructions. lr performs a load, and tries to reserve that address for its thread. A later store-conditional sc to the reserved address will be performed only if the reservation is not broken by an intervening store from another source. If the store succeeds, a zero is placed in a register. If it failed, a non-zero value indicates that software needs to retry the operation. In either case, the reservation is released.[2]: Chapter 8
+The second group of atomic instructions perform read-modify-write sequences: a load (which is optionally a load-acquire) to a destination register, then an operation between the loaded value and a source register, then a store of the result (which may optionally be a store-release). Making the memory barriers optional permits combining the operations. The optional operations are enabled by acquire and release bits which are present in every atomic instruction. RISC-V defines nine possible operations: swap (use source register value directly); add; bitwise and, or, and exclusive-or; and signed and unsigned minimum and maximum.[2]: Chapter 8
+A system design may optimize these combined operations more than lr and sc. For example, if the destination register for a swap is the constant zero, the load may be skipped. If the value stored is unmodified since the load, the store may be skipped.[59]: 44
+The IBM System/370 and its successors including z/Architecture, and x86, both implement a compare-and-swap (cas) instruction, which tests and conditionally updates a location in memory: if the location contains an expected old value, cas replaces it with a given new value; it then returns an indication of whether it made the change. However, a simple load-type instruction is usually performed before the cas to fetch the old value. The classic problem is that if a thread reads (loads) a value A, calculates a new value C, and then uses (cas) to replace A with C, it has no way to know whether concurrent activity in another thread has replaced A with some other value B and then restored the A in between. In some algorithms (e.g., ones in which the values in memory are pointers to dynamically allocated blocks), this ABA problem can lead to incorrect results. The most common solution employs a double-wide cas instruction to update both the pointer and an adjacent counter; unfortunately, such an instruction requires a special instruction format to specify multiple registers, performs several reads and writes, and can have complex bus operation.[2]: 48–49
+The lr/sc alternative is more efficient. It usually requires only one memory load, and minimizing slow memory operations is desirable. It's also exact: it controls all accesses to the memory cell, rather than just assuring a bit pattern. However, unlike cas, it can permit livelock, in which two or more threads repeatedly cause each other's instructions to fail. RISC-V guarantees forward progress (no livelock) if the code follows rules on the timing and sequence of instructions: 1) It must use only the I subset. 2) To prevent repetitive cache misses, the code (including the retry loop) must occupy no more than 16 consecutive instructions. 3) It must include no system or fence instructions, or taken backward branches between the lr and sc. 4) The backward branch to the retry loop must be to the original sequence.[2]: 48–49
+The specification gives an example of how to use the read-modify-write atomic instructions to lock a data structure.[2]: 54
+Compressed subset[edit]
+The standard RISC-V ISA specifies that all instructions are 32 bits. This makes for a particularly simple implementation, but like other RISC processors with 32-bit instruction encoding, results in larger code size than in instruction sets with variable-length instructions.[2]: 99 [61]
+To compensate, RISC-V's 32-bit instructions are actually 30 bits; 3⁄4 of the opcode space is reserved for an optional (but recommended) variable-length compressed instruction set, RVC, that includes 16-bit instructions. As in ARM Thumb and MIPS16, the compressed instructions are simply alternative encodings for a subset of the larger instructions. Unlike the ARM or MIPS compressed sets, space was reserved from the start so there is no separate operating mode. Standard and compressed instructions may be intermixed freely.[2]: 97 [61] (Extension letter is C.)[2]: 97
+Because (like Thumb-1 and MIPS16) the compressed instructions are simply alternate encodings (aliases) for a selected subset of larger instructions, the compression can be implemented in the assembler, and it is not essential for the compiler to even know about it.
+A prototype of RVC was tested in 2011.[61] The prototype code was 20% smaller than an x86 PC and MIPS compressed code, and 2% larger than ARM Thumb-2 code.[61] It also substantially reduced both the needed cache memory and the estimated power use of the memory system.[61]
+The researcher intended to reduce the code's binary size for small computers, especially embedded computer systems. The prototype included 33 of the most frequently used instructions, recoded as compact 16-bit formats using operation codes previously reserved for the compressed set.[61] The compression was done in the assembler, with no changes to the compiler. Compressed instructions omitted fields that are often zero, used small immediate values or accessed subsets (16 or 8) of the registers. addi is very common and often compressible.[61]
+Much of the difference in size compared to ARM's Thumb set occurred because RISC-V, and the prototype, have no instructions to save and restore multiple registers. Instead, the compiler generated conventional instructions that access the stack. The prototype RVC assembler then often converted these to compressed forms that were half the size. However, this still took more code space than the ARM instructions that save and restore multiple registers. The researcher proposed to modify the compiler to call library routines to save and restore registers. These routines would tend to remain in a code cache and thus run fast, though probably not as fast as a save-multiple instruction.[61]
+Standard RVC requires occasional use of 32-bit instructions. Several nonstandard RVC proposals are complete, requiring no 32-bit instructions, and are said to have higher densities than standard RVC.[63][64] Another proposal builds on these, and claims to use less coding range as well.[65]
+Embedded subset[edit]
+An instruction set for the smallest embedded CPUs (set E) is reduced in other ways: Only 16 of the 32 integer registers are supported.[2]: Chapter 4  All current extensions may be used; a floating-point extension to use the integer registers for floating-point values is being considered. The privileged instruction set supports only machine mode, user mode and memory schemes that use base-and-bound address relocation.[3]
+Discussion has occurred for a microcontroller profile for RISC-V, to ease development of deeply embedded systems. It centers on faster, simple C-language support for interrupts, simplified security modes and a simplified POSIX application binary interface.[66]
+Correspondents have also proposed smaller, non-standard, 16-bit RV16E ISAs: Several serious proposals would use the 16-bit C instructions with 8 × 16-bit registers.[64][63] An April fools' joke proposed a very practical arrangement: Utilize 16 × 16-bit integer registers, with the standard EIMC ISAs (including 32-bit instructions.) The joke was to use bank switching when a 32-bit CPU would be clearly superior with the larger address space.[67]
+Privileged instruction set[edit]
+RISC-V's ISA includes a separate privileged instruction set specification, which mostly describes three privilege levels plus an orthogonal hypervisor mode. As of December 2021[update], version 1.12 is ratified by RISC-V International.[3]
+Version 1.12 of the specification supports several types of computer systems:
+Systems that have only machine mode, perhaps for simple embedded systems,
+Systems with both machine mode (for a simple supervisor) and user-mode to implement relatively secure embedded systems,
+Systems with machine-mode, supervisor mode (for operating system) and user-modes for typical operating systems.
+These correspond roughly to systems with up to four rings of privilege and security, at most: machine, hypervisor, supervisor and user. Each layer also is expected to have a thin layer of standardized supporting software that communicates to a more-privileged layer, or hardware.[3]
+The ISA also includes a hypervisor mode that is orthogonal to the user and supervisor modes.[68] The basic feature is a configuration bit that either permits supervisor-level code to access hypervisor registers, or causes an interrupt on accesses. This bit lets supervisor mode directly handle the hardware needed by a hypervisor. This simplifies the implementation of hypervisors that are hosted by an operating system. This is a popular mode to run warehouse-scale computers. To support non-hosted hypervisors, the bit can cause these accesses to interrupt to a hypervisor. The design also simplifies nesting of hypervisors, in which a hypervisor runs under a hypervisor, and if necessary it lets the kernel use hypervisor features within its own kernel code. As a result, the hypervisor form of the ISA supports five modes: machine, supervisor, user, supervisor-under-hypervisor and user-under-supervisor.
+The privileged instruction set specification explicitly defines hardware threads, or harts. Multiple hardware threads are a common practice in more-capable computers. When one thread is stalled, waiting for memory, others can often proceed. Hardware threads can help make better use of the large number of registers and execution units in fast out-of-order CPUs. Finally, hardware threads can be a simple, powerful way to handle interrupts: No saving or restoring of registers is required, simply executing a different hardware thread. However, the only hardware thread required in a RISC-V computer is thread zero.[3]
+Interrupts and exceptions are handled together. Exceptions are caused by instruction execution including illegal instructions and system calls, while interrupts are caused by external events. The existing control and status register definitions support RISC-V's error and memory exceptions, and a small number of interrupts, typically via an "advanced core local interruptor" (ACLINT).[69] For systems with more interrupts, the specification also defines a platform-level interrupt controller (PLIC) to coordinate large number of interrupts among multiple processors. Interrupts always start at the highest-privileged machine level, and the control registers of each level have explicit forwarding bits to route interrupts to less-privileged code. For example, the hypervisor need not include software that executes on each interrupt to forward an interrupt to an operating system. Instead, on set-up, it can set bits to forward the interrupt.[3]
+Several memory systems are supported in the specification. Physical-only is suited to the simplest embedded systems. There are also four UNIX-style virtual memory systems for memory cached in mass-storage systems. The virtual memory systems support MMU with four sizes, with addresses sized 32, 39, 48 and 57 bits. All virtual memory systems support 4 KiB pages, multilevel page-table trees and use very similar algorithms to walk the page table trees. All are designed for either hardware or software page-table walking. To optionally reduce the cost of page table walks, super-sized pages may be leaf pages in higher levels of a system's page table tree. SV32 is only supported on 32-bit implementations, has a two-layer page table tree and supports 4 MiB superpages. SV39 has a three level page table, and supports 2 MiB superpages and 1 GiB gigapages. SV48 is required to support SV39. It also has a 4-level page table and supports 2 MiB superpages, 1 GiB gigapages, and 512 GiB terapages. SV57 has a 5-level page table and supports 2 MiB superpages, 1 GiB gigapages, 512 GiB terapages and 256 TiB petapages. Superpages are aligned on the page boundaries for the next-lowest size of page.[3]
+Bit manipulation[edit]
+Some bit-manipulation ISA extensions were ratified in November 2021 (Zba, Zbb, Zbc, Zbs).[51] The Zba, Zbb, and Zbs extensions are arguably extensions of the standard I integer instructions: Zba contains instructions to speed up the computation of the addresses of array elements in arrays of datatypes of size 2, 4, or 8 bytes (sh1add, sh2add, sh3add), and for 64 (and 128) bit processors when indexed with unsigned integers (add.uw, sh1add.uw, sh2add.uw, sh3add.uw and slli.uw). The Zbb instructions contains operations to count leading, trailing 0 bits or all 1 bits in a full and 32 word operations (clz, clzw, ctz, ctzw, cpop, cpopw), byte order reversion (rev8), logical instructions with negation of the second input (andn,orn, xnor), sign and zero extension (sext.b, sext.h, zext.h) that could not be provided as special cases of other instructions (andi, addiw, add.wu), min and max of (signed and unsigned) integers, (left and right) rotation of bits in a register and 32-bit words (rori,roriw, ror, rorw, rol, rolw), and a byte wise "or combine" operation which allows detection of a zero byte in a full register, useful for handling C-style null terminated strings functions. The Zbs extension allows setting, getting, clearing, and toggling individual bits in a register by their index (bseti, bset, bexti, bext, bclri, bclr, binvi,binv).
+The Zbc extension has instructions for "carryless multiplication", which does the multiplication of polynomials over the Galois field GF(2) (clmul, clmulh, clmulr). These are useful for cryptography and CRC checks of data integrity.
+Done well, a more specialised bit-manipulation subset can aid cryptographic, graphic, and mathematical operations. Further instructions that have been discussed include instructions to shift in ones, a generalized bit-reverse, shuffle and crossbar permutations, bit-field place, extract and deposit pack two words, bytes or halfwords in one register, CRC instructions, bit-matrix operations (RV64 only), conditional mix, conditional move, funnel shifts. The criteria for inclusion documented in the draft were compliant with RISC-V philosophies and ISA formats, substantial improvements in code density or speed (i.e., at least a 3-for-1 reduction in instructions), and substantial real-world applications, including preexisting compiler support. Version 0.93 of the bit-manipulation extension includes those instructions;[70] some of them are now in version 1.0.1 of the scalar and entropy source instructions cryptography extension.[53]
+Packed SIMD[edit]
+Packed-SIMD instructions are widely used by commercial CPUs to inexpensively accelerate multimedia and other digital signal processing.[49] For simple, cost-reduced RISC-V systems, the base ISA's specification proposed to use the floating-point registers' bits to perform parallel single instruction, multiple data (SIMD) sub-word arithmetic.
+In 2017 a vendor published a more detailed proposal to the mailing list, and this can be cited as version 0.1.[71] As of 2019[update], the efficiency of this proposed ISA varies from 2x to 5x a base CPU for a variety of DSP codecs.[72] The proposal lacked instruction formats and a license assignment to RISC-V International, but it was reviewed by the mailing list.[71] Some unpopular parts of this proposal were that it added a condition code, the first in a RISC-V design, linked adjacent registers (also a first), and has a loop counter that can be difficult to implement in some microarchitectures.
+Vector set[edit]
+The proposed vector-processing instruction set may make the packed SIMD set obsolete. The designers hope to have enough flexibility that a CPU can implement vector instructions in a standard processor's registers. This would enable minimal implementations with similar performance to a multimedia ISA, as above. However, a true vector coprocessor could execute the same code with higher performance.[73]
+As of 19 September 2021[update], the vector extension is at version 1.0.[74] It is a conservative, flexible design of a general-purpose mixed-precision vector processor, suitable to execute compute kernels. Code would port easily to CPUs with differing vector lengths, ideally without recompiling.[73]
+In contrast, short-vector SIMD extensions are less convenient. These are used in x86, ARM and PA-RISC. In these, a change in word-width forces a change to the instruction set to expand the vector registers (in the case of x86, from 64-bit MMX registers to 128-bit Streaming SIMD Extensions (SSE), to 256-bit Advanced Vector Extensions (AVX), and AVX-512). The result is a growing instruction set, and a need to port working code to the new instructions.
+In the RISC-V vector ISA, rather than fix the vector length in the architecture, instructions (vsetvli, vsetivli, and vsetvl) are available which take a requested size and sets the vector length to the minimum of the hardware limit and the requested size. So, the RISC-V proposal is more like a Cray's long-vector design or ARM's Scalable Vector Extension. That is, each vector in up to 32 vectors is the same length.[74]: 25
+The application specifies the total vector width it requires, and the processor determines the vector length it can provide with available on-chip resources. This takes the form of an instruction (vsetcfg) with four immediate operands, specifying the number of vector registers of each available width needed. The total must be no more than the addressable limit of 32, but may be less if the application does not require them all. The vector length is limited by the available on-chip storage divided by the number of bytes of storage needed for each entry. (Added hardware limits may also exist, which in turn may permit SIMD-style implementations.)[73]
+Outside of vector loops, the application can zero the number of requested vector registers, saving the operating system the work of preserving them on context switches.[73]
+The vector length is not only architecturally variable, but designed to vary at run time also. To achieve this flexibility, the instruction set is likely to use variable-width data paths and variable-type operations using polymorphic overloading.[73] The plan is that these can reduce the size and complexity of the ISA and compiler.[73]
+Recent experimental vector processors with variable-width data paths also show profitable increases in operations per: second (speed), area (lower cost), and watt (longer battery life).[75]
+Unlike a typical modern graphics processing unit, there are no plans to provide special hardware to support branch predication. Instead, lower cost compiler-based predication will be used.[73][76]
+External debug system[edit]
+There is a preliminary specification for RISC-V's hardware-assisted debugger. The debugger will use a transport system such as Joint Test Action Group (JTAG) or Universal Serial Bus (USB) to access debug registers. A standard hardware debug interface may support either a standardized abstract interface or instruction feeding.[77][78]
+As of January 2017[update], the exact form of the abstract interface remains undefined, but proposals include a memory mapped system with standardized addresses for the registers of debug devices or a command register and a data register accessible to the communication system.[77] Correspondents claim that similar systems are used by Freescale's background debug mode interface (BDM) for some CPUs, ARM, OpenRISC, and Aeroflex's LEON.[77]
+In instruction feeding, the CPU will process a debug exception to execute individual instructions written to a register. This may be supplemented with a data-passing register and a module to directly access the memory. Instruction feeding lets the debugger access the computer exactly as software would. It also minimizes changes in the CPU, and adapts to many types of CPU. This was said to be especially apt for RISC-V because it is designed explicitly for many types of computers. The data-passing register allows a debugger to write a data-movement loop to RAM, and then execute the loop to move data into or out of the computer at a speed near the maximum speed of the debug system's data channel.[77] Correspondents say that similar systems are used by MIPS Technologies MIPS, Intel Quark, Tensilica's Xtensa, and for Freescale Power ISA CPUs' background debug mode interface (BDM).[77]
+A vendor proposed a hardware trace subsystem for standardization, donated a conforming design, and initiated a review.[79][80] The proposal is for a hardware module that can trace code execution on most RISC-V CPUs. To reduce the data rate, and permit simpler or less-expensive paths for the trace data, the proposal does not generate trace data that can be calculated from a binary image of the code. It sends only data that indicates "uninferrable" paths through the program, such as which conditional branches are taken. To reduce the data rates, branches that can be calculated, such as unconditional branches, are not traced. The proposed interface between the module and the control unit is a logic signal for each uninferrable type of instruction. Addresses and other data are to be provided in a specialized bus attached to appropriate data sources in a CPU. The data structure sent to an external trace unit is a series of short messages with the needed data. The details of the data channel are intentionally not described in the proposal, because several are likely to make sense.
+Implementations[edit]
+The RISC-V organization maintains a list of RISC-V CPU and SoC implementations.[81] Due to trade wars and possible sanctions that would prevent China from accessing proprietary ISAs, as of 2023 the country was planning to shift most of its CPU and MCU architectures to RISC-V cores.[82]
+In 2023, the European Union was set to provide 270 million euros within a so-called Framework Partnership Agreement (FPA) to a single company that was able and willing to carry out a RISC-V CPU development project aimed at supercomputers, servers, and data centers.[83] The European Union's aim was to become independent from political developments in other countries and to "strengthen its digital sovereignty and set standards, rather than following those of others."[84]
+Existing[edit]
+Existing proprietary implementations include:
+Akeana[85] of Santa Clara, CA, a Premier member of RISC-V International, offers a wide range of RISC-V-based IP. Its offerings range from tiny 32-bit cores to advanced datacenter-class 64-bit cores with FPU, Vector, Hypervisor, and multicore capabilities, as well as IOMMU, high-speed interconnect fabric, AI accelerators, and related IP.
+Andes Technology Corporation of Hsinchu, Taiwan, a Founding Premier member of RISC-V International.[86] Its RISC-V CPU families range from tiny 32-bit cores to advanced 64-bit cores with DSP, FPU, vector, superscalar, and/or multicore capabilities.
+Bouffalo Lab has a series of MCUs based on RISC-V (RV32IMACF, BL60x/BL70x series).[87]
+CloudBEAR is a processor IP company that develops its own RISC-V cores for a range of applications.[88]
+Codasip of Munich, Germany, a founding member of RISC-V International,[86] started developing a range of low-power embedded, high-performance embedded and application processor cores in 2015.[89][90][91] In 2016, Codasip and UltraSoC developed fully supported intellectual property for RISC-V embedded SOCs that combine Codasip's RISC-V cores and other IP with UltraSoC's debug, optimization and analytics.[92]
+Cortus of Mauguio in the Montpellier area, France, is an original founding Platinum member of the RISC-V foundation and the RISC-V International.[86] The company offers several RISC-V implementations. Cortus offers ASIC design services using its IP portfolio including RISC-V 32/64-bit processors from low-end to very high performance RISC-V processors, digital, analog, RF, security and a complete IDE/toolchain/debug eco-system.
+Espressif of Shanghai, China, added a RISC-V ULP coprocessor to their ESP32-S2 microcontroller.[93] In November 2020 Espressif announced their ESP32-C3, a single-core, 32-bit, RISC-V-based MCU (RV32IMC).[94]
+The Fraunhofer Institute for Photonic Microsystems, based in Dresden, Germany, was the first organization to develop a RISC-V core that can meet functional safety requirements. The IP Core EMSA5 is a 32-bit processor with a five-stage pipeline and is available as a general purpose variant (EMSA5-GP) and as a safety variant (EMSA5-FS) that can meet an ISO 26262 Automotive Safety Integrity Level-D standard.[95]
+GigaDevice of Beijing, China, developed a series of MCUs based on RISC-V (RV32IMAC, GD32V series) in 2019,[96] with one of them used on the Longan Nano board produced by a Chinese electronic company Sipeed.[97]
+Google has developed the Titan M2 security module for the Pixel 6 and Pixel 7[98]
+GreenWaves Technologies announced the availability of GAP8, a 32-bit 1 controller plus 8 compute cores, 32-bit SoC (RV32IMC) and developer board in February 2018. Their GAPuino GAP8 development board started shipping in May 2018.[99][100][101]
+Imagination Technologies of Kings Langley, England, UK, released the RTXM-2200[102] in 2023, their first core from their Catapult range. This is a real-time, deterministic, 32-bit embedded CPU.
+Instant SoC RISC-V cores from FPGA cores. System on chip, including RISC-V cores, defined by C++.
+Micro Magic Inc. announced the world's fastest 64-bit RISC-V core achieving 5 GHz and 13,000 CoreMarks in October 2020.
+MIPS Technologies of San Jose, California, pivoted to developing RISC-V cores in 2021. It rolled out its first implementation eVocore P8700 in December 2022.[103][104]
+Seagate, in December 2020, announced that it had developed two RISC-V general-purpose cores for use in upcoming controllers for its storage devices.[105]
+SiFive of Santa Clara, California, was established specifically for developing RISC-V hardware and began releasing processor models in 2017.[106][107] These included a quad-core, 64-bit (RV64GC) system on a chip (SoC) capable of running general-purpose operating systems such as Linux.[108]
+SpacemiT, a Chinese company headquartered in Hangzhou, developed the SpacemiT Key Stone K1 in 2024, an octa-core 64-bit processor that is availible in the BPI-F3 computer, as well as the following other devices: LicheePi 3A, the Milk-V Jupiter, the DeepComputing DC-ROMA LAPTOP II, and the SpacemiT MUSEbook featuing the Bianbu OS operating system. The processor is based on the X60 core design, integrates an IMG BXE-2-32 GPU, and supports the vector extension RVV 1.0.[109] In January 2025, SpacemiT announced the development of a server processor with up to 64 RISC-V cores, called "VitalStone V100" and made with a 12nm-class process technology.[110][111][112]
+StarFive, an offshoot of SiFive based in China, offers two RISC-V implementations – one for big data applications and the other for computational storage.[113][114]
+Syntacore,[115] a founding member of RISC-V International and one of the first commercial RISC-V IP vendors, develops and licenses family of RISC-V IP since 2015. As of 2018[update], product line includes eight 32- and 64-bit cores, including open-source SCR1 MCU core (RV32I/E[MC]).[116] First commercial SoCs, based on the Syntacore IP were demonstrated in 2016.[117]
+WinChipHead (WCH), a Chinese semiconductor manufacturer of popular and inexpensive USB chips such as CH340 and ARM microcontrollers[118] introduced a simple, inexpensive RISC-V microcontroller line CH32Vxxx, headed by US$0.10 CH32V003.[119][120]
+As of 2020, the Indian defence and strategic sector started using the 64-bit RISC-V based 100-350 MHz Risecreek processor[citation needed] developed by IIT Madras which is fabricated by Intel with 22 nm FinFET process.[121][122] IIT Madras and ISRO Inertial Systems Unit successfully designed and booted a 64-bit Indigenous RISC-V Controller for Space Applications (IRIS) chip based on the SHAKTI baseline processor in February 2025. The chip configuration takes into account the processing power and functional needs of the devices and sensors utilized in ISRO missions. To improve dependability, fault-tolerant internal memory were interfaced with the SHAKTI core.[123]
+RIES v3.0d development boards are the first to use DIR-V VEGA RISC-V processors. It contains the VEGA ET1031, a 32-bit RISC-V CPU with three UART serial ports, four Serial Peripheral Interface ports, two megabytes of flash memory, 256KB of SRAM, and three 32-bit timers. It operates at 100 MHz. It is advised for usage in wearables, toys, small IoT devices, and sensors by C-DAC in Indian market.[124]
+In development[edit]
+ASTC developed a RISC-V CPU for embedded ICs.[125]
+Centre for Development of Advanced Computing (C-DAC) in India is developing a single core 32-bit in-order, a single core 64-bit in-order and three out-of-order single, dual and quad-core RISC-V processor under VEGA Microprocessors series.[126][127][128]
+Cobham Gaisler NOEL-V 64-bit.[129]
+Computer Laboratory, University of Cambridge, in collaboration with the FreeBSD Project, has ported that operating system to 64-bit RISC-V to use as a hardware-software research platform.[130]
+Esperanto Technologies announced that they are developing three RISC-V based processors: the ET-Maxion high-performance core, ET-Minion energy-efficient core, and ET-Graphics graphics processor.[131]
+Esperanto ET-SoC-1, a 200 TOPS "kilocore" supercomputer on a chip, with 1088 small 64-bit in-order ET-Minion cores with tensor/vector units and 4 big 64-bit out-of-order ET-Maxion cores[132]
+ETH Zurich and the University of Bologna have cooperatively developed the open-source RISC-V PULPino processor[133] as part of the Parallel Ultra-Low Power (PULP) project for energy-efficient IoT computing.[134]
+European Processor Initiative (EPI), RISC-V Accelerator Stream.[135][136]Illustration of EPI's first working RISC-V chip sample in 2021.
+Reconfigurable Intelligent Systems Engineering Group (RISE) of IIT-Madras is developing six Shakti series RISC-V open-source CPU designs for six distinct uses, from a small 32-bit CPU for the Internet of things (IoT) to large, 64-bit CPUs designed for warehouse-scale computers such as server farms based on RapidIO and Hybrid Memory Cube technologies.[137][47][138] 32-bit Moushik successfully booted by RISE for the application of credit cards, electronic voting machines (EVMs), surveillance cameras, safe locks, personalized health management systems.[122][139]
+lowRISC is a non profit project to implement a fully open-source hardware system on a chip (SoC) based on the 64-bit RISC-V ISA.[140]
+Nvidia plans to use RISC-V to replace their Falcon processor on their GeForce graphics cards.[141]
+RV64X consortium is working on a set of graphics extensions to RISC-V and has announced that they are developing an open source RISC-V core with a GPU unit.[142]
+SiFive announced their first RISC-V out-of-order high performance CPU core, the U8 Series Processor IP.[143]
+Ventana revealed they are developing high performance RISC-V CPU IP and chiplet technology targeting data center applications.[144][145]
+Open source[edit]
+DAMO Academy,[146][147] the research arm of Alibaba Group, in July 2019 announced the 2.5 GHz 16-core 64-bit (RV64GC) Xuantie 910 out-of-order processor.[148] In October 2021 the Xuantie 910 was released as an open-source design.[149] In November 2023, DAMO unveiled three updated processors: the Xuantie C920, Xuantie C907 and Xuantie R910; these processors were aimed at a variety of application areas, including autonomous vehicles, artificial intelligence (AI), enterprise hard drives, and network communications.[150] The server-grade CPU Xuantie C930 was expected to be launched in 2024.[151]
+The Berkeley CPUs are implemented in a unique hardware design language, Chisel, and some are named for famous train engines:
+64-bit Rocket.[152] Rocket may suit compact, low-power intermediate computers such as personal devices. Named for Stephenson's Rocket.
+The 64-bit Berkeley Out of Order Machine (BOOM).[153] The Berkeley Out-of-Order Machine (BOOM) is a synthesizable and parameterizable open source RV64GC RISC-V core written in the Chisel hardware construction language. BOOM uses much of the infrastructure created for Rocket, and may be usable for personal, supercomputer, and warehouse-scale computers.
+Five 32-bit Sodor CPU designs from Berkeley, designed for student projects.[46] Sodor is the fictional island of trains in children's stories about Thomas the Tank Engine.
+The Institute of Computing Technology of the Chinese Academy of Sciences (ICT CAS) in June 2020 launched the XiangShan high-performance RISC-V processor project.[154][155] In summer 2021, a CPU prototype produced at TSMC on a 28 nm process node, with speeds of up to 1.3 GHz, was presented at a RISC-V conference in China.[156] An updated prototype was to be produced at SMIC on a 14 nm process node with speeds of up to 2 GHz.[157] The capabilities of the second XiangShan processor, called “Nanhu”, which was released in August 2022, may have surpassed those of the ARM Cortex-A76, a current CPU at the time, making Nanhu the most powerful open-source CPU in the world in 2023.[158][150] For 2022 the Institute of Computing Technology was planning to announce a new XiangShan design with the RISC-V Vector extension for applications such as AI acceleration; in the future it hoped to find a "Red Hat" type company that would engage in commericalization of its XiangShan cores.[158]
+PicoRV32 by Claire Wolf,[159] a 32-bit microcontroller unit (MCU) class RV32IMC implementation in Verilog.
+The CORE-V family of open-source RISC-V cores is curated by the OpenHW Foundation.
+SCR1 from Syntacore,[116] a 32-bit microcontroller unit (MCU) class RV32IMC implementation in Verilog.
+MIPT-MIPS[160] by MIPT-ILab (MIPT Lab for CPU Technologies created with help of Intel). MIPT-MIPS is a cycle-accurate pre-silicon simulator of RISC-V and MIPS CPUs. It measures performance of program running on CPU. Among key features are: compatibility with interactive MARS system calls,[161] interactive simulation with GDB, configurable branch prediction unit with several prediction algorithms and instruction cache and interstage data bypassing. Implementation in C++.
+SERV[162] by Olof Kindgren, a physically small, validated bit-serial RV32I core in Verilog, is the world's smallest RISC-V CPU. It is integrated with both the LiteX and FuseSoC SoC construction systems. An FPGA implementation[163] was 125 lookup tables (LUTs) and 164 flip-flops, running at 1.5 MIPS, In a 130 nm-node ASIC, it was 2.1kGE[163] and a high-end FPGA could hold 10,000 cores.[164]
+PULPino (Riscy and Zero-Riscy) from ETH Zürich / University of Bologna.[165] The cores in PULPino implement a simple RV32IMC ISA for microcontrollers (Zero-Riscy) or a more powerful RV32IMFC ISA with custom DSP extensions for embedded signal processing.
+Western Digital, in December 2018 announced an RV32IMC core called SweRV EH1 featuring an in-order 2-way superscalar and nine-stage pipeline design. In December 2019, WD announced the SweRV EH2 an in-order core with two hardware threads and a nine-stage pipeline and the SweRV EL2 a single issue core with a 4-stage pipeline[166] WD plans to use SweRV based processors in their flash controllers and SSDs, and released it as open-source to third parties in January 2019.[167][168][169]
+NEORV32 by Stephan Nolting,[170] a highly-configurable 32-bit microcontroller unit (MCU) class RV32[I/E]MACUX_Zbb_Zfinx_Zicsr_Zifencei CPU with on-chip debugger support written in platform-independent VHDL. The project includes a microcontroller-like SoC that already includes common modules like UART, timers, SPI, TWI, a TRNG and embedded memories.
+Hazard3 by Luke Wren, a RV32I processor with a three-stage pipeline.[171] Two Hazard3 cores are implemented in the RP2350 microcontroller.[172]
+End-user hardware[edit]
+DeepComputing of Hong Kong announced the release on 13 April 2023 of the "world's first laptop with RISC-V processor"; the notebook, called "ROMA", was delivered to its first customers in August 2023[173] and came pre-installed with the Chinese openKylin Linux operating system.[174] The device's basic model, available from Alibaba, was still expensive at roughly US$1500[175] considering it was powered by the not very fast[176] Alibaba (DAMO) CPU "XuanTie C910".
+An upgrade in June 2024 doubled the core count to 8 cores and increased the clock speed to 2 GHz (from 1.5 GHz), while dropping the price to US$1,000.[177] The processor used was a SpacemiT SoC K1.[178][179] A collaboration with Canonical[180] meant that the ROMA II came pre-installed with the major international Linux distribution Ubuntu.[181]
+In 2024, DeepComputing announced a collaboration with Framework Computer to produce a mainboard for their Framework Laptop 13.[182][183] As of 4 February 2025, it is ready to ship and mainly targeted at developers. It features a 4-core StarFive JH7110 processor.[184]
+Software[edit]
+A normal problem for a new instruction set is both a lack of CPU designs and of software, which limit its usability and reduce adoption.[25] In addition to already having a large number of CPU hardware designs, RISC-V is also supported by toolchains, operating systems (e.g. Linux), middleware[vague] and design software.
+Available RISC-V software tools include a GNU Compiler Collection (GCC) toolchain (with GDB, the debugger), an LLVM toolchain, the OVPsim simulator (and library of RISC-V Fast Processor Models), the Spike simulator, and a simulator in QEMU (RV32GC/RV64GC). JEP 422: Linux/RISC-V Port is already integrated into mainline OpenJDK repository. Java 21+ Temurin OpenJDK builds for RISC-V are available from Adoptium.
+Operating system support exists for the Linux kernel, FreeBSD, NetBSD, and OpenBSD but the supervisor-mode instructions were unstandardized before version 1.11 of the privileged ISA specification,[3] so this support is provisional. The preliminary FreeBSD port to the RISC-V architecture was upstreamed in February 2016, and shipped in FreeBSD 11.0.[185][130]
+Ports of the Debian,[186][11] Fedora,[187] and openSUSE[188] Linux distributions, and a port of Haiku,[189] are stabilizing (all only support 64-bit RISC-V, with no plans to support the 32-bit version). In June 2024, Hong Kong company DeepComputing announced the commercial availability of the first RISC-V laptop in the world to run the popular Linux operating system Ubuntu in its standard form ("out of the box").[18] "As RISC-V is becoming a competitive ISA in multiple markets, porting Ubuntu to RISC-V to become the reference OS [operating system] for early adopters was a natural choice," Ubuntu-developer Canonical stated in June 2024.[190]
+A port of Das U-Boot exists.[191] UEFI Spec v2.7 has defined the RISC-V binding and a TianoCore port has been done by HPE engineers[192] and is expected to be upstreamed. A RISC-V boot deep dive was done as part of openSUSE Hackweek 20.[193] There is a preliminary port of the seL4 microkernel.[194][195] Hex Five released the first Secure IoT Stack for RISC-V with FreeRTOS support.[196] Also xv6, a modern reimplementation of Sixth Edition Unix in ANSI C used for pedagogical purposes in MIT, was ported. Pharos RTOS has been ported to 64-bit RISC-V[197] (including time and memory protection). Also see Comparison of real-time operating systems.
+A simulator exists to run a RISC-V Linux system on a web browser using JavaScript.[198][199][200]
+QEMU supports running (using binary translation) 32- and 64-bit RISC-V systems (e.g. Linux) with many emulated or virtualized devices (serial, parallel, USB, network, storage, real time clock, watchdog, audio), as well as running RISC-V Linux binaries (translating syscalls to the host kernel). It does support multi-core emulation (SMP).[201]
+The CREATOR simulator is portable and allows the user to learn various assembly languages of different processors (CREATOR has examples with an implementation of RISC-V and MIPS32 instructions).[202][203][204][205][206]
+Several languages have been applied to creating RISC-V IP cores including a Scala-based hardware description language, Chisel,[207] which can reduce the designs to Verilog for use in devices, and the CodAL processor description language which has been used in to describe RISC-V processor cores and to generate corresponding HDKs (RTL, testbench and UVM) and SDKs.[208] The RISC-V International Compliance Task Group has a GitHub repository for RV32IMC.[209]
+The extensible educational simulator WepSIM implements a microprogrammed subset of RISC-V instructions (RV32I+M) and allows the execution of subroutines on both, at assembly and microprogramming level.[210][211]
+Development tools[edit]
+IAR Systems released the first version of IAR Embedded Workbench for RISC-V, which supports RV32 32-bit RISC-V cores and extensions in the first version. Future releases will include 64-bit support and support for the smaller RV32E base instruction set, as well as functional safety certification and security solutions.
+Lauterbach added support for RISC-V to their TRACE32 JTAG debuggers.[212][213] Lauterbach also announced[214] support for SiFives RISC-V NEXUS based processor trace.
+SEGGER released a new product named "J-Trace PRO RISC-V", added support for RISC-V cores to their J-Link debugging probe family,[215] their integrated development environment Embedded Studio,[216] and their RTOS embOS and embedded software.[217]
+UltraSOC, now part of Siemens,[218] proposed a standard trace system and donated an implementation.
+See also[edit]
+RISC-V assembly language
+RISC-V instruction listings
+List of open-source computing hardware
+Microprocessor chronology
+Notes[edit]
+^ Big and bi-endianness supported through non-standard variants; instructions are always little-endian.[2]: vi, 9–10
+^ The designation V (Roman numeral '5') represents RISC-V as the 5th generation reduced instruction set computer (RISC) architecture that was developed at the University of California, Berkeley since 1981.[4]
+References[edit]
+^ Asanović, Krste; Patterson, David A. (6 August 2014). Instruction Sets Should Be Free: The Case For RISC-V (PDF). EECS Department, University of California, Berkeley. UCB/EECS-2014-146.
+^ a b c d e f g h i j k l m n o p q r s t u v w x y z aa ab ac ad ae af ag ah ai aj ak al am an ao ap aq ar as at au av aw ax ay az ba bb bc Waterman, Andrew; Asanović, Krste, eds. (December 2019). "The RISC-V Instruction Set Manual, Volume I: User-Level ISA, Document Version 20191213" (PDF). RISC-V Foundation. Retrieved 5 November 2021.
+^ a b c d e f g h i j k l Waterman, Andrew; Asanović, Krste (3 December 2021). "The RISC-V Instruction Set Manual Volume II: Privileged Architecture Document Version 20211203" (PDF). RISC-V International. Retrieved 5 November 2021.
+^ Urquhart, Roddy (29 March 2021). "What Does RISC-V Stand For? A brief history of the open ISA". Systems & Design: Opinion. Semiconductor Engineering.
+^ "About RISC-V". RISC-V International.
+^ "RISC-V To Move HQ to Switzerland Amid Trade War Concerns". EE Times Europe. 28 November 2019.
+^ "Frequently Asked Questions (FAQ) – RISC-V International". Retrieved 20 August 2024.
+^ "Linux 5.17 Adds Support For "The First Usable, Low-Cost RISC-V Platform" | Michael Larabel, Phoronix – RISC-V International". 2022. Retrieved 20 August 2024.
+^ "RISC-V - Debian Wiki". wiki.debian.org. Retrieved 13 August 2024.
+^ "riscv64 is now an official architecture". lists.debian.org. Retrieved 13 August 2024.
+^ a b "RISC-V - Debian Wiki". wiki.debian.org. Retrieved 13 August 2024.
+^ "Project:RISC-V - Gentoo wiki". wiki.gentoo.org. Retrieved 11 February 2025.
+^ Hanlon, Neil (19 February 2025). "RISC-V and Fedora: All Aboard!". Fedora Magazine. Retrieved 21 February 2025.
+^ "Architectures - Fedora Project Wiki". fedoraproject.org. Retrieved 21 February 2025.
+^ "openSUSE Project Wiki". opensuse.org. Retrieved 25 February 2025.
+^ Anton Shilov (20 March 2024). "Alibaba claims it will launch a server-grade RISC-V processor this year". Tom's Hardware. Retrieved 19 August 2024.
+^ Connatser, Matthew (13 August 2024). "Akeana debuts RISC-V CPU designs on $100M budget, longs for an Arm wrestle". The Register. Retrieved 19 August 2024.
+^ a b Connatser, Matthew. "World's first RISC-V laptop with Ubuntu preloaded touts AI smarts and octa-core chip". The Register. Retrieved 19 August 2024.
+^ a b Patterson, David A.; Ditzel, David R. (October 1980). "The Case for the Reduced Instruction Set Computer". ACM SIGARCH Computer Architecture News. 8 (6): 25. doi:10.1145/641914.641917. S2CID 12034303.
+^ "Amber ARM-compatible core". OpenCores. Retrieved 26 August 2014.
+^ "ARM4U". OpenCores. Retrieved 26 August 2014.
+^ "CPU Architectures — The Linux Kernel documentation". docs.kernel.org. Retrieved 20 August 2024.
+^ Aleksandar Kostovic (12 July 2021). "Libre-SOC Releases First Non-IBM OpenPOWER Chip in Decade". Tom's Hardware. Retrieved 20 August 2024.
+^ Nguyen, Phuc-Vinh; Tran, Thi-Thu-Trang; Diep, Phuoc-Loc; Le, Duc-Hung (September 2018). "A Low-Power ASIC Implementation of Multi-Core OpenSPARC T1 Processor on 90nm CMOS Process". 2018 IEEE 12th International Symposium on Embedded Multicore/Many-core Systems-on-Chip (MCSoC). IEEE. pp. 95–100. doi:10.1109/MCSoC2018.2018.00027. ISBN 978-1-5386-6689-0.
+^ a b c d e f Asanović, Krste. "Instruction Sets Should be Free" (PDF). U.C. Berkeley Technical Reports. Regents of the University of California. Retrieved 15 November 2016.
+^ Chen, Tony; Patterson, David (24 January 2016). RISC-V Geneology (Technical report). University of California at Berkeley. UCB/EECS-2016-6.
+^ Samples, Alan Dain; Klein, Mike; Foley, Pete (1985). SOAR Architecture (Technical report). University of California, Berkeley. UCB/CSD-85-226.
+^ Hill, Mark Donald; et al. (Susan J. Eggers, James Richard Larus, George S. Taylor, Glenn D. Adams, Bidyut Kumar Bose, Garth A. Gibson, Paul Mark Hansen, John Keller, Shing I. Kong, Corinna Grace Lee, Daebum Lee, J. M. Pendleton, Scott Allen Ritchie, David A. Wood, Benjamin G. Zorn, Paul N. Hilfinger, D. A. Hodges, Randy H. Katz, John K. Ousterhout, and David A. Patterson) (December 1985). SPUR: A VLSI Multiprocessor Workstation (Technical report). University of California, Berkeley. UCB/CSD-86-273.
+^ "Contributors". riscv.org. Regents of the University of California. Archived from the original on 7 September 2018. Retrieved 25 August 2014.
+^ Asanović, Krste. "The RISC-V Instruction Set Manual, Volume I: Base User-Level ISA" (PDF). U.C. Berkeley Technical Reports. Regents of the University of California. Retrieved 13 May 2011.
+^ Hruska, Joel (21 August 2014). "RISC rides again: New RISC-V architecture hopes to battle ARM and x86 by being totally open source". ExtremeTech.
+^ "RISC-V History". Retrieved 28 January 2023.
+^ "A new blueprint for microprocessors challenges the industry's giants". The Economist. 3 October 2019. ISSN 0013-0613. Retrieved 10 November 2019.
+^ "Design Automation Conference". dac.com. Retrieved 6 February 2021.
+^ "Members". RISC-V International. Retrieved 1 August 2023.
+^ "U.S.-based chip-tech group moving to Switzerland over trade curb fears". Reuters. 26 November 2019. Retrieved 26 November 2019.
+^ Cheung, Sunny (15 December 2023). "Examining China's Grand Strategy For RISC-V". China Brief. Jamestown Foundation. Retrieved 18 December 2023.
+^ "RISC-V History - RISC-V International". RISC-V International. Retrieved 14 May 2020.
+^ "Branding Guidelines – RISC-V International". Retrieved 23 June 2024.
+^ Lardinois, Frederic (31 May 2023). "The Linux Foundation Europe launches RISE, the RISC-V Software Ecosystem project". TechCrunch. Retrieved 13 December 2024.
+^ "The Linley Group Announces Winners of Annual Analysts' Choice Awards" (Press release). The Linley Group. 12 January 2017. Retrieved 21 January 2018.
+^ Demerjian, Chuck (7 August 2013). "A long look at how ARM licenses chips: Part 1". SemiAccurate.
+^ Demerjian, Chuck (8 August 2013). "How ARM licenses its IP for production: Part 2". SemiAccurate.
+^ "Wave Computing Closes Its MIPS Open Initiative with Immediate Effect, Zero Warning". 15 November 2019.
+^ "Rocket Core Generator". RISC-V. Regents of the University of California. Archived from the original on 6 October 2014. Retrieved 1 October 2014.
+^ a b Celio, Christopher; Love, Eric. "riscv-sodor: educational microarchitectures for risc-v isa". GitHub. Regents of the University of California. Retrieved 25 October 2019.
+^ a b "SHAKTI Processor Program". Indian Institute of Technology Madras. Retrieved 3 September 2019.
+^ Celio, Christopher. "CS 152 Laboratory Exercise 3" (PDF). UC Berkeley. Regents of the University of California. Archived from the original (PDF) on 12 February 2015. Retrieved 12 February 2015.
+^ a b c d e Waterman, Andrew; Asanović, Krste (31 May 2016). "The RISC-V Instruction Set Manual, Volume I: Base User-Level ISA version 2.1" (PDF). University of California, Berkeley. EECS-2016-118. Retrieved 5 November 2021.
+^ "B Standard Extension for Bit Manipulation Instructions". RISC-V International. April 2024.
+^ a b "Bit-Manipulation ISA-extensions" (PDF). RISC-V International. November 2021.
+^ "Vector Extension". RISC-V International. November 2021.
+^ a b "RISC-V Cryptography Extensions Volume I Scalar & Entropy Source Instructions" (PDF). GitHub. 18 February 2022. Retrieved 28 January 2023.
+^ "RISC-V Profiles". Discussion. 2022.
+^ "Profiles". RISC-V Technical Specifications. December 2024.
+^ "6.1.3. RVA22U64 Optional Extensions". RISC-V Profiles. RISCV. 2024.
+^ "RVA23U64 Mandatory Base". RVA23 Profiles. RISCV. December 2024.
+^ RISC-V Platform Horizontal Subcommittee (December 2021). "RISC-V Platform Specification" (PDF). Version 0.3-draft.
+^ a b Waterman, Andrew; Asanović, Krste (7 May 2017). "The RISC-V Instruction Set Manual, Volume I: Base User-Level ISA version 2.2" (PDF). RISC-V International. Retrieved 5 November 2021.
+^ Newsome, Tim; Wachs, Megan (22 March 2019). "RISC-V External Debug Support Version 0.13.2 d5029366d59e8563c08b6b9435f82573b603e48e" (PDF). RISC-V International. Retrieved 7 November 2021.
+^ a b c d e f g h i Waterman, Andrew (13 May 2011). Improving Energy Efficiency and Reducing Code Size with RISC-V Compressed. U.C. Berkeley: Regents of the University of California. p. 32. Retrieved 25 August 2014.
+^ Waterman, Andrew; et al. "The RISC-V Compressed Instruction Set Manual Version 1.9 (draft)" (PDF). RISC-V. Retrieved 18 July 2016.
+^ a b Brussee, Rogier. "A Complete 16-bit RVC". Google Groups. RISC-V Foundation. Retrieved 18 July 2019.
+^ a b Brussee, Rogier. "Proposal: Xcondensed, [a] ... Compact ... 16 bit standalone G-ISA". RISC-V ISA Mail Server. Google Groups. Retrieved 10 November 2016.
+^ Phung, Xan. "Improved Xcondensed". Google Groups. RISC-V Foundation. Retrieved 18 July 2019.
+^ Ionescu, Liviu. "The RISC-V Microcontroller Profile". GitHub. Retrieved 5 April 2018.
+^ Barros, Cesar (1 April 2018). "Proposal: RV16E". RISC-V ISA Developers (Mailing list). Retrieved 2 April 2018.
+^ Bonzini, Paolo; Waterman, Andrew. "Proposal for Virtualization without H mode". RISC-V ISA Developers (Mailing list). Retrieved 24 February 2017.
+^ "riscv-aclint/riscv-aclint.adoc at main · riscv/riscv-aclint". GitHub. Retrieved 2 January 2024.
+^ Wolf, Claire, ed. (10 January 2021). "RISC-V Bitmanip Extension Document Version 0.93" (PDF). GitHub. RISC-V Foundation. Retrieved 9 March 2021.
+^ a b "Instruction Summary for a "P" ISA Proposal". Google Groups. ANDES Technologies. Retrieved 13 January 2020.
+^ Su, Charlie (30 June 2018). "Comprehensive RISC-V Solutions for AIoT" (PDF). RISC-V Content. RISC-V Foundation. Retrieved 28 January 2023.
+^ a b c d e f g Schmidt, Colin; Ou, Albert; Lee, Yunsup; Asanović, Krste. "RISC-V Vector Extension Proposal" (PDF). RISC-V. Regents of the University of California. Retrieved 14 March 2016.
+^ a b "Release Vector Extension 1.0, frozen for public review · riscv/Riscv-v-spec". GitHub.
+^ Ou, Albert; Nguyen, Quan; Lee, Yunsup; Asanović, Krste. "A Case for MVPs: Mixed-Precision Vector Processors" (PDF). UC Berkeley EECS. Regents of the University of California. Archived from the original (PDF) on 15 March 2016. Retrieved 14 March 2016.
+^ Lee, Yunsup; Grover, Vinod; Krashinsky, Ronny; Stephenson, Mark; Keckler, Stephen W.; Asanović, Krste. "Exploring the Design Space of SPMD Divergence Management on Data-Parallel Architectures" (PDF). Berkeley's EECS Site. Regents of the University of California. Archived from the original (PDF) on 15 March 2016. Retrieved 14 March 2016.
+^ a b c d e Bradbury, Alex; Wallentowitz, Stefan. "RISC-V Run Control Debug". Google Docs. RISC-V Foundation. Retrieved 20 January 2017.
+^ Newsome, Tim. "RISC-V Debug Group > poll results". Google Groups, RISC-V Debug Group. RISC-V Foundation. Retrieved 20 January 2017.
+^ McGooganus. "riscv-trace-spec". GitHub. Retrieved 13 January 2020.
+^ Dahad, Nitin (7 December 2019). "UltraSoC Tackles RISC-V Support Challenge by Donating Trace Encoder". EE Times. Aspencore. Retrieved 13 January 2020.
+^ "RISC-V Cores and SoC Overview". RISC-V. 25 September 2019. Retrieved 5 October 2019.
+^ "China Is All In on a RISC-V Future". 8 January 2024. Retrieved 7 May 2024.
+^ "270 Millionen Euro für CPUs und Beschleuniger: EuroHPC fördert RISC-V-Technik". heise online (in German). 21 December 2022. Retrieved 13 August 2024.
+^ "A Europe fit for the digital age - European Commission". commission.europa.eu. 19 February 2020. Retrieved 13 August 2024.
+^ Akeana http://www.Akeana.com/. {{cite web}}: Missing or empty |title= (help)
+^ a b c "RISC-V International Members". RISC-V International. Retrieved 22 January 2021.
+^ "At CES2022 Bouffalo Shows its Matter Turnkey Solution". www.eetimes.com. 17 January 2022. Retrieved 20 January 2022.
+^ "CloudBEAR". Retrieved 16 October 2018.
+^ riscv/riscv-cores-list, RISC-V, 6 February 2021, retrieved 9 February 2021
+^ "Codasip announces RISC-V processor cores providing multi-core and SIMD capabilities". www.newelectronics.co.uk. Archived from the original on 23 December 2020. Retrieved 9 February 2021.
+^ "Codasip Joins RISC-V Foundation and Announces Availability of RISC-V Compliant Codix Processor IP". Design And Reuse. Retrieved 9 September 2024.
+^ Manners, David (23 November 2016). "Codasip and UltraSoC Combine on RISC-V". Electronics Weekly. Metropolis International Group, Ltd. Retrieved 23 November 2016.
+^ "3.6.2 Ultra-Low-Power Co-Processor". ESP32-S2 Family Datasheet V1.1 (PDF). Espressif Systems. 2020. Retrieved 9 June 2020.
+^ "ESP32-C3 Family Datasheet V0.4" (PDF). Espressif Systems. 2020. Retrieved 27 December 2020.
+"Introducing ESP32-C3". Espressif (Press release). 27 November 2020.
+^ Manners, David (8 June 2021). "Fraunhofer licensing fault-tolerant RISC core for safety-critical applications". Electronics Weekly. Retrieved 13 April 2022.
+^ "GigaDevice Unveils The GD32V Series With RISC-V Core in a Brand New 32-bit General Purpose Microcontroller". www.gigadevice.com. 23 August 2019. Archived from the original on 29 August 2019. Retrieved 29 August 2019.
+^ "Sipeed Longan Nano - RISC-V GD32VF103CBT6 Development Board". www.seeedstudio.com. Retrieved 29 August 2019.
+^ Kleidermacher, Dave; Seed, Jesse; Barbello, Brandon (27 October 2021). "Pixel 6: Setting a new standard for mobile security". Google Security Blog. Archived from the original on 27 October 2021. Retrieved 12 February 2023.
+^ "GreenWaves GAP8 is a Low Power RISC-V IoT Processor Optimized for Artificial Intelligence Applications". CNXSoft: Embedded Systems News. 27 February 2018. Retrieved 4 March 2018.
+^ Yoshida, Junko (26 February 2018). "AI Comes to Sensing Devices". EE Times. Retrieved 10 July 2018.
+^ "GreenWaves Technologies Announces Availability of GAP8 Software Development Kit and GAPuino Development Board" (Press release). 22 May 2018.
+^ "IMG RTXM-2200 CPU". Imagination. Retrieved 30 September 2023.
+^ Leibson, Steven (9 January 2023). "MIPS Rolls Out Its First RISC-V Processor Core – It's a Big 'Un". EEJournal.
+^ Robinson, Dan (11 May 2022). "MIPS discloses first RISC-V chips coming in Q4 2022". The Register.
+^ Shilov, Anton (9 December 2020). "Seagate Develops Own RISC-V Cores for Storage Controllers". Tom's Hardware.
+^ "HiFive1". SiFive. Archived from the original on 26 February 2017. Retrieved 10 July 2018.
+^ SiFive. "Hi-Five1: Open-source Arduino-Compatible Development Kit". Crowd Supply. Retrieved 2 December 2016.
+^ "FU540 SoC CPU". SiFive. Archived from the original on 5 October 2018. Retrieved 24 October 2018.
+^ "进迭时空开发者社区". developer.spacemit.com. Retrieved 10 December 2024.
+^ StringerAI™ (9 January 2025). "SpacemiT Develops Server CPU Chip V100 for Next-Gen AI Applications". SDxCentral. Retrieved 20 January 2025.
+^ Anton Shilov (14 January 2025). "China's SpacemiT develops 64-core RISC-V datacenter CPU on 12nm". Tom's Hardware. Retrieved 20 January 2025.
+^ SpacemiT. "RISC-V Breakthrough: SpacemiT Develops Server CPU Chip V100 for Next-Generation AI Applications". www.prnewswire.com (Press release). Retrieved 20 January 2025.
+^ Horwitz, Josh (23 March 2023). "Chinese search giant Baidu invests in RISC-V chip technology startup StarFive". Reuters.
+^ Sharwood, Simon (27 March 2023). "Chinese web giant Baidu backs RISC-V for the datacenter". The Register.
+^ "Syntacore". Retrieved 11 December 2018.
+^ a b "SCR1 is a high-quality open-source RISC-V MCU core in Verilog". GitHub. Syntacore. Retrieved 13 January 2020.
+^ "RISC-V workshop proceedings". 11 December 2016. Retrieved 28 January 2023.
+^ "WinChipHead (WCH)".
+^ "CH32V003". WCH-IC. Retrieved 10 July 2023.
+^ "the-10-cent-risc-v-processor-ch32v003". EEvblog. Retrieved 10 July 2023.
+^ Desikan, Shubashree (6 August 2018). "IIT-Madras powers up a desi chip". The Hindu. ISSN 0971-751X. Retrieved 25 September 2020.
+^ a b "Meet India's Atmanirbhar Microprocessor chip 'Moushik', meant for IoT devices". WION. 24 September 2020. Retrieved 25 September 2020.
+^ Tripathi, Sibu Kumar (11 February 2025). "Isro and IIT Madras develop indigenous semiconductor chip". India Today. Retrieved 11 February 2025.
+^ Dobberstein, Laura. "India's homebrew RISC-V CPU debuts in cheap dev board". The Register. Retrieved 6 March 2024.
+^ Ashenden, Peter (9 November 2016). "Re: [isa-dev] RISC V ISA for embedded systems". RISC-V ISA Developers (Mailing list). Retrieved 10 November 2016. At ASTC (www.astc-design.com), we have an implementation of RV32EC as a synthesizable IP core intended for small embedded applications, such as smart sensors and IoT.
+^ "C-DAC announces Tech Conclave 2019". The Times of India. Archived from the original on 17 May 2019. Retrieved 12 April 2019.
+^ Sharwood, Simon (19 August 2020). "India selects RISC-V for semiconductor self-sufficiency contest: Use these homegrown cores to build kit". The Register. Retrieved 9 July 2021.
+^ "VEGA MICROPROCESSORS". Vega Processor - CDAC. 9 July 2021. Archived from the original on 9 July 2021. Retrieved 9 July 2021.
+^ "NOEL-V Processor". Cobham Gaisler. Retrieved 14 January 2020.
+^ a b "FreeBSD Foundation: Initial FreeBSD RISC-V Architecture Port Committed". 4 February 2016.
+^ "Esperanto exits stealth mode, aims at AI with a 4,096 core 7nm RISC-V monster". wikichip.org. January 2018. Retrieved 2 January 2018.
+^ "Esperanto ET-SoC-1 1092 RISC-V AI Accelerator Solution at Hot Chips 33". 24 August 2021.
+^ "PULPino GitHub project". GitHub. Retrieved 2 February 2018.
+^ "PULP Platform". PULP Platform. Retrieved 2 February 2018.
+^ "Accelerator Stream". European Processor Initiative (EPI). Retrieved 22 February 2020.
+^ Redmond, Calista (28 January 2023). "How the European Processor Initiative is Leveraging RISC-V for the Future of Supercomputing". RISC-V International News. RISC-V International.
+^ Halfacree, Gareth (10 June 2021). "RISC-V boffins lay out a plan for bringing the architecture to high-performance computing". The Register. Retrieved 9 July 2021.
+^ "IIT Madras Open Source Processor Project". Rapid IO. IIT Madras. 26 August 2014. Archived from the original on 14 September 2014. Retrieved 13 September 2014.
+^ "IIT Madras Develops and Boots up MOUSHIK Microprocessor for IoT Devices". IIT Madras. 24 September 2020. Retrieved 9 July 2021.
+^ "lowRISC website". Retrieved 10 May 2015.
+^ Xie, Joe (July 2016). NVIDIA RISC V Evaluation Story. 4th RISC-V Workshop. Youtube. Archived from the original on 13 November 2021.
+^ "RV64X: A Free, Open Source GPU for RISC-V". EETimes. 27 January 2021. Retrieved 9 February 2021.
+^ Frumusanu, Andrei (30 October 2019). "SiFive Announces First RISC-V OoO CPU Core: The U8-Series Processor IP". Anandtech.
+^ Gwennap, Linley (13 December 2021). "Ventana Develops RISC-V Chiplet". Microprocessor Report.
+^ Dahad, Nitin (6 September 2021). "RISC-V Chiplet Startup Raises $38m, Targets Data Center Compute". EE Times.
+^ "研究布局". damo.alibaba.com. Retrieved 13 August 2024.
+^ "Tech to the Future". damo.alibaba.com. Retrieved 13 August 2024.
+^ "China's Alibaba is making a 16-core, 2.5 GHz RISC-V processor". www.techspot.com. 28 July 2019. Retrieved 30 July 2019.
+^ "Alibaba open sources four RISC-V cores: XuanTie E902, E906, C906 and C910". 20 October 2021. Retrieved 20 October 2021.
+^ a b "Examining China's Grand Strategy For RISC-V". jamestown.org. Retrieved 13 August 2024.
+^ Anton Shilov (20 March 2024). "Alibaba claims it will launch a server-grade RISC-V processor this year". Tom's Hardware. Retrieved 14 September 2024.
+^ Asanović, Krste; et al. "rocket-chip". GitHub. RISC-V International. Retrieved 11 November 2016.
+^ Celio, Christopher. "riscv-boom". GitHub. Regents of the University of California. Retrieved 29 March 2020.
+^ XiangShan repository on Github
+^ XiangShan open-source 64-bit RISC-V processor to rival Arm Cortex-A76 - CNX Software
+^ Halfacree, Gareth (6 July 2021). "Chinese chip designers hope to topple Arm's Cortex-A76 with XiangShan RISC-V design". The Register. Retrieved 13 August 2024.
+^ "Offengelegter RISC-V-Chip aus China soll an ARM Cortex-A76 heranreichen". c't Magazin (in German). 30 June 2021. Retrieved 13 August 2024.
+^ a b Brown, Eric (8 December 2021). "Two 64-bit RISC-V cores debut: StarFive Dubhe and CAS Nanhu". LinuxGizmos.com. Retrieved 13 August 2024.
+^ Wolf, Claire. "PicoRV32 - A Size-Optimized RISC-V CPU". GitHub. Retrieved 27 February 2020.
+^ "MIPT-MIPS: Cycle-accurate pre-silicon simulator of RISC-V and MIPS CPUs". GitHub.
+^ "MIPS syscall functions available in MARS". courses.missouristate.edu. Retrieved 28 May 2023.
+^ Kindgren, Olof. "SERV - The serial RISC-V CPU". GitHub. Retrieved 25 September 2023.
+^ a b Kindgren, Olof (29 December 2022). "SERV: 32-bit is the New 8-bit" (Video, 2:38). YouTube. RISC-V Foundation. Retrieved 25 September 2023.
+^ Halfacree, Gareth (14 June 2022). "CoreScore Benchmark Sees New Record with 10,000 RISC-V Cores on One FPGA". fossi-foundation.org. FOSSi Foundation. Retrieved 25 September 2023.
+^ Traber, Andreas; et al. "PULP: Parallel Ultra Low Power". ETH Zurich, University of Bologna. Retrieved 5 August 2016.
+^ Shilov, Anton. "Western Digital Rolls-Out Two New SweRV RISC-V Cores For Microcontrollers". www.anandtech.com. Retrieved 9 February 2021.
+^ Shilov, Anton. "Western Digital Reveals SweRV RISC-V Core, Cache Coherency over Ethernet Initiative". www.anandtech.com. Retrieved 23 May 2019.
+^ "Western Digital Releases SweRV RISC-V Core Source Code". AB Open. 28 January 2019. Archived from the original on 21 May 2019.
+^ Cores-SweRV on GitHub
+^ Nolting, Stephan (2022). "neorv32". GitHub. doi:10.5281/zenodo.7030070. Retrieved 9 September 2021.
+^ Wren, Luke (8 August 2024), Wren6991/Hazard3, retrieved 8 August 2024
+^ Upton, Eben (8 August 2024). "Raspberry Pi Pico 2, our new $5 microcontroller board, on sale now". Retrieved 8 August 2024.
+^ "World's First RISC-V Laptop Roma Officially Delivered: 8GB RAM and Pre-installed with Domestic OS". Gizmochina. 17 August 2023. Retrieved 13 September 2024.
+^ liubing (13 April 2023). "ROMA is officially released!". DeepComputing. Retrieved 13 September 2024.
+^ Ian Evenden (4 October 2022). "World's First Laptop with RISC-V Processor Now Available". Tom's Hardware. Retrieved 14 September 2024.
+^ online, heise (13 October 2021). "Alibabas RISC-V-Prozessor XuanTie C910 lieferbar". c't Magazin (in German). Retrieved 14 September 2024.
+^ Jowi Morales (13 June 2024). "The world's first RISC-V laptop gets a big upgrade — DeepComputing doubled the core count, increased clocks to 2 GHz, and added AI capabilities". Tom's Hardware. Retrieved 14 September 2024.
+^ Jowi Morales (13 June 2024). "The world's first RISC-V laptop gets a big upgrade — DeepComputing doubled the core count, increased clocks to 2 GHz, and added AI capabilities". Tom's Hardware. Retrieved 27 November 2024.
+^ "SpacemiT K1 8 core RISC-V chip Brief". BananaPi Docs. Retrieved 27 November 2024.
+^ "World's first RISC-V Laptop gets a MASSIVE upgrade and equips with Ubuntu". canonical.com. Retrieved 14 September 2024.
+^ anisha. "World's first RISC-V Laptop gets a MASSIVE upgrade and equips with Ubuntu – RISC-V International". Retrieved 14 September 2024.
+^ "Introducing a new RISC-V Mainboard from DeepComputing". Framework. Retrieved 6 December 2024.
+^ "DeepComputing Launches Early Access Program for DC-ROMA RISC-V Mainboard for Framework Laptop 13". DeepComputing. 13 November 2024. Retrieved 9 December 2024.
+^ "RISC-V Mainboard for Framework Laptop 13 is now available". Framework. Retrieved 5 February 2025.
+^ "riscv - FreeBSD Wiki". wiki.freebsd.org.
+^ Montezelo, Manuel. "Debian GNU/Linux port for RISC-V 64". Google Groups. Retrieved 19 July 2018.
+^ "Architectures/RISC-V". Fedora Wiki. Red Hat. Retrieved 26 September 2016.
+^ "RISC-V Portal". openSUSE Wiki. openSUSE. Retrieved 21 June 2021.
+^ "Booting our RISC-V images". Haiku Project. 7 November 2021. Retrieved 4 March 2023.
+^ "World's first RISC-V Laptop gets a massive upgrade and equips with Ubuntu". canonical.com. 13 June 2024. Retrieved 19 August 2024.
+^ Begari, Padmarao. "U-Boot port on RISC-V 32-bit is available". Google Groups. Microsemi. Retrieved 15 February 2017.
+^ RiscVEdk2 on GitHub
+^ "RISC-V boot deep dive". openSUSE Hackweek.
+^ Almatary, Hesham. "RISC-V, seL4". seL4 Documentation. Commonwealth Scientific and Industrial Research Organisation (CSIRO). Retrieved 13 July 2018.
+^ Almatary, Hesham. "heshamelmatary". GitHub. Retrieved 13 July 2018.
+^ "MultiZone Secure IoT Stack, the First Secure IoT Stack for RISC-V". Hex Five Security. Hex Five Security, Inc. 22 February 2019. Retrieved 3 March 2019.
+^ "Pharos". SourceForge. Retrieved 1 April 2020.
+^ "ANGEL is a Javascript RISC-V ISA (RV64) Simulator that runs riscv-linux with BusyBox". RISCV.org. Archived from the original on 11 November 2018. Retrieved 17 January 2019.
+^ Lee, Yunsup (5 March 2014). "Boot RISC-V Linux in your web browser!". RISC-V International. Retrieved 4 September 2020.
+^ "ANGEL – RISC-V". riscv.org.s3-website-us-west-1.amazonaws.com. Archived from the original on 1 December 2020. Retrieved 4 September 2020.
+^ "Documentation/Platforms/RISCV". QEMU Wiki. Retrieved 7 May 2020.
+^ Camarmas-Alonso, Diego; Garcia-Carballeira, Felix; Del-Pozo-Punal, Elias; Mateos, Alejandro Calderon (29 May 2024). "CREATOR: An Educational Integrated Development Environment for RISC-V Programming". IEEE Access. 12: 127702–127717. Bibcode:2024IEEEA..12l7702C. doi:10.1109/ACCESS.2024.3406935. ISSN 2169-3536.
+^ Camarmas-Alonso, Diego; Garcia-Carballeira, Felix; Del-Pozo-Puñal, Elias; Mateos, Alejandro Calderon (23 July 2021). CREATOR: Simulador didáctico y genérico para la programación en ensamblador [CREATOR: Didactic and generic simulator for assembly programming]. XXXI Jornadas de Paralelismo (JP20/21) (in Spanish). Malaga. doi:10.5281/zenodo.5130302.
+^ Camarmas-Alonso, Diego; Garcia-Carballeira, Felix; Del-Pozo-Punal, Elias; Mateos, Alejandro Calderon (October 2021). A new generic simulator for the teaching of assembly programming. 2021 XLVII Latin American Computing Conference (CLEI) (in Spanish). Cartago, Costa Rica: IEEE (published 21 December 2021). pp. 1–9. doi:10.1109/CLEI53233.2021.9640144. ISBN 978-1-6654-9503-5. S2CID 245387555. Retrieved 2 August 2022.
+^ CREATOR Web with RISC-V example: https://creatorsim.github.io/creator/?example_set=default_rv&example=e12
+^ CREATOR source code on GitHub: https://github.com/creatorsim/creator
+^ "Chisel: Constructing Hardware in a Scala Embedded Language". UC Berkeley. Regents of the University of California. Retrieved 12 February 2015.
+^ "Codasip Studio". Codasip. Retrieved 19 February 2021.
+^ riscv/riscv-compliance, RISC-V, 12 February 2021, retrieved 19 February 2021
+^ "WepSIM with RISC-V_im example". WepSIM.
+^ "WepSIM homepage".
+^ "RISC-V Debugger". www.lauterbach.com TRACE32 Debugger for RISC-V.
+^ "Lauterbach and SiFive Bring TRACE32 Support for High-Performance RISC-V Cores". www.sifive.com.
+^ "TRACE32 supports SiFive's RISC-V trace". www.lauterbach.com. Archived from the original on 2 June 2022. Retrieved 6 March 2021.
+^ "SEGGER Adds Support for SiFive's Coreplex IP to Its Industry Leading J-Link Debug Probe". Retrieved 19 September 2017.
+^ "PR: SEGGER Embedded Studio supports RISC-V architecture". Retrieved 23 November 2017.
+^ "PR: SEGGER presents RTOS, stacks, middleware for RISC-V". Retrieved 8 December 2017.
+^ Dahad, Nitin (23 June 2020). "Siemens Acquires UltraSoC for SoC Lifecycle Product Suite". EE Times. Retrieved 12 July 2023.
+Further reading[edit]
+Library resources about
+RISC-V
+Resources in your library
+Resources in other libraries
+"The RISC-V Instruction Set Manual". RISC-V International.
+"RISC-V Assembly Language Programming". GitHub. 8 November 2019.
+Waterman, Andrew (January 2016). "Design of the RISC-V Instruction Set Architecture" (PDF). EECS Department, University of California, Berkeley. EECS-2016-1.
+Asanović, Krste; Patterson, David A. (6 August 2014). "Instruction Sets Should Be Free: The Case For RISC-V". EECS Department, University of California, Berkeley. UCB/EECS-2014-146.
+Waterman, Andrew; Lee, Yunsup; Avizienis, Rimas; Cook, Henry; Patterson, David A.; Asanović, Krste (25–27 August 2013). The RISC-V Instruction Set (PDF). Hot Chips 25. Stanford University, Palo Alto, California, USA.
+Dabbelt, Palmer (7–11 February 2015). RISC-V Software Ecosystem (PDF). High-Performance Computer Architecture (HPCA) 2015. San Francisco, California, USA.
+Lee, Yunsup (7–11 February 2015). RISC-V "Rocket Chip" SoC Generator in Chisel (PDF). High-Performance Computer Architecture (HPCA) 2015. San Francisco, California, USA.
+Waterman, Andrew; Lee, Yunsup; Patterson, David A.; Asanović, Krste (5 November 2015). "The RISC-V Compressed Instruction Set Manual Version 1.9 (draft)" (PDF). RISC-V.
+External links[edit]
+Wikimedia Commons has media related to RISC-V.
+Official website
+RISC-V on GitHub
+vteRISC-VTopics
+Assembly language
+Instruction listings
+Software
+Assemblers: GNU Assembler (GAS)
+Debuggers: GNU Debugger (gdb)
+Emulators: QEMU
+Toolchains: GNU Binutils
+Operating systems
+Linux
+FreeBSD, NetBSD, OpenBSD
+FreeRTOS
+Nucleus RTOS
+NuttX
+RIOT
+RTEMS
+RT-Thread
+ThreadX
+Zephyr
+Linux distributions
+Debian
+Fedora Linux
+openSUSE
+Ubuntu
+vteReduced instruction set computer (RISC) architecturesOrigins
+IBM 801
+Berkeley RISC
+Stanford MIPS
+In active development
+Analog Devices Blackfin
+ARC
+ARM
+AVR
+eSi-RISC
+LatticeMico8, LatticeMico32
+MIPS
+OpenRISC
+Power ISA
+Renesas M32R, SuperH, V850
+RISC-V
+SPARC
+Sunway
+Unicore
+Xilinx MicroBlaze, PicoBlaze
+Development discontinued
+Alpha
+AMD Am29000
+Apollo PRISM
+Atmel AVR32
+Clipper
+CR16
+CRISP
+DEC PRISM
+Intel i860, i960
+META
+MIPS-X
+Motorola 88000, M·CORE
+PA-RISC
+POWER, PowerPC (active use in space exploration as RAD750), ROMP
+vteProgrammable logicConcepts
+ASIC
+SoC
+FPGA
+Logic block
+CPLD
+EPLD
+PLA
+PAL
+GAL
+PSoC
+Reconfigurable computing
+Xputer
+Soft microprocessor
+Circuit underutilization
+High-level synthesis
+Hardware acceleration
+Languages
+Verilog
+A
+AMS
+VHDL
+AMS
+VITAL
+SystemVerilog
+DPI
+SystemC
+AHDL
+Handel-C
+Lola
+PSL
+UPF
+PALASM
+ABEL
+CUPL
+C to HDL
+Flow to HDL
+MyHDL
+ELLA
+Chisel
+Companies
+Accellera
+Achronix
+AMD
+Aldec
+Arm
+Cadence
+Infineon
+Intel
+Lattice
+Microchip Technology
+NXP
+Siemens
+Synopsys
+Texas Instruments
+ProductsHardware
+iCE
+Stratix
+Virtex
+Software
+Intel Quartus Prime
+Xilinx ISE
+Vivado
+ModelSim
+VTR
+Simulators
+IntellectualpropertyProprietary
+ARC
+ARM Cortex-M
+LEON
+LatticeMico8
+MicroBlaze
+PicoBlaze
+Nios
+Nios II
+Open-source
+JOP
+LatticeMico32
+OpenCores
+OpenRISC
+1200
+Power ISA
+Libre-SOC
+Microwatt
+RISC-V
+vteMicrocontrollersMain
+Single-board microcontroller
+Special function register
+Architectures
+68000
+8051
+ARC
+ARM
+AVR
+MIPS
+MPS430
+PIC
+RISC-V
+x86
+Word length4-bit
+Am2900
+COP400
+MARC4
+PPS-4
+S1C6x
+TLCS-47
+TMS1000
+μCOM-4
+8-bit
+6800
+68HC05
+68HC08
+68HC11
+S08
+RS08
+6502
+65C134
+65C265
+MELPS 740
+78K
+8048
+8051
+XC800
+AVR
+COP8
+H8
+PIC10/12/16/17/18
+ST6/ST7
+STM8
+Z8
+Z80
+eZ80
+Rabbit 2000
+TLCS-870
+16-bit
+65C816
+68HC12/16
+80186
+C166
+CR16/C
+H8S
+MSP430
+PIC24/dsPIC
+R8C
+RL78
+TLCS-900
+Z8000
+32-bit
+Am29000
+ARC
+ARM Cortex-M
+EFM32
+LPC
+SAM
+STM32
+XMC
+ARM Cortex-R
+AVR32
+CRX
+FR
+FR-V
+H8SX
+M32R
+MN103
+68000
+ColdFire
+PIC32
+PowerPC
+MPC5xx
+Propeller
+SuperH
+TLCS-900
+TriCore
+V850
+RX
+Xtensa
+Z80000
+64-bit
+ARC
+ARM Cortex-R
+PowerPC64
+InterfacesProgramming
+In-circuit serial programming (ICSP)
+In-system programming (ISP)
+Program and Debug Interface (PDI)
+High-voltage serial programming (HVSP)
+High voltage parallel programming (HVPP)
+Bootloader
+ROM
+aWire
+Debugging
+Nexus (standard)
+Joint Test Action Group (JTAG)
+debugWIRE (Atmel)
+In-circuit debugging (ICD)
+In-circuit emulator (ICE)
+In-target probe (ITP)
+Lists
+List of common microcontrollers
+By manufacturer
+Intel
+NXP/Freescale
+Infineon
+Renesas Electronics
+List of Wi-Fi microcontrollers
+See also
+Embedded system
+Programmable logic controller
+List of microprocessors
+vteLinux FoundationSub-foundations
+Cloud Native Computing Foundation
+Cloud Foundry
+OpenJS Foundation
+LF Energy
+Presto Foundation
+Open Source Security Foundation
+Overture Maps Foundation
+Initiatives
+Open Container Initiative
+Core Infrastructure Initiative
+OpenAPI Initiative
+Projects
+Open Mainframe Project
+SONiC
+Hyperledger
+Retrieved from "https://en.wikipedia.org/w/index.php?title=RISC-V&oldid=1286834041"
+Categories: 64-bit computersComputer-related introductions in 2010Instruction set architecturesMicrocontrollersOpen microprocessorsLists of microprocessorsRISC-VHidden categories: CS1 German-language sources (de)CS1 errors: missing titleCS1 errors: bare URLCS1 Spanish-language sources (es)Articles with short descriptionShort description is different from WikidataWikipedia introduction cleanup from March 2025All pages needing cleanupArticles covered by WikiProject Wikify from March 2025All articles covered by WikiProject WikifyUse dmy dates from June 2016All articles with unsourced statementsArticles with unsourced statements from August 2023All articles with failed verificationArticles with failed verification from January 2023Articles containing potentially dated statements from 2019All articles containing potentially dated statementsArticles with a promotional tone from March 2025All articles with a promotional toneAll accuracy disputesArticles with disputed statements from November 2023Articles containing potentially dated statements from 2023Articles with failed verification from November 2021Articles containing potentially dated statements from December 2021Articles containing potentially dated statements from September 2021Articles containing potentially dated statements from January 2017Articles containing potentially dated statements from 2018Articles with unsourced statements from December 2020All Wikipedia articles needing clarificationWikipedia articles needing clarification from July 2022Commons category link from Wikidata
+This page was last edited on 22 April 2025, at 08:13 (UTC).
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Code of Conduct
+Developers
+Statistics
+Cookie statement
+Mobile view
+Search
+Search
+Toggle the table of contents
+RISC-V
+29 languages
+Add topic

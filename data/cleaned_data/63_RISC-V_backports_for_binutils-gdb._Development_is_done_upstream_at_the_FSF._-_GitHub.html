@@ -1,0 +1,264 @@
+GitHub - riscvarchive/riscv-binutils-gdb: RISC-V backports for binutils-gdb.
+Development is done upstream at the FSF.
+Skip to content
+Navigation Menu
+Toggle navigation
+Sign in
+Product
+GitHub Copilot
+Write better code with AI
+GitHub Advanced Security
+Find and fix vulnerabilities
+Actions
+Automate any workflow
+Codespaces
+Instant dev environments
+Issues
+Plan and track work
+Code Review
+Manage code changes
+Discussions
+Collaborate outside of code
+Code Search
+Find more, search less
+Explore
+Why GitHub
+All features
+Documentation
+GitHub Skills
+Blog
+Solutions
+By company size
+Enterprises
+Small and medium teams
+Startups
+Nonprofits
+By use case
+DevSecOps
+DevOps
+CI/CD
+View all use cases
+By industry
+Healthcare
+Financial services
+Manufacturing
+Government
+View all industries
+View all solutions
+Resources
+Topics
+AI
+DevOps
+Security
+Software Development
+View all
+Explore
+Learning Pathways
+Events & Webinars
+Ebooks & Whitepapers
+Customer Stories
+Partners
+Executive Insights
+Open Source
+GitHub Sponsors
+Fund open source developers
+The ReadME Project
+GitHub community articles
+Repositories
+Topics
+Trending
+Collections
+Enterprise
+Enterprise platform
+AI-powered developer platform
+Available add-ons
+GitHub Advanced Security
+Enterprise-grade security features
+Copilot for business
+Enterprise-grade AI features
+Premium Support
+Enterprise-grade 24/7 support
+Pricing
+Search or jump to...
+Search code, repositories, users, issues, pull requests...
+Search
+Clear
+Search syntax tips
+Provide feedback
+We read every piece of feedback, and take your input very seriously.
+Include my email address so I can be contacted
+Cancel
+Submit feedback
+Saved searches
+Use saved searches to filter your results more quickly
+Name
+Query
+To see all available qualifiers, see our documentation.
+Cancel
+Create saved search
+Sign in
+Sign up
+Reseting focus
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+Dismiss alert
+This repository was archived by the owner on Aug 17, 2022. It is now read-only.
+riscvarchive
+/
+riscv-binutils-gdb
+Public archive
+Notifications
+You must be signed in to change notification settings
+Fork
+235
+Star
+149
+RISC-V backports for binutils-gdb. Development is done upstream at the FSF.
+License
+GPL-2.0 and 3 other licenses found
+Licenses found
+GPL-2.0
+COPYING
+Unknown
+COPYING.LIB
+Unknown
+COPYING.LIBGLOSS
+Unknown
+COPYING.NEWLIB
+149
+stars
+235
+forks
+Branches
+Tags
+Activity
+Star
+Notifications
+You must be signed in to change notification settings
+Code
+Issues
+20
+Pull requests
+4
+Actions
+Projects
+0
+Wiki
+Security
+Insights
+Additional navigation options
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+riscvarchive/riscv-binutils-gdb
+riscv-binutils-2.38BranchesTagsGo to fileCodeFolders and filesNameNameLast commit messageLast commit dateLatest commit History108,862 Commitsbfdbfd  binutilsbinutils  configconfig  contribcontrib  cpucpu  elfcppelfcpp  etcetc  gasgas  gdbgdb  gdbservergdbserver  gdbsupportgdbsupport  gnulibgnulib  goldgold  gprofgprof  includeinclude  intlintl  ldld  libbacktracelibbacktrace  libctflibctf  libdecnumberlibdecnumber  libibertylibiberty  opcodesopcodes  readlinereadline  simsim  texinfotexinfo  zlibzlib  .cvsignore.cvsignore  .gitattributes.gitattributes  .gitignore.gitignore  COPYINGCOPYING  COPYING.LIBCOPYING.LIB  COPYING.LIBGLOSSCOPYING.LIBGLOSS  COPYING.NEWLIBCOPYING.NEWLIB  COPYING3COPYING3  COPYING3.LIBCOPYING3.LIB  ChangeLogChangeLog  ChangeLog.git.2.37-2.38ChangeLog.git.2.37-2.38  MAINTAINERSMAINTAINERS  Makefile.defMakefile.def  Makefile.inMakefile.in  Makefile.tplMakefile.tpl  READMEREADME  README-maintainer-modeREADME-maintainer-mode  ar-libar-lib  compilecompile  config-ml.inconfig-ml.in  config.guessconfig.guess  config.rpathconfig.rpath  config.subconfig.sub  configureconfigure  configure.acconfigure.ac  depcompdepcomp  djunpack.batdjunpack.bat  install-shinstall-sh  libtool.m4libtool.m4  ltgcc.m4ltgcc.m4  ltmain.shltmain.sh  ltoptions.m4ltoptions.m4  ltsugar.m4ltsugar.m4  ltversion.m4ltversion.m4  lt~obsolete.m4lt~obsolete.m4  makefile.vmsmakefile.vms  missingmissing  mkdepmkdep  mkinstalldirsmkinstalldirs  move-if-changemove-if-change  multilib.ammultilib.am  setup.comsetup.com  src-release.shsrc-release.sh  symlink-treesymlink-tree  test-drivertest-driver  ylwrapylwrap  View all filesRepository files navigationREADMEGPL-2.0 licenseLicenseLicenseLicense
+README for GNU development tools
+This directory contains various GNU compilers, assemblers, linkers,
+debuggers, etc., plus their support routines, definitions, and documentation.
+If you are receiving this as part of a GDB release, see the file gdb/README.
+If with a binutils release, see binutils/README;
+if with a libg++ release,
+see libg++/README, etc.
+That'll give you info about this
+package -- supported targets, how to use it, how to report bugs, etc.
+It is now possible to automatically configure and build a variety of
+tools with one command.
+To build all of the tools contained herein,
+run the ``configure'' script here, e.g.:
+./configure
+make
+To install them (by default in /usr/local/bin, /usr/local/lib, etc),
+then do:
+make install
+(If the configure script can't determine your type of computer, give it
+the name as an argument, for instance ``./configure sun4''.
+You can
+use the script ``config.sub'' to test whether a name is recognized; if
+it is, config.sub translates it to a triplet specifying CPU, vendor,
+and OS.)
+If you have more than one compiler on your system, it is often best to
+explicitly set CC in the environment before running configure, and to
+also set CC when running make.
+For example (assuming sh/bash/ksh):
+CC=gcc ./configure
+make
+A similar example using csh:
+setenv CC gcc
+./configure
+make
+Much of the code and documentation enclosed is copyright by
+the Free Software Foundation, Inc.
+See the file COPYING or
+COPYING.LIB in the various directories, for a description of the
+GNU General Public License terms under which you can copy the files.
+REPORTING BUGS: Again, see gdb/README, binutils/README, etc., for info
+on where and how to report problems.
+About
+RISC-V backports for binutils-gdb. Development is done upstream at the FSF.
+Resources
+Readme
+License
+GPL-2.0 and 3 other licenses found
+Licenses found
+GPL-2.0
+COPYING
+Unknown
+COPYING.LIB
+Unknown
+COPYING.LIBGLOSS
+Unknown
+COPYING.NEWLIB
+Activity
+Custom properties
+Stars
+149
+stars
+Watchers
+34
+watching
+Forks
+235
+forks
+Report repository
+Releases
+2
+tags
+Packages
+0
+No packages published
+Contributors
+541
++ 527 contributors
+Languages
+C
+47.2%
+Assembly
+14.3%
+Makefile
+14.0%
+DTrace
+8.9%
+D
+7.0%
+C++
+4.3%
+Other
+4.3%
+Footer
+© 2025 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+You can’t perform that action at this time.

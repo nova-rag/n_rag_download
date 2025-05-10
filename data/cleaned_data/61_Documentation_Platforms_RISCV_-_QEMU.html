@@ -1,0 +1,215 @@
+Documentation/Platforms/RISCV - QEMU
+Jump to content
+Toggle sidebar
+Search
+Personal tools
+Create account
+Log in
+Link to website
+About QEMU
+Get
+DownloadLicense
+Contribute
+Start HereReport a BugReport a security issueSubmit a PatchMailing ListsTesting QEMU
+Learn
+DocumentationLinks
+Tools
+What links hereRelated changesSpecial pagesPrintable versionPermanent linkPage information
+Contents
+move to sidebar
+hide
+Beginning
+1Description
+2Build Directions
+3Booting Linux
+Toggle Booting Linux subsection
+3.1Booting 64-bit Debian
+3.2Booting 64-bit Fedora
+3.3Booting 32-bit OpenEmbedded Images
+3.4Booting 64-bit OpenEmbedded Images
+3.5Booting 32-bit Buildroot Images
+3.6Booting 64-bit Buildroot Images
+4Microchip PolarFire SoC Icicle Kit
+5Attaching GDB
+6RISC-V Foundation Extensions
+7RISC-V Custom Extensions/Instructions
+8Links
+9Contacts
+Toggle the table of contents
+Documentation/Platforms/RISCV
+PageDiscussion
+English
+ReadView sourceView history
+More
+ReadView sourceView history
+From QEMU
+Description
+RISC-V is an open source instruction set. It is a modular with only a small set of mandatory instructions. Every other module might be implemented by vendors
+allowing RISC-V to be suitable for small embedded systems up to large supercomputers.
+Build Directions
+For RV64:
+./configure --target-list=riscv64-softmmu && make
+For RV32:
+./configure --target-list=riscv32-softmmu && make
+Booting Linux
+Booting 64-bit Debian
+Follow the instructions on the Debian wiki to boot Debian on QEMU: https://wiki.debian.org/RISC-V
+Booting 64-bit Fedora
+Download the Fedora prebuilt images from: https://dl.fedoraproject.org/pub/alt/risc-v/repo/virt-builder-images/images/
+You will want to download Fedora-Minimal-Rawhide-*-fw_payload-uboot-qemu-virt-smode.elf and Fedora-Minimal-Rawhide-*-sda.raw.xz images
+Decompress the rootFS:
+unxz Fedora-Minimal-Rawhide-*-sda.raw.xz
+Boot linux using RV64GC qemu:
+qemu-system-riscv64 \
+-nographic \
+-machine virt \
+-smp 4 \
+-m 2G \
+-kernel Fedora-Minimal-Rawhide-*-fw_payload-uboot-qemu-virt-smode.elf \
+-bios none \
+-object rng-random,filename=/dev/urandom,id=rng0 \
+-device virtio-rng-device,rng=rng0 \
+-device virtio-blk-device,drive=hd0 \
+-drive file=Fedora-Minimal-Rawhide-20200108.n.0-sda.raw,format=raw,id=hd0 \
+-device virtio-net-device,netdev=usernet \
+-netdev user,id=usernet,hostfwd=tcp::10000-:22
+Login: root
+Password: riscv
+For more details on running Fedora see the Fedora Wiki: https://fedoraproject.org/wiki/Architectures/RISC-V/Installing
+Booting 32-bit OpenEmbedded Images
+Follow the usual OpenEmbedded build flow using meta-riscv to build for the qemuriscv32 machine.
+MACHINE=qemuriscv32 bitbake core-image-minimal; runqemu qemuriscv32
+More details on doing this can be found here: https://github.com/riscv/meta-riscv/#build-image
+When using OpenEmbedded it is recommended to use the runqemu script to boot QEMU. It will dynamically handle display options as well as advanced networking.
+Booting 64-bit OpenEmbedded Images
+Follow the usual OpenEmbedded build flow using meta-riscv to build for the qemuriscv64 machine.
+MACHINE=qemuriscv64 bitbake core-image-minimal; runqemu qemuriscv64
+More details on doing this can be found here: https://github.com/riscv/meta-riscv/#build-image
+When using OpenEmbedded it is recommended to use the runqemu script to boot QEMU. It will dynamically handle display options as well as advanced networking.
+Booting 32-bit Buildroot Images
+Clone the Buildroot source code and cd into the directory.
+Generate the default config:
+make qemu_riscv32_virt_defconfig
+Build the images
+make
+Boot the images:
+qemu-system-riscv32 \
+-M virt -nographic \
+-bios output/images/fw_jump.elf \
+-kernel output/images/Image \
+-append "root=/dev/vda ro" \
+-drive file=output/images/rootfs.ext2,format=raw,id=hd0 \
+-device virtio-blk-device,drive=hd0 \
+-netdev user,id=net0 -device virtio-net-device,netdev=net0
+Booting 64-bit Buildroot Images
+Clone the Buildroot source code and cd into the directory.
+Generate the default config:
+make qemu_riscv64_virt_defconfig
+Build the images
+make
+Boot the images:
+qemu-system-riscv64 \
+-M virt -nographic \
+-bios output/images/fw_jump.elf \
+-kernel output/images/Image \
+-append "root=/dev/vda ro" \
+-drive file=output/images/rootfs.ext2,format=raw,id=hd0 \
+-device virtio-blk-device,drive=hd0 \
+-netdev user,id=net0 -device virtio-net-device,netdev=net0
+Microchip PolarFire SoC Icicle Kit
+QEMU 5.2.0 supports a new machine: Microchip PolarFire SoC Icicle Kit. The Icicle Kit board integrates a PolarFire SoC, with one SiFive's E51 plus four U54 cores and many on-chip peripherals and an FPGA.
+For more details about Microchip PolarFire Soc, please see:
+https://www.microsemi.com/product-directory/soc-fpgas/5498-polarfire-soc-fpga
+The Icicle Kit board information can be found here:
+https://www.microsemi.com/existing-parts/parts/152514
+Boot the images:
+qemu-system-riscv64 -M microchip-icicle-kit -smp 5 \
+-bios path/to/hss.bin -sd path/to/sdcard.img \
+-nic user,model=cadence_gem \
+-nic tap,ifname=tap,model=cadence_gem,script=no \
+-display none -serial stdio \
+-chardev socket,id=serial1,path=serial1.sock,server,wait \
+-serial chardev:serial1
+The BIOS image used by this machine is hss.bin, aka Hart Software Services, which can be built from: https://github.com/polarfire-soc/hart-software-services
+QEMU does not support eMMC hence the SD configuration shall be used in the HSS and Yocto BSP build. The eMMC configuration is not supported.
+Instructions to build HSS:
+$ cp boards/icicle-kit-es/def_config.sdcard .config
+$ make BOARD=icicle-kit-es
+The following commit of HSS was tested:
+commit 078ce16d8cb3a89e4c3e93916621b816dbdaa274
+Merge: 76b34dd 2cd45c9
+Author: Cyril-Jean <cyril.jean@microchip.com>
+Date:
+Fri Oct 9 17:07:12 2020 +0100
+Merge pull request #7 from avpatel/custom_boot_flow_v1
+Custom boot flow for PolarFire boards
+For Yocto build, "MACHINE=icicle-kit-es-sd" should be specified, otherwise when booting Linux kernel the rootfs cannot be mounted. The generated image is something like: mpfs-dev-cli-icicle-kit-es-sd.rootfs.wic. Resize the file with 'qemu-image' to a power of 2 before passing to QEMU '-sd' command line.
+The following commands download the official SD card image released by Microchip and prepare it for QEMU usage:
+$ wget ftp://ftpsoc.microsemi.com/outgoing/core-image-minimal-dev-icicle-kit-es-sd-20201009141623.rootfs.wic.gz
+$ gunzip core-image-minimal-dev-icicle-kit-es-sd-20201009141623.rootfs.wic.gz
+$ qemu-img resize core-image-minimal-dev-icicle-kit-es-sd-20201009141623.rootfs.wic 4G
+The memory is set to 1537 MiB by default which is the minimum required high memory size by HSS. A sanity check on ram size is performed in the machine init routine to prompt user to increase the RAM size to > 1537 MiB when less than 1537 MiB ram is detected.
+HSS output is on the first serial port (stdio) and U-Boot/Linux outputs on the 2nd serial port. OpenSBI outputs on a random serial port due to the lottery mechanism used during the multi-core boot.
+Attaching GDB
+To attach GDB to a QEMU RISC-V instance with only a single cluster (every machine except the sifive_u) run these commands from GDB:
+target extended-remote :1234
+info threads
+To attach GDB to a QEMU RISC-V instance with multiple clusters (the sifive_u) run these commands from GDB:
+target extended-remote :1234
+add-inferior
+inferior 2
+attach 2
+set schedule-multiple
+info threads
+The above commands assume the default GDB port exposed from QEMU of 1234. This will happen when you run QEMU with the '-s' command line argument.
+If you would like QEMU to not run the guest until you have connected GDB, you can specify the '-S' command line argument as well.
+RISC-V Foundation Extensions
+As RISC-V has a range of possible extensions, QEMU has guidelines for
+supporting them all.
+If an extension is frozen or ratified by the RISC-V foundation, it can
+be supported in QEMU. Generally we will try to support as many versions
+as feasible, following the usual QEMU deprecation policy to remove old
+versions.
+If an official RISC-V foundation extension is in a reasonable draft
+state, that is not too many changes are still expected, it can be
+supported experimentally by QEMU. Experimental support means it must
+be disabled by default and marked with a "x-" in the CPU/board properties.
+Draft extensions should also include the version information in the property.
+Draft extensions can be enabled by specific CPUs or boards if the hardware
+supports that extension.
+QEMU will only support the latest version of patches submitted for a draft
+extension. A draft extension can also be removed at any time and does not
+follow QEMU's deprecation policy.
+RISC-V Custom Extensions/Instructions
+Support for custom instruction set extensions are an important part of RISC-V,
+with large encoding spaces reserved of vendor extensions.
+QEMU follows similar rules to the RISC-V toolchain convention, as described
+here: https://github.com/riscv-non-isa/riscv-toolchain-conventions/pull/17
+QEMU will support vendor extensions. Vendor extensions must be
+disabled by default, but can be enabled for specific vendor CPUs and
+boards. The vendor extensions should use prefixes and names as described in
+https://github.com/riscv-non-isa/riscv-toolchain-conventions
+Vendor extensions must be maintained and tested by the vendor. Upstream will
+take efforts to not break extensions, but testing and bug fixes should be
+done by the vendor. Patches to add support for open source toolchains are
+unlikely to be accepted without specification documents being made available
+publicly.
+Vendor extensions can not interfere with other extensions and can not
+be obtrusive to the core RISC-V target code.
+If you are looking to add support for vendor extensions, it is recommended
+that you get involved in the QEMU review process. It is also recommended that
+you send your patches as early as possible to get community feedback before
+they are fully implemented. This is especially important if you are modifying
+core code.
+Links
+Fedora RISC-V wiki
+OpenEmbedded meta-riscv
+Video: QEMU Support for the RISC-V Instruction Set Architecture
+Contacts
+Maintainers:
+Palmer Dabbelt
+Alistair Francis
+Retrieved from "https://wiki.qemu.org/index.php?title=Documentation/Platforms/RISCV&oldid=10741"
+This page was last edited on 21 January 2022, at 03:02.
+Content is available under GNU Free Documentation License 1.2.QEMU is a trademark of Fabrice Bellard.
+About QEMU

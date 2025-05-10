@@ -1,0 +1,169 @@
+Getting Started | xPack GNU RISC-V Embedded GCC
+Skip to main contentThe xPack Binary Toolsriscv-none-elf-gccDocumentationGetting StartedInstall GuideUser's GuideContributor's GuideMaintainer's GuideFAQHelp CentreReleasesAboutBlogRecentArchiveTagsGitHubriscv-none-elf-gcc-xpack projectxpack orgxpack-dev-tools org14.2.0-3SearchGetting StartedInstall GuideUser's GuideContributor's GuideMaintainer's GuideFAQHelp CentreReleasesProjectAboutHistoryLicenseGetting StartedOn this page
+Getting Started with the xPack GNU RISC-V Embedded GCC
+Separate User/Contributor/Maintainer pagesTo address the specific needs of different
+audiences, this site features separate
+User's Guide,
+Contributor's Guide and
+Maintainer's Guide
+pages. This way, each group can easily find the information and resources
+most relevant to them.
+Overview​
+xPack GNU RISC-V Embedded GCC is a
+standalone, cross-platform (Windows, macOS, GNU/Linux) binary
+distribution of GNU RISC-V Embedded GCC,
+aimed at reproducible builds.
+What are reproducible operations?To be reproducible, an operation must remain stable over time and
+across different environments. In other words, if the same operation is repeated
+after some time, possibly on a different machine or platform, the
+resulting behaviour must be functionally equivalent.
+GNU RISC-V Embedded GCC is the RISC-V cross-compiler variant of
+the GNU Compiler Collection,
+an open source project maintained by the
+Free Software Foundation.
+infoIn this context, embedded refers exclusively to bare-metal systems,
+not embedded Linux, which necessitates a different toolchain for building
+Linux user space applications.
+The open source xPack GNU RISC-V Embedded GCC project is hosted on GitHub as
+xpack-dev-tools/riscv-none-elf-gcc-xpack;
+it provides the platform specific binaries as
+release assets.
+In addition to the binary archives and the package metadata,
+this project also includes the
+build scripts.
+Upgrade noticeThis project replaces the deprecated
+xpack-dev-tools/riscv-none-embed-gcc-xpack
+project, which followed the
+SiFive releases;
+in order to have access to further versions,
+it is recommended to update your projects.
+What are xpm packages? (xPacks)​
+xpm packages, abbreviated as xPacks, are versatile,
+language-neutral software packages. They have been successfully
+utilised in C/C++ projects.
+What the heck are xpm packages (xPacks)? Please, do not introduce another package format!Although the initial appearance may seem complex, utilising
+xpm packages is, in fact, straightforward.
+The design rationale is to automate frequent
+operations that occur during software development, such as the
+installation of
+dependencies, and to ensure reproducibility.These packages are managed by xpm
+(the xPack Project Manager),
+a programme that complements the npm CLI
+(the popular JavaScript package manager), with new language-neutral features.The xPacks Framework does NOT introduce a new package format; instead,
+it uses the same format as npm packages, which is a collection of
+files/folders and a package.json file with the package metadata.xpm can install packages from the
+same repositories as npm, whether public or private.The packages (usually regular archives, but also git repositories),
+are extracted into separate folders within the project.Based on the content, there are two types of xpm packages:
+packages with source libraries (source xpm packages)
+packages with executables, usually platform-specific binary
+tools (binary xpm packages)
+Source xpm packages are regular npm packages that include library
+source files, typically in C/C++, though there are no language
+restrictions.Binary xpm packages are also regular npm packages, but with minimal
+content, typically just the package.json file. Since these packages
+provide executables for multiple platforms, some of which are quite
+large, it is not practical to include all binaries within the npm
+package itself. Instead, the package.json file contains references
+(URLs) to platform-specific binary archives (e.g., .tar.gz for Unix or
+.zip for Windows).These archives are also expanded along with the package metadata.
+Links/forwarders to
+these executables are created in a .bin folder,
+eliminating the need to add multiple folders to the PATH.In summary, xpm packages can enhance and automate the installation
+process for source libraries and tools.In summary, xpm packages can streamline and automate the installation
+process for source libraries and tools. Further details are available on the
+xpm Concepts page.
+Features​
+All binaries are:
+Self-contained (include all required libraries).
+File-system relocatable (can be installed in any location).
+Built on slightly older systems (to ensure compatibility with both
+old and new systems).
+Compatibility with older systemsGiven that most operating systems maintain significant compatibility
+with older versions, building an application on an older system ensures
+that the same binary can run on newer versions. Conversely, building an
+application on a newer system may utilize library features that are
+not available in older versions, making backward compatibility less
+feasible.
+Similarly to flatpacks or snap,
+but significantly simpler, xpm packages include all dependent shared libraries
+within the distributed archives, making the binaries independent of
+any similar libraries installed on the system. This ensures they
+can run on any system without needing specific libraries to be
+installed.
+Also the builds are configured so that the binaries do not depend on
+being installed in specific folders, and can be installed in any
+location, including in user folders.
+Benefits​
+The main advantages of using the xPack GNU RISC-V Embedded GCC are:
+A convenient, uniform and portable install/uninstall/upgrade
+procedure; the same procedure is used for all major
+platforms (x64 Windows, x64 macOS, arm64 macOS, x64 GNU/Linux, arm64 GNU/Linux).
+Multiple versions of the same package can be installed at the same time on
+the same system.
+No need to worry about dependent libraries, they are all included.
+Not affected by system updates that
+might change the versions of the dependent libraries.
+Significantly lighter and easier to use than Docker images that provide
+similar functionality and are GNU/Linux centric.
+Projects can be tied to specific tools versions; this provides a good
+reproducibility, especially useful in CI/CD environments.
+Compatibility​
+The xPack GNU RISC-V Embedded GCC project is fully compatible with the upstream
+riscv32-*-elf and riscv64-*-elf variants of the
+upstream GCC.
+Install​
+The executables and other related files can be installed automatically with
+xpm or manually by downloading the
+platform specific archives.
+The details for installing the xPack GNU RISC-V Embedded GCC on different platforms are
+provided in the
+Install Guide on the project's website.
+Status​
+The xPack GNU RISC-V Embedded GCC project is fully functional,
+stable, and suitable for use in production environments.
+Documentation​
+The original GNU RISC-V Embedded GCC documentation is available from the
+GCC project web site:
+https://gcc.gnu.org/onlinedocs/
+Release schedule​
+This distribution generally follows the official
+GCC release timeline.
+For each major version there are 2 releases, like 14.1
+in the first part of the year (tentatively April-May) and
+14.2 in the second part
+(tentatively in August-September).
+Previous versions are maintained for 3 more years, and, around midyear,
+GNU releases updates for the previous 3 versions,
+(like 13.3, 12.4, 11.5).
+Releases​
+The list of releases is available in the Releases pages.
+Change log​
+The release and change log is available in the repository
+CHANGELOG.md file.
+Support & feedback​
+The quick advice for getting support and providing feedback is to use the
+GitHub Discussions.
+For additional information, please refer to the
+Help Centre page.
+License​
+Unless otherwise stated, the original content is released under the terms of the
+MIT License,
+with all rights reserved by
+Liviu Ionescu.
+The binary distributions include several open-source components; the
+corresponding licenses are available in each archive in the
+distro-info/licenses folder.
+Credits​
+Special thanks to MacStadium, for providing the Apple Silicon
+development infrastructure as part of their generous
+Free and Open Source Software
+program.
+Thanks to Shields IO for the badges.
+Enjoyed Using This Project? Let Us Know!​
+If you enjoyed using this project, please let us know! Here are some ways you can show your support:
+Donate: Your contributions, whether small or generous, help us keep the
+xPack
+projects thriving.
+Star the project on GitHub: It helps others discover our work.
+Follow us on X/Twitter: Stay updated with our latest releases and news.
+Edit this pageLast updated on Mar 23, 2025NextInstall GuideOverviewWhat are xpm packages? (xPacks)FeaturesBenefitsCompatibilityInstallStatusDocumentationRelease scheduleReleasesChange logSupport & feedbackLicenseCreditsEnjoyed Using This Project? Let Us Know!PagesGetting StartedReleasesAboutBlogCommunityGitHub DiscussionsStack OverflowDiscordX/TwitterMoreDonate via PayPalGitHub riscv-none-elf-gcc-xpack projectGitHub xpack orgGitHub xpack-dev-tools orgCopyright © 2025 Liviu Ionescu. Built with Docusaurus v3.6.3 on Sun Mar 23 2025.
